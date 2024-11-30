@@ -1,0 +1,429 @@
+Fri 29 Nov 2024 14:40:12 INFO  ['run_baselines.py']
+Fri 29 Nov 2024 14:40:12 INFO  
+General Hyper Parameters:
+gpu_id = 0
+use_gpu = True
+seed = 2020
+state = INFO
+reproducibility = True
+data_path = dataset/amazon-beauty
+checkpoint_dir = saved
+show_progress = True
+save_dataset = False
+dataset_save_path = None
+save_dataloaders = False
+dataloaders_save_path = None
+log_wandb = False
+
+Training Hyper Parameters:
+epochs = 300
+train_batch_size = 512
+learner = adam
+learning_rate = 0.001
+train_neg_sample_args = {'distribution': 'none', 'sample_num': 'none', 'alpha': 'none', 'dynamic': False, 'candidate_num': 0}
+eval_step = 1
+stopping_step = 10
+clip_grad_norm = None
+weight_decay = 0.0
+loss_decimal_place = 4
+
+Evaluation Hyper Parameters:
+eval_args = {'split': {'LS': 'valid_and_test'}, 'order': 'TO', 'group_by': 'user', 'mode': {'valid': 'full', 'test': 'full'}}
+repeatable = True
+metrics = ['Recall', 'MRR', 'NDCG', 'Precision']
+topk = [50, 40, 20, 10, 5, 1]
+valid_metric = NDCG@20
+valid_metric_bigger = True
+eval_batch_size = 512
+metric_decimal_place = 4
+
+Dataset Hyper Parameters:
+field_separator = 	
+seq_separator =  
+USER_ID_FIELD = user_id
+ITEM_ID_FIELD = item_id
+RATING_FIELD = rating
+TIME_FIELD = timestamp
+seq_len = None
+LABEL_FIELD = label
+threshold = None
+NEG_PREFIX = neg_
+load_col = {'inter': ['user_id', 'item_id', 'timestamp']}
+unload_col = None
+unused_col = None
+additional_feat_suffix = None
+rm_dup_inter = None
+val_interval = None
+filter_inter_by_user_or_item = True
+user_inter_num_interval = [5,inf)
+item_inter_num_interval = [5,inf)
+alias_of_user_id = None
+alias_of_item_id = None
+alias_of_entity_id = None
+alias_of_relation_id = None
+preload_weight = None
+normalize_field = None
+normalize_all = None
+ITEM_LIST_LENGTH_FIELD = item_length
+LIST_SUFFIX = _list
+MAX_ITEM_LIST_LENGTH = 50
+POSITION_FIELD = position_id
+HEAD_ENTITY_ID_FIELD = head_id
+TAIL_ENTITY_ID_FIELD = tail_id
+RELATION_ID_FIELD = relation_id
+ENTITY_ID_FIELD = entity_id
+benchmark_filename = None
+
+Other Hyper Parameters: 
+worker = 0
+wandb_project = recbole
+shuffle = True
+require_pow = False
+enable_amp = False
+enable_scaler = False
+transform = None
+n_layers = 2
+n_heads = 2
+hidden_size = 64
+inner_size = 256
+hidden_dropout_prob = 0.5
+attn_dropout_prob = 0.5
+hidden_act = gelu
+layer_norm_eps = 1e-12
+initializer_range = 0.02
+loss_type = CE
+numerical_features = []
+discretization = None
+kg_reverse_r = False
+entity_kg_num_interval = [0,inf)
+relation_kg_num_interval = [0,inf)
+MODEL_TYPE = ModelType.SEQUENTIAL
+embedding_size = 64
+MODEL_INPUT_TYPE = InputType.POINTWISE
+eval_type = EvaluatorType.RANKING
+single_spec = True
+local_rank = 0
+device = cuda
+valid_neg_sample_args = {'distribution': 'uniform', 'sample_num': 'none'}
+test_neg_sample_args = {'distribution': 'uniform', 'sample_num': 'none'}
+
+
+Fri 29 Nov 2024 14:40:27 INFO  amazon-beauty
+The number of users: 22364
+Average actions of users: 8.876358270357287
+The number of items: 12102
+Average actions of items: 16.403768283612923
+The number of inters: 198502
+The sparsity of the dataset: 99.92665707018277%
+Remain Fields: ['user_id', 'item_id', 'timestamp']
+Fri 29 Nov 2024 14:40:36 INFO  [Training]: train_batch_size = [512] train_neg_sample_args: [{'distribution': 'none', 'sample_num': 'none', 'alpha': 'none', 'dynamic': False, 'candidate_num': 0}]
+Fri 29 Nov 2024 14:40:36 INFO  [Evaluation]: eval_batch_size = [512] eval_args: [{'split': {'LS': 'valid_and_test'}, 'order': 'TO', 'group_by': 'user', 'mode': {'valid': 'full', 'test': 'full'}}]
+Fri 29 Nov 2024 14:40:42 INFO  SASRec(
+  (item_embedding): Embedding(12102, 64, padding_idx=0)
+  (position_embedding): Embedding(50, 64)
+  (trm_encoder): TransformerEncoder(
+    (layer): ModuleList(
+      (0-1): 2 x TransformerLayer(
+        (multi_head_attention): MultiHeadAttention(
+          (query): Linear(in_features=64, out_features=64, bias=True)
+          (key): Linear(in_features=64, out_features=64, bias=True)
+          (value): Linear(in_features=64, out_features=64, bias=True)
+          (softmax): Softmax(dim=-1)
+          (attn_dropout): Dropout(p=0.5, inplace=False)
+          (dense): Linear(in_features=64, out_features=64, bias=True)
+          (LayerNorm): LayerNorm((64,), eps=1e-12, elementwise_affine=True)
+          (out_dropout): Dropout(p=0.5, inplace=False)
+        )
+        (feed_forward): FeedForward(
+          (dense_1): Linear(in_features=64, out_features=256, bias=True)
+          (dense_2): Linear(in_features=256, out_features=64, bias=True)
+          (LayerNorm): LayerNorm((64,), eps=1e-12, elementwise_affine=True)
+          (dropout): Dropout(p=0.5, inplace=False)
+        )
+      )
+    )
+  )
+  (LayerNorm): LayerNorm((64,), eps=1e-12, elementwise_affine=True)
+  (dropout): Dropout(p=0.5, inplace=False)
+  (loss_fct): CrossEntropyLoss()
+)
+Trainable parameters: 877824
+Fri 29 Nov 2024 14:41:14 INFO  FLOPs: 4983464.0
+Fri 29 Nov 2024 14:42:44 INFO  epoch 0 training [time: 36.62s, train loss: 2270.8213]
+Fri 29 Nov 2024 14:42:51 INFO  epoch 0 evaluating [time: 6.47s, valid_score: 0.014400]
+Fri 29 Nov 2024 14:42:51 INFO  valid result: 
+recall@50 : 0.0657    recall@40 : 0.0582    recall@20 : 0.0355    recall@10 : 0.0221    recall@5 : 0.0125    recall@1 : 0.0038    mrr@50 : 0.0096    mrr@40 : 0.0094    mrr@20 : 0.0086    mrr@10 : 0.0077    mrr@5 : 0.0065    mrr@1 : 0.0038    ndcg@50 : 0.0203    ndcg@40 : 0.019    ndcg@20 : 0.0144    ndcg@10 : 0.011    ndcg@5 : 0.008    ndcg@1 : 0.0038    precision@50 : 0.0013    precision@40 : 0.0015    precision@20 : 0.0018    precision@10 : 0.0022    precision@5 : 0.0025    precision@1 : 0.0038
+Fri 29 Nov 2024 14:42:52 INFO  Saving current: saved/SASRec-Nov-29-2024_14-41-14.pth
+Fri 29 Nov 2024 14:43:04 INFO  epoch 1 training [time: 12.81s, train loss: 2124.9913]
+Fri 29 Nov 2024 14:43:05 INFO  epoch 1 evaluating [time: 0.37s, valid_score: 0.028500]
+Fri 29 Nov 2024 14:43:05 INFO  valid result: 
+recall@50 : 0.1173    recall@40 : 0.1045    recall@20 : 0.0687    recall@10 : 0.043    recall@5 : 0.0254    recall@1 : 0.0076    mrr@50 : 0.0191    mrr@40 : 0.0188    mrr@20 : 0.0176    mrr@10 : 0.0158    mrr@5 : 0.0135    mrr@1 : 0.0076    ndcg@50 : 0.0382    ndcg@40 : 0.0358    ndcg@20 : 0.0285    ndcg@10 : 0.022    ndcg@5 : 0.0164    ndcg@1 : 0.0076    precision@50 : 0.0023    precision@40 : 0.0026    precision@20 : 0.0034    precision@10 : 0.0043    precision@5 : 0.0051    precision@1 : 0.0076
+Fri 29 Nov 2024 14:43:05 INFO  Saving current: saved/SASRec-Nov-29-2024_14-41-14.pth
+Fri 29 Nov 2024 14:43:18 INFO  epoch 2 training [time: 12.79s, train loss: 2018.2709]
+Fri 29 Nov 2024 14:43:18 INFO  epoch 2 evaluating [time: 0.38s, valid_score: 0.037700]
+Fri 29 Nov 2024 14:43:18 INFO  valid result: 
+recall@50 : 0.149    recall@40 : 0.1312    recall@20 : 0.0892    recall@10 : 0.0589    recall@5 : 0.0358    recall@1 : 0.0093    mrr@50 : 0.0253    mrr@40 : 0.0249    mrr@20 : 0.0234    mrr@10 : 0.0214    mrr@5 : 0.0183    mrr@1 : 0.0093    ndcg@50 : 0.0495    ndcg@40 : 0.0462    ndcg@20 : 0.0377    ndcg@10 : 0.0301    ndcg@5 : 0.0226    ndcg@1 : 0.0093    precision@50 : 0.003    precision@40 : 0.0033    precision@20 : 0.0045    precision@10 : 0.0059    precision@5 : 0.0072    precision@1 : 0.0093
+Fri 29 Nov 2024 14:43:18 INFO  Saving current: saved/SASRec-Nov-29-2024_14-41-14.pth
+Fri 29 Nov 2024 14:43:31 INFO  epoch 3 training [time: 12.71s, train loss: 1943.9941]
+Fri 29 Nov 2024 14:43:31 INFO  epoch 3 evaluating [time: 0.37s, valid_score: 0.046500]
+Fri 29 Nov 2024 14:43:31 INFO  valid result: 
+recall@50 : 0.1724    recall@40 : 0.1548    recall@20 : 0.1091    recall@10 : 0.074    recall@5 : 0.0467    recall@1 : 0.0111    mrr@50 : 0.0311    mrr@40 : 0.0307    mrr@20 : 0.0291    mrr@10 : 0.0267    mrr@5 : 0.0231    mrr@1 : 0.0111    ndcg@50 : 0.0591    ndcg@40 : 0.0559    ndcg@20 : 0.0465    ndcg@10 : 0.0377    ndcg@5 : 0.0289    ndcg@1 : 0.0111    precision@50 : 0.0034    precision@40 : 0.0039    precision@20 : 0.0055    precision@10 : 0.0074    precision@5 : 0.0093    precision@1 : 0.0111
+Fri 29 Nov 2024 14:43:31 INFO  Saving current: saved/SASRec-Nov-29-2024_14-41-14.pth
+Fri 29 Nov 2024 14:43:44 INFO  epoch 4 training [time: 12.77s, train loss: 1887.7046]
+Fri 29 Nov 2024 14:43:45 INFO  epoch 4 evaluating [time: 0.37s, valid_score: 0.051000]
+Fri 29 Nov 2024 14:43:45 INFO  valid result: 
+recall@50 : 0.1891    recall@40 : 0.1702    recall@20 : 0.1205    recall@10 : 0.0844    recall@5 : 0.0546    recall@1 : 0.0101    mrr@50 : 0.0336    mrr@40 : 0.0332    mrr@20 : 0.0314    mrr@10 : 0.029    mrr@5 : 0.0251    mrr@1 : 0.0101    ndcg@50 : 0.0645    ndcg@40 : 0.0611    ndcg@20 : 0.051    ndcg@10 : 0.0419    ndcg@5 : 0.0323    ndcg@1 : 0.0101    precision@50 : 0.0038    precision@40 : 0.0043    precision@20 : 0.006    precision@10 : 0.0084    precision@5 : 0.0109    precision@1 : 0.0101
+Fri 29 Nov 2024 14:43:45 INFO  Saving current: saved/SASRec-Nov-29-2024_14-41-14.pth
+Fri 29 Nov 2024 14:43:57 INFO  epoch 5 training [time: 12.80s, train loss: 1842.5021]
+Fri 29 Nov 2024 14:43:58 INFO  epoch 5 evaluating [time: 0.42s, valid_score: 0.055400]
+Fri 29 Nov 2024 14:43:58 INFO  valid result: 
+recall@50 : 0.1964    recall@40 : 0.18    recall@20 : 0.1298    recall@10 : 0.0902    recall@5 : 0.0587    recall@1 : 0.0112    mrr@50 : 0.0366    mrr@40 : 0.0362    mrr@20 : 0.0345    mrr@10 : 0.0317    mrr@5 : 0.0276    mrr@1 : 0.0112    ndcg@50 : 0.0686    ndcg@40 : 0.0656    ndcg@20 : 0.0554    ndcg@10 : 0.0454    ndcg@5 : 0.0353    ndcg@1 : 0.0112    precision@50 : 0.0039    precision@40 : 0.0045    precision@20 : 0.0065    precision@10 : 0.009    precision@5 : 0.0117    precision@1 : 0.0112
+Fri 29 Nov 2024 14:43:58 INFO  Saving current: saved/SASRec-Nov-29-2024_14-41-14.pth
+Fri 29 Nov 2024 14:44:11 INFO  epoch 6 training [time: 12.76s, train loss: 1803.7332]
+Fri 29 Nov 2024 14:44:11 INFO  epoch 6 evaluating [time: 0.37s, valid_score: 0.057000]
+Fri 29 Nov 2024 14:44:11 INFO  valid result: 
+recall@50 : 0.2014    recall@40 : 0.185    recall@20 : 0.1353    recall@10 : 0.0956    recall@5 : 0.0622    recall@1 : 0.0092    mrr@50 : 0.037    mrr@40 : 0.0366    mrr@20 : 0.0349    mrr@10 : 0.0322    mrr@5 : 0.0278    mrr@1 : 0.0092    ndcg@50 : 0.0701    ndcg@40 : 0.0672    ndcg@20 : 0.057    ndcg@10 : 0.047    ndcg@5 : 0.0363    ndcg@1 : 0.0092    precision@50 : 0.004    precision@40 : 0.0046    precision@20 : 0.0068    precision@10 : 0.0096    precision@5 : 0.0124    precision@1 : 0.0092
+Fri 29 Nov 2024 14:44:11 INFO  Saving current: saved/SASRec-Nov-29-2024_14-41-14.pth
+Fri 29 Nov 2024 14:44:24 INFO  epoch 7 training [time: 12.81s, train loss: 1773.7035]
+Fri 29 Nov 2024 14:44:24 INFO  epoch 7 evaluating [time: 0.37s, valid_score: 0.057900]
+Fri 29 Nov 2024 14:44:24 INFO  valid result: 
+recall@50 : 0.2047    recall@40 : 0.1864    recall@20 : 0.1372    recall@10 : 0.0966    recall@5 : 0.0643    recall@1 : 0.0091    mrr@50 : 0.0376    mrr@40 : 0.0372    mrr@20 : 0.0354    mrr@10 : 0.0327    mrr@5 : 0.0283    mrr@1 : 0.0091    ndcg@50 : 0.0712    ndcg@40 : 0.0679    ndcg@20 : 0.0579    ndcg@10 : 0.0477    ndcg@5 : 0.0372    ndcg@1 : 0.0091    precision@50 : 0.0041    precision@40 : 0.0047    precision@20 : 0.0069    precision@10 : 0.0097    precision@5 : 0.0129    precision@1 : 0.0091
+Fri 29 Nov 2024 14:44:24 INFO  Saving current: saved/SASRec-Nov-29-2024_14-41-14.pth
+Fri 29 Nov 2024 14:44:37 INFO  epoch 8 training [time: 13.12s, train loss: 1748.4095]
+Fri 29 Nov 2024 14:44:38 INFO  epoch 8 evaluating [time: 0.45s, valid_score: 0.058300]
+Fri 29 Nov 2024 14:44:38 INFO  valid result: 
+recall@50 : 0.2069    recall@40 : 0.1893    recall@20 : 0.1397    recall@10 : 0.0984    recall@5 : 0.0655    recall@1 : 0.0077    mrr@50 : 0.0374    mrr@40 : 0.037    mrr@20 : 0.0352    mrr@10 : 0.0324    mrr@5 : 0.0281    mrr@1 : 0.0077    ndcg@50 : 0.0716    ndcg@40 : 0.0684    ndcg@20 : 0.0583    ndcg@10 : 0.0479    ndcg@5 : 0.0373    ndcg@1 : 0.0077    precision@50 : 0.0041    precision@40 : 0.0047    precision@20 : 0.007    precision@10 : 0.0098    precision@5 : 0.0131    precision@1 : 0.0077
+Fri 29 Nov 2024 14:44:38 INFO  Saving current: saved/SASRec-Nov-29-2024_14-41-14.pth
+Fri 29 Nov 2024 14:44:51 INFO  epoch 9 training [time: 13.53s, train loss: 1728.2519]
+Fri 29 Nov 2024 14:44:52 INFO  epoch 9 evaluating [time: 0.37s, valid_score: 0.059300]
+Fri 29 Nov 2024 14:44:52 INFO  valid result: 
+recall@50 : 0.2065    recall@40 : 0.1889    recall@20 : 0.1408    recall@10 : 0.1005    recall@5 : 0.0652    recall@1 : 0.0088    mrr@50 : 0.0383    mrr@40 : 0.0379    mrr@20 : 0.0362    mrr@10 : 0.0334    mrr@5 : 0.0288    mrr@1 : 0.0088    ndcg@50 : 0.0723    ndcg@40 : 0.0691    ndcg@20 : 0.0593    ndcg@10 : 0.0491    ndcg@5 : 0.0378    ndcg@1 : 0.0088    precision@50 : 0.0041    precision@40 : 0.0047    precision@20 : 0.007    precision@10 : 0.0101    precision@5 : 0.013    precision@1 : 0.0088
+Fri 29 Nov 2024 14:44:52 INFO  Saving current: saved/SASRec-Nov-29-2024_14-41-14.pth
+Fri 29 Nov 2024 14:45:05 INFO  epoch 10 training [time: 12.83s, train loss: 1711.9659]
+Fri 29 Nov 2024 14:45:05 INFO  epoch 10 evaluating [time: 0.37s, valid_score: 0.059400]
+Fri 29 Nov 2024 14:45:05 INFO  valid result: 
+recall@50 : 0.2092    recall@40 : 0.1916    recall@20 : 0.1405    recall@10 : 0.1015    recall@5 : 0.066    recall@1 : 0.0087    mrr@50 : 0.0385    mrr@40 : 0.0381    mrr@20 : 0.0363    mrr@10 : 0.0336    mrr@5 : 0.0289    mrr@1 : 0.0087    ndcg@50 : 0.073    ndcg@40 : 0.0698    ndcg@20 : 0.0594    ndcg@10 : 0.0495    ndcg@5 : 0.0381    ndcg@1 : 0.0087    precision@50 : 0.0042    precision@40 : 0.0048    precision@20 : 0.007    precision@10 : 0.0102    precision@5 : 0.0132    precision@1 : 0.0087
+Fri 29 Nov 2024 14:45:05 INFO  Saving current: saved/SASRec-Nov-29-2024_14-41-14.pth
+Fri 29 Nov 2024 14:45:18 INFO  epoch 11 training [time: 12.80s, train loss: 1696.6039]
+Fri 29 Nov 2024 14:45:18 INFO  epoch 11 evaluating [time: 0.37s, valid_score: 0.058900]
+Fri 29 Nov 2024 14:45:18 INFO  valid result: 
+recall@50 : 0.2095    recall@40 : 0.1907    recall@20 : 0.1402    recall@10 : 0.1004    recall@5 : 0.0669    recall@1 : 0.008    mrr@50 : 0.038    mrr@40 : 0.0376    mrr@20 : 0.0358    mrr@10 : 0.0331    mrr@5 : 0.0287    mrr@1 : 0.008    ndcg@50 : 0.0727    ndcg@40 : 0.0693    ndcg@20 : 0.0589    ndcg@10 : 0.049    ndcg@5 : 0.0381    ndcg@1 : 0.008    precision@50 : 0.0042    precision@40 : 0.0048    precision@20 : 0.007    precision@10 : 0.01    precision@5 : 0.0134    precision@1 : 0.008
+Fri 29 Nov 2024 14:45:31 INFO  epoch 12 training [time: 12.75s, train loss: 1684.5449]
+Fri 29 Nov 2024 14:45:31 INFO  epoch 12 evaluating [time: 0.38s, valid_score: 0.060200]
+Fri 29 Nov 2024 14:45:31 INFO  valid result: 
+recall@50 : 0.2104    recall@40 : 0.192    recall@20 : 0.1426    recall@10 : 0.1007    recall@5 : 0.0679    recall@1 : 0.0086    mrr@50 : 0.0389    mrr@40 : 0.0385    mrr@20 : 0.0368    mrr@10 : 0.0339    mrr@5 : 0.0295    mrr@1 : 0.0086    ndcg@50 : 0.0736    ndcg@40 : 0.0703    ndcg@20 : 0.0602    ndcg@10 : 0.0496    ndcg@5 : 0.039    ndcg@1 : 0.0086    precision@50 : 0.0042    precision@40 : 0.0048    precision@20 : 0.0071    precision@10 : 0.0101    precision@5 : 0.0136    precision@1 : 0.0086
+Fri 29 Nov 2024 14:45:32 INFO  Saving current: saved/SASRec-Nov-29-2024_14-41-14.pth
+Fri 29 Nov 2024 14:45:44 INFO  epoch 13 training [time: 12.64s, train loss: 1674.6557]
+Fri 29 Nov 2024 14:45:45 INFO  epoch 13 evaluating [time: 0.50s, valid_score: 0.059600]
+Fri 29 Nov 2024 14:45:45 INFO  valid result: 
+recall@50 : 0.2119    recall@40 : 0.1936    recall@20 : 0.1414    recall@10 : 0.1016    recall@5 : 0.0674    recall@1 : 0.0078    mrr@50 : 0.0386    mrr@40 : 0.0382    mrr@20 : 0.0364    mrr@10 : 0.0337    mrr@5 : 0.0292    mrr@1 : 0.0078    ndcg@50 : 0.0736    ndcg@40 : 0.0703    ndcg@20 : 0.0596    ndcg@10 : 0.0496    ndcg@5 : 0.0387    ndcg@1 : 0.0078    precision@50 : 0.0042    precision@40 : 0.0048    precision@20 : 0.0071    precision@10 : 0.0102    precision@5 : 0.0135    precision@1 : 0.0078
+Fri 29 Nov 2024 14:45:57 INFO  epoch 14 training [time: 12.66s, train loss: 1666.4789]
+Fri 29 Nov 2024 14:45:58 INFO  epoch 14 evaluating [time: 0.42s, valid_score: 0.060400]
+Fri 29 Nov 2024 14:45:58 INFO  valid result: 
+recall@50 : 0.2107    recall@40 : 0.1933    recall@20 : 0.1445    recall@10 : 0.1016    recall@5 : 0.0669    recall@1 : 0.0084    mrr@50 : 0.0387    mrr@40 : 0.0383    mrr@20 : 0.0366    mrr@10 : 0.0336    mrr@5 : 0.029    mrr@1 : 0.0084    ndcg@50 : 0.0735    ndcg@40 : 0.0704    ndcg@20 : 0.0604    ndcg@10 : 0.0496    ndcg@5 : 0.0384    ndcg@1 : 0.0084    precision@50 : 0.0042    precision@40 : 0.0048    precision@20 : 0.0072    precision@10 : 0.0102    precision@5 : 0.0134    precision@1 : 0.0084
+Fri 29 Nov 2024 14:45:58 INFO  Saving current: saved/SASRec-Nov-29-2024_14-41-14.pth
+Fri 29 Nov 2024 14:46:11 INFO  epoch 15 training [time: 12.71s, train loss: 1658.2004]
+Fri 29 Nov 2024 14:46:11 INFO  epoch 15 evaluating [time: 0.37s, valid_score: 0.060100]
+Fri 29 Nov 2024 14:46:11 INFO  valid result: 
+recall@50 : 0.2104    recall@40 : 0.1932    recall@20 : 0.1423    recall@10 : 0.102    recall@5 : 0.0681    recall@1 : 0.0082    mrr@50 : 0.0389    mrr@40 : 0.0385    mrr@20 : 0.0367    mrr@10 : 0.0339    mrr@5 : 0.0294    mrr@1 : 0.0082    ndcg@50 : 0.0736    ndcg@40 : 0.0705    ndcg@20 : 0.0601    ndcg@10 : 0.05    ndcg@5 : 0.039    ndcg@1 : 0.0082    precision@50 : 0.0042    precision@40 : 0.0048    precision@20 : 0.0071    precision@10 : 0.0102    precision@5 : 0.0136    precision@1 : 0.0082
+Fri 29 Nov 2024 14:46:24 INFO  epoch 16 training [time: 13.09s, train loss: 1651.2312]
+Fri 29 Nov 2024 14:46:24 INFO  epoch 16 evaluating [time: 0.38s, valid_score: 0.059600]
+Fri 29 Nov 2024 14:46:24 INFO  valid result: 
+recall@50 : 0.211    recall@40 : 0.1927    recall@20 : 0.1435    recall@10 : 0.1011    recall@5 : 0.0676    recall@1 : 0.008    mrr@50 : 0.038    mrr@40 : 0.0376    mrr@20 : 0.0359    mrr@10 : 0.033    mrr@5 : 0.0286    mrr@1 : 0.008    ndcg@50 : 0.073    ndcg@40 : 0.0697    ndcg@20 : 0.0596    ndcg@10 : 0.049    ndcg@5 : 0.0382    ndcg@1 : 0.008    precision@50 : 0.0042    precision@40 : 0.0048    precision@20 : 0.0072    precision@10 : 0.0101    precision@5 : 0.0135    precision@1 : 0.008
+Fri 29 Nov 2024 14:46:37 INFO  epoch 17 training [time: 12.85s, train loss: 1645.8360]
+Fri 29 Nov 2024 14:46:38 INFO  epoch 17 evaluating [time: 0.46s, valid_score: 0.060900]
+Fri 29 Nov 2024 14:46:38 INFO  valid result: 
+recall@50 : 0.2126    recall@40 : 0.1931    recall@20 : 0.1432    recall@10 : 0.1038    recall@5 : 0.0694    recall@1 : 0.0089    mrr@50 : 0.0396    mrr@40 : 0.0392    mrr@20 : 0.0374    mrr@10 : 0.0347    mrr@5 : 0.0302    mrr@1 : 0.0089    ndcg@50 : 0.0746    ndcg@40 : 0.0711    ndcg@20 : 0.0609    ndcg@10 : 0.051    ndcg@5 : 0.0399    ndcg@1 : 0.0089    precision@50 : 0.0043    precision@40 : 0.0048    precision@20 : 0.0072    precision@10 : 0.0104    precision@5 : 0.0139    precision@1 : 0.0089
+Fri 29 Nov 2024 14:46:38 INFO  Saving current: saved/SASRec-Nov-29-2024_14-41-14.pth
+Fri 29 Nov 2024 14:46:50 INFO  epoch 18 training [time: 12.68s, train loss: 1640.4389]
+Fri 29 Nov 2024 14:46:51 INFO  epoch 18 evaluating [time: 0.37s, valid_score: 0.060100]
+Fri 29 Nov 2024 14:46:51 INFO  valid result: 
+recall@50 : 0.2124    recall@40 : 0.1947    recall@20 : 0.1429    recall@10 : 0.1009    recall@5 : 0.0671    recall@1 : 0.0085    mrr@50 : 0.0388    mrr@40 : 0.0384    mrr@20 : 0.0366    mrr@10 : 0.0338    mrr@5 : 0.0293    mrr@1 : 0.0085    ndcg@50 : 0.0739    ndcg@40 : 0.0707    ndcg@20 : 0.0601    ndcg@10 : 0.0496    ndcg@5 : 0.0387    ndcg@1 : 0.0085    precision@50 : 0.0042    precision@40 : 0.0049    precision@20 : 0.0071    precision@10 : 0.0101    precision@5 : 0.0134    precision@1 : 0.0085
+Fri 29 Nov 2024 14:47:04 INFO  epoch 19 training [time: 12.74s, train loss: 1635.6900]
+Fri 29 Nov 2024 14:47:04 INFO  epoch 19 evaluating [time: 0.52s, valid_score: 0.059900]
+Fri 29 Nov 2024 14:47:04 INFO  valid result: 
+recall@50 : 0.2121    recall@40 : 0.1938    recall@20 : 0.1413    recall@10 : 0.102    recall@5 : 0.0686    recall@1 : 0.0083    mrr@50 : 0.039    mrr@40 : 0.0386    mrr@20 : 0.0367    mrr@10 : 0.0341    mrr@5 : 0.0297    mrr@1 : 0.0083    ndcg@50 : 0.074    ndcg@40 : 0.0707    ndcg@20 : 0.0599    ndcg@10 : 0.0501    ndcg@5 : 0.0393    ndcg@1 : 0.0083    precision@50 : 0.0042    precision@40 : 0.0048    precision@20 : 0.0071    precision@10 : 0.0102    precision@5 : 0.0137    precision@1 : 0.0083
+Fri 29 Nov 2024 14:47:17 INFO  epoch 20 training [time: 12.66s, train loss: 1631.2136]
+Fri 29 Nov 2024 14:47:17 INFO  epoch 20 evaluating [time: 0.37s, valid_score: 0.060900]
+Fri 29 Nov 2024 14:47:17 INFO  valid result: 
+recall@50 : 0.215    recall@40 : 0.1947    recall@20 : 0.1442    recall@10 : 0.1029    recall@5 : 0.0695    recall@1 : 0.008    mrr@50 : 0.0394    mrr@40 : 0.0389    mrr@20 : 0.0372    mrr@10 : 0.0344    mrr@5 : 0.0299    mrr@1 : 0.008    ndcg@50 : 0.0749    ndcg@40 : 0.0712    ndcg@20 : 0.0609    ndcg@10 : 0.0505    ndcg@5 : 0.0397    ndcg@1 : 0.008    precision@50 : 0.0043    precision@40 : 0.0049    precision@20 : 0.0072    precision@10 : 0.0103    precision@5 : 0.0139    precision@1 : 0.008
+Fri 29 Nov 2024 14:47:17 INFO  Saving current: saved/SASRec-Nov-29-2024_14-41-14.pth
+Fri 29 Nov 2024 14:47:30 INFO  epoch 21 training [time: 12.74s, train loss: 1627.6752]
+Fri 29 Nov 2024 14:47:30 INFO  epoch 21 evaluating [time: 0.37s, valid_score: 0.061000]
+Fri 29 Nov 2024 14:47:30 INFO  valid result: 
+recall@50 : 0.2141    recall@40 : 0.195    recall@20 : 0.1434    recall@10 : 0.1024    recall@5 : 0.0685    recall@1 : 0.0093    mrr@50 : 0.0398    mrr@40 : 0.0394    mrr@20 : 0.0376    mrr@10 : 0.0348    mrr@5 : 0.0303    mrr@1 : 0.0093    ndcg@50 : 0.075    ndcg@40 : 0.0716    ndcg@20 : 0.061    ndcg@10 : 0.0507    ndcg@5 : 0.0397    ndcg@1 : 0.0093    precision@50 : 0.0043    precision@40 : 0.0049    precision@20 : 0.0072    precision@10 : 0.0102    precision@5 : 0.0137    precision@1 : 0.0093
+Fri 29 Nov 2024 14:47:30 INFO  Saving current: saved/SASRec-Nov-29-2024_14-41-14.pth
+Fri 29 Nov 2024 14:47:43 INFO  epoch 22 training [time: 12.88s, train loss: 1624.3441]
+Fri 29 Nov 2024 14:47:44 INFO  epoch 22 evaluating [time: 0.37s, valid_score: 0.060300]
+Fri 29 Nov 2024 14:47:44 INFO  valid result: 
+recall@50 : 0.2133    recall@40 : 0.1949    recall@20 : 0.1422    recall@10 : 0.1009    recall@5 : 0.0677    recall@1 : 0.0097    mrr@50 : 0.0393    mrr@40 : 0.0388    mrr@20 : 0.037    mrr@10 : 0.0342    mrr@5 : 0.0298    mrr@1 : 0.0097    ndcg@50 : 0.0743    ndcg@40 : 0.071    ndcg@20 : 0.0603    ndcg@10 : 0.0498    ndcg@5 : 0.0391    ndcg@1 : 0.0097    precision@50 : 0.0043    precision@40 : 0.0049    precision@20 : 0.0071    precision@10 : 0.0101    precision@5 : 0.0135    precision@1 : 0.0097
+Fri 29 Nov 2024 14:47:56 INFO  epoch 23 training [time: 12.76s, train loss: 1619.3602]
+Fri 29 Nov 2024 14:47:57 INFO  epoch 23 evaluating [time: 0.38s, valid_score: 0.060700]
+Fri 29 Nov 2024 14:47:57 INFO  valid result: 
+recall@50 : 0.2124    recall@40 : 0.1945    recall@20 : 0.1419    recall@10 : 0.1027    recall@5 : 0.0681    recall@1 : 0.0099    mrr@50 : 0.0398    mrr@40 : 0.0394    mrr@20 : 0.0375    mrr@10 : 0.0348    mrr@5 : 0.0302    mrr@1 : 0.0099    ndcg@50 : 0.0746    ndcg@40 : 0.0714    ndcg@20 : 0.0607    ndcg@10 : 0.0508    ndcg@5 : 0.0396    ndcg@1 : 0.0099    precision@50 : 0.0042    precision@40 : 0.0049    precision@20 : 0.0071    precision@10 : 0.0103    precision@5 : 0.0136    precision@1 : 0.0099
+Fri 29 Nov 2024 14:48:09 INFO  epoch 24 training [time: 12.74s, train loss: 1616.7605]
+Fri 29 Nov 2024 14:48:10 INFO  epoch 24 evaluating [time: 0.37s, valid_score: 0.060900]
+Fri 29 Nov 2024 14:48:10 INFO  valid result: 
+recall@50 : 0.2136    recall@40 : 0.1954    recall@20 : 0.1438    recall@10 : 0.1025    recall@5 : 0.0684    recall@1 : 0.0088    mrr@50 : 0.0396    mrr@40 : 0.0391    mrr@20 : 0.0373    mrr@10 : 0.0345    mrr@5 : 0.03    mrr@1 : 0.0088    ndcg@50 : 0.0747    ndcg@40 : 0.0715    ndcg@20 : 0.0609    ndcg@10 : 0.0505    ndcg@5 : 0.0395    ndcg@1 : 0.0088    precision@50 : 0.0043    precision@40 : 0.0049    precision@20 : 0.0072    precision@10 : 0.0102    precision@5 : 0.0137    precision@1 : 0.0088
+Fri 29 Nov 2024 14:48:23 INFO  epoch 25 training [time: 12.77s, train loss: 1613.3435]
+Fri 29 Nov 2024 14:48:23 INFO  epoch 25 evaluating [time: 0.41s, valid_score: 0.060600]
+Fri 29 Nov 2024 14:48:23 INFO  valid result: 
+recall@50 : 0.2125    recall@40 : 0.1939    recall@20 : 0.1428    recall@10 : 0.1035    recall@5 : 0.0686    recall@1 : 0.0088    mrr@50 : 0.0394    mrr@40 : 0.039    mrr@20 : 0.0372    mrr@10 : 0.0345    mrr@5 : 0.0299    mrr@1 : 0.0088    ndcg@50 : 0.0744    ndcg@40 : 0.0711    ndcg@20 : 0.0606    ndcg@10 : 0.0507    ndcg@5 : 0.0395    ndcg@1 : 0.0088    precision@50 : 0.0042    precision@40 : 0.0048    precision@20 : 0.0071    precision@10 : 0.0104    precision@5 : 0.0137    precision@1 : 0.0088
+Fri 29 Nov 2024 14:48:36 INFO  epoch 26 training [time: 12.79s, train loss: 1611.4342]
+Fri 29 Nov 2024 14:48:36 INFO  epoch 26 evaluating [time: 0.37s, valid_score: 0.060500]
+Fri 29 Nov 2024 14:48:36 INFO  valid result: 
+recall@50 : 0.2116    recall@40 : 0.1938    recall@20 : 0.1436    recall@10 : 0.1025    recall@5 : 0.0679    recall@1 : 0.0087    mrr@50 : 0.0391    mrr@40 : 0.0387    mrr@20 : 0.0369    mrr@10 : 0.0341    mrr@5 : 0.0295    mrr@1 : 0.0087    ndcg@50 : 0.074    ndcg@40 : 0.0708    ndcg@20 : 0.0605    ndcg@10 : 0.0502    ndcg@5 : 0.039    ndcg@1 : 0.0087    precision@50 : 0.0042    precision@40 : 0.0048    precision@20 : 0.0072    precision@10 : 0.0102    precision@5 : 0.0136    precision@1 : 0.0087
+Fri 29 Nov 2024 14:48:49 INFO  epoch 27 training [time: 12.61s, train loss: 1607.9150]
+Fri 29 Nov 2024 14:48:49 INFO  epoch 27 evaluating [time: 0.49s, valid_score: 0.061400]
+Fri 29 Nov 2024 14:48:49 INFO  valid result: 
+recall@50 : 0.2144    recall@40 : 0.1968    recall@20 : 0.1453    recall@10 : 0.1035    recall@5 : 0.0688    recall@1 : 0.0088    mrr@50 : 0.0398    mrr@40 : 0.0394    mrr@20 : 0.0376    mrr@10 : 0.0347    mrr@5 : 0.0301    mrr@1 : 0.0088    ndcg@50 : 0.0751    ndcg@40 : 0.072    ndcg@20 : 0.0614    ndcg@10 : 0.0509    ndcg@5 : 0.0397    ndcg@1 : 0.0088    precision@50 : 0.0043    precision@40 : 0.0049    precision@20 : 0.0073    precision@10 : 0.0104    precision@5 : 0.0138    precision@1 : 0.0088
+Fri 29 Nov 2024 14:48:50 INFO  Saving current: saved/SASRec-Nov-29-2024_14-41-14.pth
+Fri 29 Nov 2024 14:49:02 INFO  epoch 28 training [time: 12.56s, train loss: 1606.8398]
+Fri 29 Nov 2024 14:49:02 INFO  epoch 28 evaluating [time: 0.38s, valid_score: 0.061100]
+Fri 29 Nov 2024 14:49:02 INFO  valid result: 
+recall@50 : 0.2133    recall@40 : 0.1966    recall@20 : 0.1456    recall@10 : 0.1023    recall@5 : 0.0679    recall@1 : 0.0083    mrr@50 : 0.0392    mrr@40 : 0.0388    mrr@20 : 0.037    mrr@10 : 0.034    mrr@5 : 0.0295    mrr@1 : 0.0083    ndcg@50 : 0.0745    ndcg@40 : 0.0714    ndcg@20 : 0.0611    ndcg@10 : 0.0501    ndcg@5 : 0.039    ndcg@1 : 0.0083    precision@50 : 0.0043    precision@40 : 0.0049    precision@20 : 0.0073    precision@10 : 0.0102    precision@5 : 0.0136    precision@1 : 0.0083
+Fri 29 Nov 2024 14:49:15 INFO  epoch 29 training [time: 12.77s, train loss: 1603.7884]
+Fri 29 Nov 2024 14:49:16 INFO  epoch 29 evaluating [time: 0.37s, valid_score: 0.060600]
+Fri 29 Nov 2024 14:49:16 INFO  valid result: 
+recall@50 : 0.2127    recall@40 : 0.1947    recall@20 : 0.1448    recall@10 : 0.1025    recall@5 : 0.0681    recall@1 : 0.0081    mrr@50 : 0.0389    mrr@40 : 0.0385    mrr@20 : 0.0367    mrr@10 : 0.0338    mrr@5 : 0.0293    mrr@1 : 0.0081    ndcg@50 : 0.0741    ndcg@40 : 0.0708    ndcg@20 : 0.0606    ndcg@10 : 0.05    ndcg@5 : 0.0389    ndcg@1 : 0.0081    precision@50 : 0.0043    precision@40 : 0.0049    precision@20 : 0.0072    precision@10 : 0.0102    precision@5 : 0.0136    precision@1 : 0.0081
+Fri 29 Nov 2024 14:49:28 INFO  epoch 30 training [time: 12.71s, train loss: 1601.0659]
+Fri 29 Nov 2024 14:49:29 INFO  epoch 30 evaluating [time: 0.37s, valid_score: 0.061500]
+Fri 29 Nov 2024 14:49:29 INFO  valid result: 
+recall@50 : 0.2126    recall@40 : 0.1947    recall@20 : 0.1439    recall@10 : 0.1032    recall@5 : 0.0696    recall@1 : 0.0097    mrr@50 : 0.0402    mrr@40 : 0.0398    mrr@20 : 0.038    mrr@10 : 0.0352    mrr@5 : 0.0308    mrr@1 : 0.0097    ndcg@50 : 0.075    ndcg@40 : 0.0718    ndcg@20 : 0.0615    ndcg@10 : 0.0512    ndcg@5 : 0.0404    ndcg@1 : 0.0097    precision@50 : 0.0043    precision@40 : 0.0049    precision@20 : 0.0072    precision@10 : 0.0103    precision@5 : 0.0139    precision@1 : 0.0097
+Fri 29 Nov 2024 14:49:29 INFO  Saving current: saved/SASRec-Nov-29-2024_14-41-14.pth
+Fri 29 Nov 2024 14:49:41 INFO  epoch 31 training [time: 12.55s, train loss: 1599.0536]
+Fri 29 Nov 2024 14:49:42 INFO  epoch 31 evaluating [time: 0.37s, valid_score: 0.061300]
+Fri 29 Nov 2024 14:49:42 INFO  valid result: 
+recall@50 : 0.2145    recall@40 : 0.1953    recall@20 : 0.1443    recall@10 : 0.1036    recall@5 : 0.0677    recall@1 : 0.009    mrr@50 : 0.0399    mrr@40 : 0.0394    mrr@20 : 0.0377    mrr@10 : 0.0348    mrr@5 : 0.0301    mrr@1 : 0.009    ndcg@50 : 0.0751    ndcg@40 : 0.0717    ndcg@20 : 0.0613    ndcg@10 : 0.051    ndcg@5 : 0.0394    ndcg@1 : 0.009    precision@50 : 0.0043    precision@40 : 0.0049    precision@20 : 0.0072    precision@10 : 0.0104    precision@5 : 0.0135    precision@1 : 0.009
+Fri 29 Nov 2024 14:49:54 INFO  epoch 32 training [time: 12.72s, train loss: 1596.6233]
+Fri 29 Nov 2024 14:49:55 INFO  epoch 32 evaluating [time: 0.37s, valid_score: 0.061100]
+Fri 29 Nov 2024 14:49:55 INFO  valid result: 
+recall@50 : 0.2161    recall@40 : 0.1957    recall@20 : 0.1439    recall@10 : 0.1039    recall@5 : 0.0681    recall@1 : 0.0095    mrr@50 : 0.0399    mrr@40 : 0.0394    mrr@20 : 0.0376    mrr@10 : 0.0349    mrr@5 : 0.0302    mrr@1 : 0.0095    ndcg@50 : 0.0754    ndcg@40 : 0.0717    ndcg@20 : 0.0611    ndcg@10 : 0.0511    ndcg@5 : 0.0395    ndcg@1 : 0.0095    precision@50 : 0.0043    precision@40 : 0.0049    precision@20 : 0.0072    precision@10 : 0.0104    precision@5 : 0.0136    precision@1 : 0.0095
+Fri 29 Nov 2024 14:50:11 INFO  epoch 33 training [time: 16.59s, train loss: 1595.3794]
+Fri 29 Nov 2024 14:50:13 INFO  epoch 33 evaluating [time: 1.38s, valid_score: 0.061600]
+Fri 29 Nov 2024 14:50:13 INFO  valid result: 
+recall@50 : 0.2152    recall@40 : 0.1958    recall@20 : 0.1442    recall@10 : 0.1027    recall@5 : 0.0683    recall@1 : 0.0102    mrr@50 : 0.0404    mrr@40 : 0.04    mrr@20 : 0.0382    mrr@10 : 0.0353    mrr@5 : 0.0307    mrr@1 : 0.0102    ndcg@50 : 0.0757    ndcg@40 : 0.0722    ndcg@20 : 0.0616    ndcg@10 : 0.0511    ndcg@5 : 0.04    ndcg@1 : 0.0102    precision@50 : 0.0043    precision@40 : 0.0049    precision@20 : 0.0072    precision@10 : 0.0103    precision@5 : 0.0137    precision@1 : 0.0102
+Fri 29 Nov 2024 14:50:13 INFO  Saving current: saved/SASRec-Nov-29-2024_14-41-14.pth
+Fri 29 Nov 2024 14:50:26 INFO  epoch 34 training [time: 12.73s, train loss: 1592.5488]
+Fri 29 Nov 2024 14:50:26 INFO  epoch 34 evaluating [time: 0.37s, valid_score: 0.061400]
+Fri 29 Nov 2024 14:50:26 INFO  valid result: 
+recall@50 : 0.2131    recall@40 : 0.1951    recall@20 : 0.1435    recall@10 : 0.1022    recall@5 : 0.0692    recall@1 : 0.0101    mrr@50 : 0.0403    mrr@40 : 0.0399    mrr@20 : 0.0381    mrr@10 : 0.0353    mrr@5 : 0.0309    mrr@1 : 0.0101    ndcg@50 : 0.0752    ndcg@40 : 0.072    ndcg@20 : 0.0614    ndcg@10 : 0.051    ndcg@5 : 0.0404    ndcg@1 : 0.0101    precision@50 : 0.0043    precision@40 : 0.0049    precision@20 : 0.0072    precision@10 : 0.0102    precision@5 : 0.0138    precision@1 : 0.0101
+Fri 29 Nov 2024 14:50:39 INFO  epoch 35 training [time: 12.55s, train loss: 1590.6789]
+Fri 29 Nov 2024 14:50:39 INFO  epoch 35 evaluating [time: 0.37s, valid_score: 0.061200]
+Fri 29 Nov 2024 14:50:39 INFO  valid result: 
+recall@50 : 0.2133    recall@40 : 0.1951    recall@20 : 0.1436    recall@10 : 0.1042    recall@5 : 0.0698    recall@1 : 0.0089    mrr@50 : 0.0399    mrr@40 : 0.0395    mrr@20 : 0.0377    mrr@10 : 0.035    mrr@5 : 0.0305    mrr@1 : 0.0089    ndcg@50 : 0.075    ndcg@40 : 0.0717    ndcg@20 : 0.0612    ndcg@10 : 0.0513    ndcg@5 : 0.0403    ndcg@1 : 0.0089    precision@50 : 0.0043    precision@40 : 0.0049    precision@20 : 0.0072    precision@10 : 0.0104    precision@5 : 0.014    precision@1 : 0.0089
+Fri 29 Nov 2024 14:50:52 INFO  epoch 36 training [time: 12.63s, train loss: 1590.9698]
+Fri 29 Nov 2024 14:50:52 INFO  epoch 36 evaluating [time: 0.37s, valid_score: 0.061000]
+Fri 29 Nov 2024 14:50:52 INFO  valid result: 
+recall@50 : 0.2135    recall@40 : 0.1952    recall@20 : 0.143    recall@10 : 0.1032    recall@5 : 0.0687    recall@1 : 0.0093    mrr@50 : 0.0399    mrr@40 : 0.0395    mrr@20 : 0.0377    mrr@10 : 0.0349    mrr@5 : 0.0304    mrr@1 : 0.0093    ndcg@50 : 0.075    ndcg@40 : 0.0717    ndcg@20 : 0.061    ndcg@10 : 0.051    ndcg@5 : 0.0399    ndcg@1 : 0.0093    precision@50 : 0.0043    precision@40 : 0.0049    precision@20 : 0.0072    precision@10 : 0.0103    precision@5 : 0.0137    precision@1 : 0.0093
+Fri 29 Nov 2024 14:51:05 INFO  epoch 37 training [time: 12.70s, train loss: 1587.4836]
+Fri 29 Nov 2024 14:51:05 INFO  epoch 37 evaluating [time: 0.37s, valid_score: 0.062500]
+Fri 29 Nov 2024 14:51:05 INFO  valid result: 
+recall@50 : 0.2137    recall@40 : 0.1963    recall@20 : 0.1464    recall@10 : 0.1049    recall@5 : 0.0708    recall@1 : 0.0095    mrr@50 : 0.0408    mrr@40 : 0.0404    mrr@20 : 0.0386    mrr@10 : 0.0358    mrr@5 : 0.0313    mrr@1 : 0.0095    ndcg@50 : 0.0758    ndcg@40 : 0.0727    ndcg@20 : 0.0625    ndcg@10 : 0.052    ndcg@5 : 0.041    ndcg@1 : 0.0095    precision@50 : 0.0043    precision@40 : 0.0049    precision@20 : 0.0073    precision@10 : 0.0105    precision@5 : 0.0142    precision@1 : 0.0095
+Fri 29 Nov 2024 14:51:05 INFO  Saving current: saved/SASRec-Nov-29-2024_14-41-14.pth
+Fri 29 Nov 2024 14:51:18 INFO  epoch 38 training [time: 12.62s, train loss: 1585.9580]
+Fri 29 Nov 2024 14:51:18 INFO  epoch 38 evaluating [time: 0.39s, valid_score: 0.060900]
+Fri 29 Nov 2024 14:51:18 INFO  valid result: 
+recall@50 : 0.2117    recall@40 : 0.1934    recall@20 : 0.1435    recall@10 : 0.1036    recall@5 : 0.0689    recall@1 : 0.0085    mrr@50 : 0.0395    mrr@40 : 0.0391    mrr@20 : 0.0374    mrr@10 : 0.0347    mrr@5 : 0.0301    mrr@1 : 0.0085    ndcg@50 : 0.0744    ndcg@40 : 0.0711    ndcg@20 : 0.0609    ndcg@10 : 0.0509    ndcg@5 : 0.0397    ndcg@1 : 0.0085    precision@50 : 0.0042    precision@40 : 0.0048    precision@20 : 0.0072    precision@10 : 0.0104    precision@5 : 0.0138    precision@1 : 0.0085
+Fri 29 Nov 2024 14:51:31 INFO  epoch 39 training [time: 12.62s, train loss: 1583.9645]
+Fri 29 Nov 2024 14:51:31 INFO  epoch 39 evaluating [time: 0.37s, valid_score: 0.062700]
+Fri 29 Nov 2024 14:51:31 INFO  valid result: 
+recall@50 : 0.2139    recall@40 : 0.1965    recall@20 : 0.1453    recall@10 : 0.1049    recall@5 : 0.0687    recall@1 : 0.0113    mrr@50 : 0.0414    mrr@40 : 0.041    mrr@20 : 0.0392    mrr@10 : 0.0364    mrr@5 : 0.0316    mrr@1 : 0.0113    ndcg@50 : 0.0763    ndcg@40 : 0.0732    ndcg@20 : 0.0627    ndcg@10 : 0.0525    ndcg@5 : 0.0408    ndcg@1 : 0.0113    precision@50 : 0.0043    precision@40 : 0.0049    precision@20 : 0.0073    precision@10 : 0.0105    precision@5 : 0.0137    precision@1 : 0.0113
+Fri 29 Nov 2024 14:51:31 INFO  Saving current: saved/SASRec-Nov-29-2024_14-41-14.pth
+Fri 29 Nov 2024 14:51:44 INFO  epoch 40 training [time: 12.58s, train loss: 1583.1323]
+Fri 29 Nov 2024 14:51:44 INFO  epoch 40 evaluating [time: 0.38s, valid_score: 0.062200]
+Fri 29 Nov 2024 14:51:44 INFO  valid result: 
+recall@50 : 0.2141    recall@40 : 0.1964    recall@20 : 0.1466    recall@10 : 0.1043    recall@5 : 0.0685    recall@1 : 0.0097    mrr@50 : 0.0404    mrr@40 : 0.04    mrr@20 : 0.0383    mrr@10 : 0.0354    mrr@5 : 0.0306    mrr@1 : 0.0097    ndcg@50 : 0.0756    ndcg@40 : 0.0724    ndcg@20 : 0.0622    ndcg@10 : 0.0516    ndcg@5 : 0.04    ndcg@1 : 0.0097    precision@50 : 0.0043    precision@40 : 0.0049    precision@20 : 0.0073    precision@10 : 0.0104    precision@5 : 0.0137    precision@1 : 0.0097
+Fri 29 Nov 2024 14:51:57 INFO  epoch 41 training [time: 12.71s, train loss: 1580.7571]
+Fri 29 Nov 2024 14:51:57 INFO  epoch 41 evaluating [time: 0.38s, valid_score: 0.061500]
+Fri 29 Nov 2024 14:51:57 INFO  valid result: 
+recall@50 : 0.2137    recall@40 : 0.1955    recall@20 : 0.1437    recall@10 : 0.1024    recall@5 : 0.0689    recall@1 : 0.0098    mrr@50 : 0.0404    mrr@40 : 0.04    mrr@20 : 0.0382    mrr@10 : 0.0353    mrr@5 : 0.0309    mrr@1 : 0.0098    ndcg@50 : 0.0754    ndcg@40 : 0.0721    ndcg@20 : 0.0615    ndcg@10 : 0.0511    ndcg@5 : 0.0403    ndcg@1 : 0.0098    precision@50 : 0.0043    precision@40 : 0.0049    precision@20 : 0.0072    precision@10 : 0.0102    precision@5 : 0.0138    precision@1 : 0.0098
+Fri 29 Nov 2024 14:52:10 INFO  epoch 42 training [time: 12.70s, train loss: 1579.4827]
+Fri 29 Nov 2024 14:52:11 INFO  epoch 42 evaluating [time: 0.41s, valid_score: 0.062700]
+Fri 29 Nov 2024 14:52:11 INFO  valid result: 
+recall@50 : 0.2138    recall@40 : 0.1957    recall@20 : 0.1466    recall@10 : 0.1045    recall@5 : 0.0692    recall@1 : 0.0101    mrr@50 : 0.041    mrr@40 : 0.0406    mrr@20 : 0.0388    mrr@10 : 0.036    mrr@5 : 0.0313    mrr@1 : 0.0101    ndcg@50 : 0.076    ndcg@40 : 0.0727    ndcg@20 : 0.0627    ndcg@10 : 0.0521    ndcg@5 : 0.0407    ndcg@1 : 0.0101    precision@50 : 0.0043    precision@40 : 0.0049    precision@20 : 0.0073    precision@10 : 0.0105    precision@5 : 0.0138    precision@1 : 0.0101
+Fri 29 Nov 2024 14:52:11 INFO  Saving current: saved/SASRec-Nov-29-2024_14-41-14.pth
+Fri 29 Nov 2024 14:52:23 INFO  epoch 43 training [time: 12.64s, train loss: 1578.2366]
+Fri 29 Nov 2024 14:52:24 INFO  epoch 43 evaluating [time: 0.37s, valid_score: 0.062800]
+Fri 29 Nov 2024 14:52:24 INFO  valid result: 
+recall@50 : 0.2136    recall@40 : 0.1963    recall@20 : 0.146    recall@10 : 0.1055    recall@5 : 0.0698    recall@1 : 0.0107    mrr@50 : 0.0413    mrr@40 : 0.0409    mrr@20 : 0.0392    mrr@10 : 0.0364    mrr@5 : 0.0317    mrr@1 : 0.0107    ndcg@50 : 0.0762    ndcg@40 : 0.0731    ndcg@20 : 0.0628    ndcg@10 : 0.0526    ndcg@5 : 0.0412    ndcg@1 : 0.0107    precision@50 : 0.0043    precision@40 : 0.0049    precision@20 : 0.0073    precision@10 : 0.0106    precision@5 : 0.014    precision@1 : 0.0107
+Fri 29 Nov 2024 14:52:24 INFO  Saving current: saved/SASRec-Nov-29-2024_14-41-14.pth
+Fri 29 Nov 2024 14:52:36 INFO  epoch 44 training [time: 12.67s, train loss: 1577.6332]
+Fri 29 Nov 2024 14:52:37 INFO  epoch 44 evaluating [time: 0.37s, valid_score: 0.061900]
+Fri 29 Nov 2024 14:52:37 INFO  valid result: 
+recall@50 : 0.2139    recall@40 : 0.1941    recall@20 : 0.1442    recall@10 : 0.1028    recall@5 : 0.069    recall@1 : 0.0106    mrr@50 : 0.0408    mrr@40 : 0.0403    mrr@20 : 0.0386    mrr@10 : 0.0357    mrr@5 : 0.0313    mrr@1 : 0.0106    ndcg@50 : 0.0757    ndcg@40 : 0.0721    ndcg@20 : 0.0619    ndcg@10 : 0.0515    ndcg@5 : 0.0406    ndcg@1 : 0.0106    precision@50 : 0.0043    precision@40 : 0.0049    precision@20 : 0.0072    precision@10 : 0.0103    precision@5 : 0.0138    precision@1 : 0.0106
+Fri 29 Nov 2024 14:52:50 INFO  epoch 45 training [time: 13.03s, train loss: 1576.2209]
+Fri 29 Nov 2024 14:52:50 INFO  epoch 45 evaluating [time: 0.38s, valid_score: 0.062500]
+Fri 29 Nov 2024 14:52:50 INFO  valid result: 
+recall@50 : 0.2147    recall@40 : 0.1967    recall@20 : 0.1467    recall@10 : 0.1041    recall@5 : 0.0713    recall@1 : 0.0098    mrr@50 : 0.0407    mrr@40 : 0.0403    mrr@20 : 0.0386    mrr@10 : 0.0357    mrr@5 : 0.0313    mrr@1 : 0.0098    ndcg@50 : 0.076    ndcg@40 : 0.0727    ndcg@20 : 0.0625    ndcg@10 : 0.0518    ndcg@5 : 0.0412    ndcg@1 : 0.0098    precision@50 : 0.0043    precision@40 : 0.0049    precision@20 : 0.0073    precision@10 : 0.0104    precision@5 : 0.0143    precision@1 : 0.0098
+Fri 29 Nov 2024 14:53:03 INFO  epoch 46 training [time: 13.00s, train loss: 1575.5914]
+Fri 29 Nov 2024 14:53:03 INFO  epoch 46 evaluating [time: 0.38s, valid_score: 0.062100]
+Fri 29 Nov 2024 14:53:03 INFO  valid result: 
+recall@50 : 0.2137    recall@40 : 0.195    recall@20 : 0.1448    recall@10 : 0.1036    recall@5 : 0.0706    recall@1 : 0.01    mrr@50 : 0.0408    mrr@40 : 0.0404    mrr@20 : 0.0386    mrr@10 : 0.0358    mrr@5 : 0.0314    mrr@1 : 0.01    ndcg@50 : 0.0758    ndcg@40 : 0.0724    ndcg@20 : 0.0621    ndcg@10 : 0.0518    ndcg@5 : 0.0411    ndcg@1 : 0.01    precision@50 : 0.0043    precision@40 : 0.0049    precision@20 : 0.0072    precision@10 : 0.0104    precision@5 : 0.0141    precision@1 : 0.01
+Fri 29 Nov 2024 14:53:16 INFO  epoch 47 training [time: 12.78s, train loss: 1573.6873]
+Fri 29 Nov 2024 14:53:17 INFO  epoch 47 evaluating [time: 0.71s, valid_score: 0.062600]
+Fri 29 Nov 2024 14:53:17 INFO  valid result: 
+recall@50 : 0.2137    recall@40 : 0.1943    recall@20 : 0.1457    recall@10 : 0.1036    recall@5 : 0.0704    recall@1 : 0.0106    mrr@50 : 0.0411    mrr@40 : 0.0407    mrr@20 : 0.039    mrr@10 : 0.036    mrr@5 : 0.0316    mrr@1 : 0.0106    ndcg@50 : 0.076    ndcg@40 : 0.0725    ndcg@20 : 0.0626    ndcg@10 : 0.0519    ndcg@5 : 0.0412    ndcg@1 : 0.0106    precision@50 : 0.0043    precision@40 : 0.0049    precision@20 : 0.0073    precision@10 : 0.0104    precision@5 : 0.0141    precision@1 : 0.0106
+Fri 29 Nov 2024 14:53:30 INFO  epoch 48 training [time: 12.85s, train loss: 1572.4712]
+Fri 29 Nov 2024 14:53:30 INFO  epoch 48 evaluating [time: 0.37s, valid_score: 0.063000]
+Fri 29 Nov 2024 14:53:30 INFO  valid result: 
+recall@50 : 0.2116    recall@40 : 0.1943    recall@20 : 0.1452    recall@10 : 0.1043    recall@5 : 0.0707    recall@1 : 0.0113    mrr@50 : 0.0417    mrr@40 : 0.0413    mrr@20 : 0.0396    mrr@10 : 0.0368    mrr@5 : 0.0323    mrr@1 : 0.0113    ndcg@50 : 0.0761    ndcg@40 : 0.073    ndcg@20 : 0.063    ndcg@10 : 0.0527    ndcg@5 : 0.0418    ndcg@1 : 0.0113    precision@50 : 0.0042    precision@40 : 0.0049    precision@20 : 0.0073    precision@10 : 0.0104    precision@5 : 0.0141    precision@1 : 0.0113
+Fri 29 Nov 2024 14:53:30 INFO  Saving current: saved/SASRec-Nov-29-2024_14-41-14.pth
+Fri 29 Nov 2024 14:53:44 INFO  epoch 49 training [time: 13.36s, train loss: 1571.4083]
+Fri 29 Nov 2024 14:53:44 INFO  epoch 49 evaluating [time: 0.38s, valid_score: 0.062300]
+Fri 29 Nov 2024 14:53:44 INFO  valid result: 
+recall@50 : 0.2137    recall@40 : 0.196    recall@20 : 0.1458    recall@10 : 0.1039    recall@5 : 0.0703    recall@1 : 0.0093    mrr@50 : 0.0406    mrr@40 : 0.0402    mrr@20 : 0.0385    mrr@10 : 0.0356    mrr@5 : 0.0311    mrr@1 : 0.0093    ndcg@50 : 0.0757    ndcg@40 : 0.0725    ndcg@20 : 0.0623    ndcg@10 : 0.0517    ndcg@5 : 0.0408    ndcg@1 : 0.0093    precision@50 : 0.0043    precision@40 : 0.0049    precision@20 : 0.0073    precision@10 : 0.0104    precision@5 : 0.0141    precision@1 : 0.0093
+Fri 29 Nov 2024 14:53:59 INFO  epoch 50 training [time: 14.97s, train loss: 1570.8354]
+Fri 29 Nov 2024 14:53:59 INFO  epoch 50 evaluating [time: 0.38s, valid_score: 0.062500]
+Fri 29 Nov 2024 14:53:59 INFO  valid result: 
+recall@50 : 0.2125    recall@40 : 0.1956    recall@20 : 0.1461    recall@10 : 0.1039    recall@5 : 0.0698    recall@1 : 0.0105    mrr@50 : 0.0409    mrr@40 : 0.0405    mrr@20 : 0.0387    mrr@10 : 0.0358    mrr@5 : 0.0313    mrr@1 : 0.0105    ndcg@50 : 0.0757    ndcg@40 : 0.0726    ndcg@20 : 0.0625    ndcg@10 : 0.0518    ndcg@5 : 0.0408    ndcg@1 : 0.0105    precision@50 : 0.0043    precision@40 : 0.0049    precision@20 : 0.0073    precision@10 : 0.0104    precision@5 : 0.014    precision@1 : 0.0105
+Fri 29 Nov 2024 14:54:13 INFO  epoch 51 training [time: 13.35s, train loss: 1569.0921]
+Fri 29 Nov 2024 14:54:13 INFO  epoch 51 evaluating [time: 0.38s, valid_score: 0.061900]
+Fri 29 Nov 2024 14:54:13 INFO  valid result: 
+recall@50 : 0.2126    recall@40 : 0.1954    recall@20 : 0.1461    recall@10 : 0.1029    recall@5 : 0.0686    recall@1 : 0.0095    mrr@50 : 0.0401    mrr@40 : 0.0397    mrr@20 : 0.038    mrr@10 : 0.035    mrr@5 : 0.0304    mrr@1 : 0.0095    ndcg@50 : 0.075    ndcg@40 : 0.0719    ndcg@20 : 0.0619    ndcg@10 : 0.051    ndcg@5 : 0.0399    ndcg@1 : 0.0095    precision@50 : 0.0043    precision@40 : 0.0049    precision@20 : 0.0073    precision@10 : 0.0103    precision@5 : 0.0137    precision@1 : 0.0095
+Fri 29 Nov 2024 14:54:27 INFO  epoch 52 training [time: 14.08s, train loss: 1567.7080]
+Fri 29 Nov 2024 14:54:27 INFO  epoch 52 evaluating [time: 0.38s, valid_score: 0.062700]
+Fri 29 Nov 2024 14:54:27 INFO  valid result: 
+recall@50 : 0.2134    recall@40 : 0.1962    recall@20 : 0.1465    recall@10 : 0.1033    recall@5 : 0.0698    recall@1 : 0.0096    mrr@50 : 0.041    mrr@40 : 0.0406    mrr@20 : 0.0389    mrr@10 : 0.0359    mrr@5 : 0.0314    mrr@1 : 0.0096    ndcg@50 : 0.0759    ndcg@40 : 0.0728    ndcg@20 : 0.0627    ndcg@10 : 0.0518    ndcg@5 : 0.041    ndcg@1 : 0.0096    precision@50 : 0.0043    precision@40 : 0.0049    precision@20 : 0.0073    precision@10 : 0.0103    precision@5 : 0.014    precision@1 : 0.0096
+Fri 29 Nov 2024 14:54:42 INFO  epoch 53 training [time: 14.04s, train loss: 1567.5327]
+Fri 29 Nov 2024 14:54:42 INFO  epoch 53 evaluating [time: 0.38s, valid_score: 0.062400]
+Fri 29 Nov 2024 14:54:42 INFO  valid result: 
+recall@50 : 0.2121    recall@40 : 0.1952    recall@20 : 0.1457    recall@10 : 0.1024    recall@5 : 0.0687    recall@1 : 0.0106    mrr@50 : 0.0409    mrr@40 : 0.0405    mrr@20 : 0.0388    mrr@10 : 0.0358    mrr@5 : 0.0314    mrr@1 : 0.0106    ndcg@50 : 0.0755    ndcg@40 : 0.0725    ndcg@20 : 0.0624    ndcg@10 : 0.0515    ndcg@5 : 0.0407    ndcg@1 : 0.0106    precision@50 : 0.0042    precision@40 : 0.0049    precision@20 : 0.0073    precision@10 : 0.0102    precision@5 : 0.0137    precision@1 : 0.0106
+Fri 29 Nov 2024 14:54:55 INFO  epoch 54 training [time: 13.38s, train loss: 1566.6954]
+Fri 29 Nov 2024 14:54:56 INFO  epoch 54 evaluating [time: 0.75s, valid_score: 0.061300]
+Fri 29 Nov 2024 14:54:56 INFO  valid result: 
+recall@50 : 0.2123    recall@40 : 0.1941    recall@20 : 0.1437    recall@10 : 0.1024    recall@5 : 0.0679    recall@1 : 0.0102    mrr@50 : 0.0401    mrr@40 : 0.0397    mrr@20 : 0.0379    mrr@10 : 0.0351    mrr@5 : 0.0305    mrr@1 : 0.0102    ndcg@50 : 0.0749    ndcg@40 : 0.0716    ndcg@20 : 0.0613    ndcg@10 : 0.0509    ndcg@5 : 0.0398    ndcg@1 : 0.0102    precision@50 : 0.0042    precision@40 : 0.0049    precision@20 : 0.0072    precision@10 : 0.0102    precision@5 : 0.0136    precision@1 : 0.0102
+Fri 29 Nov 2024 14:55:10 INFO  epoch 55 training [time: 14.40s, train loss: 1564.4764]
+Fri 29 Nov 2024 14:55:11 INFO  epoch 55 evaluating [time: 0.45s, valid_score: 0.061800]
+Fri 29 Nov 2024 14:55:11 INFO  valid result: 
+recall@50 : 0.212    recall@40 : 0.1938    recall@20 : 0.1443    recall@10 : 0.1018    recall@5 : 0.069    recall@1 : 0.0105    mrr@50 : 0.0405    mrr@40 : 0.0401    mrr@20 : 0.0384    mrr@10 : 0.0354    mrr@5 : 0.0311    mrr@1 : 0.0105    ndcg@50 : 0.0752    ndcg@40 : 0.0719    ndcg@20 : 0.0618    ndcg@10 : 0.051    ndcg@5 : 0.0405    ndcg@1 : 0.0105    precision@50 : 0.0042    precision@40 : 0.0048    precision@20 : 0.0072    precision@10 : 0.0102    precision@5 : 0.0138    precision@1 : 0.0105
+Fri 29 Nov 2024 14:55:24 INFO  epoch 56 training [time: 13.55s, train loss: 1563.2807]
+Fri 29 Nov 2024 14:55:25 INFO  epoch 56 evaluating [time: 0.39s, valid_score: 0.062300]
+Fri 29 Nov 2024 14:55:25 INFO  valid result: 
+recall@50 : 0.2123    recall@40 : 0.1946    recall@20 : 0.1451    recall@10 : 0.1025    recall@5 : 0.07    recall@1 : 0.0102    mrr@50 : 0.0409    mrr@40 : 0.0406    mrr@20 : 0.0388    mrr@10 : 0.0359    mrr@5 : 0.0316    mrr@1 : 0.0102    ndcg@50 : 0.0756    ndcg@40 : 0.0724    ndcg@20 : 0.0623    ndcg@10 : 0.0516    ndcg@5 : 0.0411    ndcg@1 : 0.0102    precision@50 : 0.0042    precision@40 : 0.0049    precision@20 : 0.0073    precision@10 : 0.0102    precision@5 : 0.014    precision@1 : 0.0102
+Fri 29 Nov 2024 14:55:38 INFO  epoch 57 training [time: 13.31s, train loss: 1563.6516]
+Fri 29 Nov 2024 14:55:39 INFO  epoch 57 evaluating [time: 0.50s, valid_score: 0.062400]
+Fri 29 Nov 2024 14:55:39 INFO  valid result: 
+recall@50 : 0.2124    recall@40 : 0.1951    recall@20 : 0.1456    recall@10 : 0.1025    recall@5 : 0.0698    recall@1 : 0.0102    mrr@50 : 0.0409    mrr@40 : 0.0405    mrr@20 : 0.0388    mrr@10 : 0.0358    mrr@5 : 0.0315    mrr@1 : 0.0102    ndcg@50 : 0.0756    ndcg@40 : 0.0725    ndcg@20 : 0.0624    ndcg@10 : 0.0515    ndcg@5 : 0.041    ndcg@1 : 0.0102    precision@50 : 0.0042    precision@40 : 0.0049    precision@20 : 0.0073    precision@10 : 0.0102    precision@5 : 0.014    precision@1 : 0.0102
+Fri 29 Nov 2024 14:55:52 INFO  epoch 58 training [time: 12.94s, train loss: 1560.9577]
+Fri 29 Nov 2024 14:55:52 INFO  epoch 58 evaluating [time: 0.37s, valid_score: 0.061500]
+Fri 29 Nov 2024 14:55:52 INFO  valid result: 
+recall@50 : 0.2123    recall@40 : 0.195    recall@20 : 0.1456    recall@10 : 0.1037    recall@5 : 0.069    recall@1 : 0.0092    mrr@50 : 0.0397    mrr@40 : 0.0394    mrr@20 : 0.0376    mrr@10 : 0.0348    mrr@5 : 0.0302    mrr@1 : 0.0092    ndcg@50 : 0.0747    ndcg@40 : 0.0716    ndcg@20 : 0.0615    ndcg@10 : 0.051    ndcg@5 : 0.0398    ndcg@1 : 0.0092    precision@50 : 0.0042    precision@40 : 0.0049    precision@20 : 0.0073    precision@10 : 0.0104    precision@5 : 0.0138    precision@1 : 0.0092
+Fri 29 Nov 2024 14:56:04 INFO  epoch 59 training [time: 12.53s, train loss: 1560.4025]
+Fri 29 Nov 2024 14:56:05 INFO  epoch 59 evaluating [time: 0.37s, valid_score: 0.061700]
+Fri 29 Nov 2024 14:56:05 INFO  valid result: 
+recall@50 : 0.2126    recall@40 : 0.1945    recall@20 : 0.1434    recall@10 : 0.1032    recall@5 : 0.0689    recall@1 : 0.0103    mrr@50 : 0.0407    mrr@40 : 0.0403    mrr@20 : 0.0385    mrr@10 : 0.0357    mrr@5 : 0.0312    mrr@1 : 0.0103    ndcg@50 : 0.0754    ndcg@40 : 0.0722    ndcg@20 : 0.0617    ndcg@10 : 0.0516    ndcg@5 : 0.0406    ndcg@1 : 0.0103    precision@50 : 0.0043    precision@40 : 0.0049    precision@20 : 0.0072    precision@10 : 0.0103    precision@5 : 0.0138    precision@1 : 0.0103
+Fri 29 Nov 2024 14:56:05 INFO  Finished training, best eval result in epoch 48
+Fri 29 Nov 2024 14:56:06 INFO  Loading model structure and parameters from saved/SASRec-Nov-29-2024_14-41-14.pth
+Fri 29 Nov 2024 14:56:08 INFO  The running environment of this training is as follows:
++-------------+-----------------+
+| Environment |      Usage      |
++=============+=================+
+| CPU         |     4.10 %      |
++-------------+-----------------+
+| GPU         | 0.65 G/44.34 G  |
++-------------+-----------------+
+| Memory      | 1.33 G/251.62 G |
++-------------+-----------------+
+Fri 29 Nov 2024 14:56:08 INFO  best valid : OrderedDict([('recall@50', 0.2116), ('recall@40', 0.1943), ('recall@20', 0.1452), ('recall@10', 0.1043), ('recall@5', 0.0707), ('recall@1', 0.0113), ('mrr@50', 0.0417), ('mrr@40', 0.0413), ('mrr@20', 0.0396), ('mrr@10', 0.0368), ('mrr@5', 0.0323), ('mrr@1', 0.0113), ('ndcg@50', 0.0761), ('ndcg@40', 0.073), ('ndcg@20', 0.063), ('ndcg@10', 0.0527), ('ndcg@5', 0.0418), ('ndcg@1', 0.0113), ('precision@50', 0.0042), ('precision@40', 0.0049), ('precision@20', 0.0073), ('precision@10', 0.0104), ('precision@5', 0.0141), ('precision@1', 0.0113)])
+Fri 29 Nov 2024 14:56:08 INFO  test result: OrderedDict([('recall@50', 0.1752), ('recall@40', 0.1591), ('recall@20', 0.1168), ('recall@10', 0.0826), ('recall@5', 0.0544), ('recall@1', 0.0087), ('mrr@50', 0.033), ('mrr@40', 0.0326), ('mrr@20', 0.0311), ('mrr@10', 0.0288), ('mrr@5', 0.025), ('mrr@1', 0.0087), ('ndcg@50', 0.0616), ('ndcg@40', 0.0587), ('ndcg@20', 0.05), ('ndcg@10', 0.0414), ('ndcg@5', 0.0323), ('ndcg@1', 0.0087), ('precision@50', 0.0035), ('precision@40', 0.004), ('precision@20', 0.0058), ('precision@10', 0.0083), ('precision@5', 0.0109), ('precision@1', 0.0087)])

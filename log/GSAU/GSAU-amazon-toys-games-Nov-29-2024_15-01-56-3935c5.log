@@ -1,0 +1,1097 @@
+Fri 29 Nov 2024 15:01:56 INFO  ['run_gsau.py', '--enable_graph_encoder', '--enable_sequential_encoder', '--sequential_encoder=SASRec', '--enable_u_i_uniformity', '--rec', '--gamma=0.1', '--dataset=amazon-toys-games']
+Fri 29 Nov 2024 15:01:56 INFO  
+General Hyper Parameters:
+gpu_id = 0
+use_gpu = True
+seed = 2020
+state = INFO
+reproducibility = True
+data_path = dataset/amazon-toys-games
+checkpoint_dir = saved
+show_progress = True
+save_dataset = False
+dataset_save_path = None
+save_dataloaders = False
+dataloaders_save_path = None
+log_wandb = False
+
+Training Hyper Parameters:
+epochs = 300
+train_batch_size = 512
+learner = adam
+learning_rate = 0.001
+train_neg_sample_args = {'distribution': 'none', 'sample_num': 'none', 'alpha': 'none', 'dynamic': False, 'candidate_num': 0}
+eval_step = 1
+stopping_step = 10
+clip_grad_norm = None
+weight_decay = 0.0
+loss_decimal_place = 4
+
+Evaluation Hyper Parameters:
+eval_args = {'split': {'LS': 'valid_and_test'}, 'order': 'TO', 'group_by': 'user', 'mode': {'valid': 'full', 'test': 'full'}}
+repeatable = False
+metrics = ['Recall', 'MRR', 'NDCG', 'Precision']
+topk = [50, 40, 20, 10, 5, 1]
+valid_metric = NDCG@20
+valid_metric_bigger = True
+eval_batch_size = 512
+metric_decimal_place = 4
+
+Dataset Hyper Parameters:
+field_separator = 	
+seq_separator =  
+USER_ID_FIELD = user_id
+ITEM_ID_FIELD = item_id
+RATING_FIELD = rating
+TIME_FIELD = timestamp
+seq_len = None
+LABEL_FIELD = label
+threshold = None
+NEG_PREFIX = neg_
+load_col = {'inter': ['user_id', 'item_id', 'timestamp']}
+unload_col = None
+unused_col = None
+additional_feat_suffix = None
+rm_dup_inter = None
+val_interval = None
+filter_inter_by_user_or_item = True
+user_inter_num_interval = [5,inf)
+item_inter_num_interval = [5,inf)
+alias_of_user_id = None
+alias_of_item_id = None
+alias_of_entity_id = None
+alias_of_relation_id = None
+preload_weight = None
+normalize_field = None
+normalize_all = None
+ITEM_LIST_LENGTH_FIELD = item_length
+LIST_SUFFIX = _list
+MAX_ITEM_LIST_LENGTH = 50
+POSITION_FIELD = position_id
+HEAD_ENTITY_ID_FIELD = head_id
+TAIL_ENTITY_ID_FIELD = tail_id
+RELATION_ID_FIELD = relation_id
+ENTITY_ID_FIELD = entity_id
+benchmark_filename = None
+
+Other Hyper Parameters: 
+worker = 0
+wandb_project = recbole
+shuffle = True
+require_pow = False
+enable_amp = False
+enable_scaler = False
+transform = None
+embedding_size = 64
+n_layers = 2
+reg_weight = 1e-05
+numerical_features = []
+discretization = None
+kg_reverse_r = False
+entity_kg_num_interval = [0,inf)
+relation_kg_num_interval = [0,inf)
+MODEL_TYPE = ModelType.GENERAL
+gamma = 0.1
+graph_encoder = LightGCN
+sequential_encoder = SASRec
+enable_graph_encoder = True
+enable_sequential_encoder = True
+predict_with_graph_encoder = False
+align_per_layer = False
+rec = True
+enable_u_i_uniformity = True
+MODEL_INPUT_TYPE = InputType.PAIRWISE
+eval_type = EvaluatorType.RANKING
+single_spec = True
+local_rank = 0
+device = cuda
+valid_neg_sample_args = {'distribution': 'uniform', 'sample_num': 'none'}
+test_neg_sample_args = {'distribution': 'uniform', 'sample_num': 'none'}
+
+
+Fri 29 Nov 2024 15:01:56 INFO  
+General Hyper Parameters:
+gpu_id = 0
+use_gpu = True
+seed = 2020
+state = INFO
+reproducibility = True
+data_path = dataset/amazon-toys-games
+checkpoint_dir = saved
+show_progress = True
+save_dataset = False
+dataset_save_path = None
+save_dataloaders = False
+dataloaders_save_path = None
+log_wandb = False
+
+Training Hyper Parameters:
+epochs = 300
+train_batch_size = 512
+learner = adam
+learning_rate = 0.001
+train_neg_sample_args = {'distribution': 'none', 'sample_num': 'none', 'alpha': 'none', 'dynamic': False, 'candidate_num': 0}
+eval_step = 1
+stopping_step = 10
+clip_grad_norm = None
+weight_decay = 0.0
+loss_decimal_place = 4
+
+Evaluation Hyper Parameters:
+eval_args = {'split': {'LS': 'valid_and_test'}, 'order': 'TO', 'group_by': 'user', 'mode': {'valid': 'full', 'test': 'full'}}
+repeatable = True
+metrics = ['Recall', 'MRR', 'NDCG', 'Precision']
+topk = [50, 40, 20, 10, 5, 1]
+valid_metric = NDCG@20
+valid_metric_bigger = True
+eval_batch_size = 512
+metric_decimal_place = 4
+
+Dataset Hyper Parameters:
+field_separator = 	
+seq_separator =  
+USER_ID_FIELD = user_id
+ITEM_ID_FIELD = item_id
+RATING_FIELD = rating
+TIME_FIELD = timestamp
+seq_len = None
+LABEL_FIELD = label
+threshold = None
+NEG_PREFIX = neg_
+load_col = {'inter': ['user_id', 'item_id', 'timestamp']}
+unload_col = None
+unused_col = None
+additional_feat_suffix = None
+rm_dup_inter = None
+val_interval = None
+filter_inter_by_user_or_item = True
+user_inter_num_interval = [5,inf)
+item_inter_num_interval = [5,inf)
+alias_of_user_id = None
+alias_of_item_id = None
+alias_of_entity_id = None
+alias_of_relation_id = None
+preload_weight = None
+normalize_field = None
+normalize_all = None
+ITEM_LIST_LENGTH_FIELD = item_length
+LIST_SUFFIX = _list
+MAX_ITEM_LIST_LENGTH = 50
+POSITION_FIELD = position_id
+HEAD_ENTITY_ID_FIELD = head_id
+TAIL_ENTITY_ID_FIELD = tail_id
+RELATION_ID_FIELD = relation_id
+ENTITY_ID_FIELD = entity_id
+benchmark_filename = None
+
+Other Hyper Parameters: 
+worker = 0
+wandb_project = recbole
+shuffle = True
+require_pow = False
+enable_amp = False
+enable_scaler = False
+transform = None
+n_layers = 2
+n_heads = 2
+hidden_size = 64
+inner_size = 256
+hidden_dropout_prob = 0.5
+attn_dropout_prob = 0.5
+hidden_act = gelu
+layer_norm_eps = 1e-12
+initializer_range = 0.02
+loss_type = CE
+numerical_features = []
+discretization = None
+kg_reverse_r = False
+entity_kg_num_interval = [0,inf)
+relation_kg_num_interval = [0,inf)
+MODEL_TYPE = ModelType.SEQUENTIAL
+embedding_size = 64
+gamma = 0.1
+graph_encoder = LightGCN
+sequential_encoder = SASRec
+enable_graph_encoder = True
+enable_sequential_encoder = True
+predict_with_graph_encoder = False
+align_per_layer = False
+rec = True
+enable_u_i_uniformity = True
+MODEL_INPUT_TYPE = InputType.POINTWISE
+eval_type = EvaluatorType.RANKING
+single_spec = True
+local_rank = 0
+device = cuda
+valid_neg_sample_args = {'distribution': 'uniform', 'sample_num': 'none'}
+test_neg_sample_args = {'distribution': 'uniform', 'sample_num': 'none'}
+
+
+Fri 29 Nov 2024 15:02:08 INFO  amazon-toys-games
+The number of users: 19413
+Average actions of users: 8.633680197815783
+The number of items: 11925
+Average actions of items: 14.055434417980543
+The number of inters: 167597
+The sparsity of the dataset: 99.92760389550713%
+Remain Fields: ['user_id', 'item_id', 'timestamp']
+Fri 29 Nov 2024 15:02:21 INFO  amazon-toys-games
+The number of users: 19413
+Average actions of users: 8.633680197815783
+The number of items: 11925
+Average actions of items: 14.055434417980543
+The number of inters: 167597
+The sparsity of the dataset: 99.92760389550713%
+Remain Fields: ['user_id', 'item_id', 'timestamp']
+Fri 29 Nov 2024 15:02:22 INFO  [Training]: train_batch_size = [512] train_neg_sample_args: [{'distribution': 'none', 'sample_num': 'none', 'alpha': 'none', 'dynamic': False, 'candidate_num': 0}]
+Fri 29 Nov 2024 15:02:22 INFO  [Evaluation]: eval_batch_size = [512] eval_args: [{'split': {'LS': 'valid_and_test'}, 'order': 'TO', 'group_by': 'user', 'mode': {'valid': 'full', 'test': 'full'}}]
+Fri 29 Nov 2024 15:02:24 INFO  [Training]: train_batch_size = [512] train_neg_sample_args: [{'distribution': 'none', 'sample_num': 'none', 'alpha': 'none', 'dynamic': False, 'candidate_num': 0}]
+Fri 29 Nov 2024 15:02:24 INFO  [Evaluation]: eval_batch_size = [512] eval_args: [{'split': {'LS': 'valid_and_test'}, 'order': 'TO', 'group_by': 'user', 'mode': {'valid': 'full', 'test': 'full'}}]
+Fri 29 Nov 2024 15:02:29 INFO  GSAU(
+  (embedding_layer): EmbeddingLayer(
+    (user_embedding): Embedding(19413, 64, padding_idx=0)
+    (item_embedding): Embedding(11925, 64, padding_idx=0)
+  )
+  (graph_encoder): LightGCNEncoder(
+    (embedding_layer): EmbeddingLayer(
+      (user_embedding): Embedding(19413, 64, padding_idx=0)
+      (item_embedding): Embedding(11925, 64, padding_idx=0)
+    )
+  )
+  (loss_fct): CrossEntropyLoss()
+  (sequential_encoder): SASRecEncoder(
+    (item_embedding): Embedding(11925, 64, padding_idx=0)
+    (position_embedding): Embedding(50, 64)
+    (trm_encoder): TransformerEncoder(
+      (layer): ModuleList(
+        (0-1): 2 x TransformerLayer(
+          (multi_head_attention): MultiHeadAttention(
+            (query): Linear(in_features=64, out_features=64, bias=True)
+            (key): Linear(in_features=64, out_features=64, bias=True)
+            (value): Linear(in_features=64, out_features=64, bias=True)
+            (softmax): Softmax(dim=-1)
+            (attn_dropout): Dropout(p=0.5, inplace=False)
+            (dense): Linear(in_features=64, out_features=64, bias=True)
+            (LayerNorm): LayerNorm((64,), eps=1e-12, elementwise_affine=True)
+            (out_dropout): Dropout(p=0.5, inplace=False)
+          )
+          (feed_forward): FeedForward(
+            (dense_1): Linear(in_features=64, out_features=256, bias=True)
+            (dense_2): Linear(in_features=256, out_features=64, bias=True)
+            (LayerNorm): LayerNorm((64,), eps=1e-12, elementwise_affine=True)
+            (dropout): Dropout(p=0.5, inplace=False)
+          )
+        )
+      )
+    )
+    (LayerNorm): LayerNorm((64,), eps=1e-12, elementwise_affine=True)
+    (dropout): Dropout(p=0.5, inplace=False)
+  )
+)
+Trainable parameters: 2108928
+Fri 29 Nov 2024 15:03:11 INFO  epoch 0 training [time: 41.22s, train loss: 2153.3242]
+Fri 29 Nov 2024 15:03:12 INFO  epoch 0 evaluating [time: 0.34s, valid_score: 0.001400]
+Fri 29 Nov 2024 15:03:12 INFO  valid result: 
+recall@50 : 0.0094    recall@40 : 0.0076    recall@20 : 0.0038    recall@10 : 0.0019    recall@5 : 0.0012    recall@1 : 0.0003    mrr@50 : 0.001    mrr@40 : 0.0009    mrr@20 : 0.0008    mrr@10 : 0.0007    mrr@5 : 0.0006    mrr@1 : 0.0003    ndcg@50 : 0.0025    ndcg@40 : 0.0022    ndcg@20 : 0.0014    ndcg@10 : 0.0009    ndcg@5 : 0.0007    ndcg@1 : 0.0003    precision@50 : 0.0002    precision@40 : 0.0002    precision@20 : 0.0002    precision@10 : 0.0002    precision@5 : 0.0002    precision@1 : 0.0003
+Fri 29 Nov 2024 15:03:12 INFO  Saving current: saved/GSAU-Nov-29-2024_15-02-29.pth
+Fri 29 Nov 2024 15:03:31 INFO  epoch 1 training [time: 19.11s, train loss: 2079.5655]
+Fri 29 Nov 2024 15:03:31 INFO  epoch 1 evaluating [time: 0.32s, valid_score: 0.001800]
+Fri 29 Nov 2024 15:03:31 INFO  valid result: 
+recall@50 : 0.0122    recall@40 : 0.0103    recall@20 : 0.0049    recall@10 : 0.0026    recall@5 : 0.0014    recall@1 : 0.0003    mrr@50 : 0.0012    mrr@40 : 0.0011    mrr@20 : 0.001    mrr@10 : 0.0008    mrr@5 : 0.0006    mrr@1 : 0.0003    ndcg@50 : 0.0032    ndcg@40 : 0.0029    ndcg@20 : 0.0018    ndcg@10 : 0.0012    ndcg@5 : 0.0008    ndcg@1 : 0.0003    precision@50 : 0.0002    precision@40 : 0.0003    precision@20 : 0.0002    precision@10 : 0.0003    precision@5 : 0.0003    precision@1 : 0.0003
+Fri 29 Nov 2024 15:03:31 INFO  Saving current: saved/GSAU-Nov-29-2024_15-02-29.pth
+Fri 29 Nov 2024 15:03:50 INFO  epoch 2 training [time: 18.55s, train loss: 2069.3766]
+Fri 29 Nov 2024 15:03:50 INFO  epoch 2 evaluating [time: 0.32s, valid_score: 0.002400]
+Fri 29 Nov 2024 15:03:50 INFO  valid result: 
+recall@50 : 0.0143    recall@40 : 0.0119    recall@20 : 0.0068    recall@10 : 0.0035    recall@5 : 0.0019    recall@1 : 0.0003    mrr@50 : 0.0015    mrr@40 : 0.0014    mrr@20 : 0.0013    mrr@10 : 0.0011    mrr@5 : 0.0008    mrr@1 : 0.0003    ndcg@50 : 0.0039    ndcg@40 : 0.0035    ndcg@20 : 0.0024    ndcg@10 : 0.0016    ndcg@5 : 0.0011    ndcg@1 : 0.0003    precision@50 : 0.0003    precision@40 : 0.0003    precision@20 : 0.0003    precision@10 : 0.0004    precision@5 : 0.0004    precision@1 : 0.0003
+Fri 29 Nov 2024 15:03:50 INFO  Saving current: saved/GSAU-Nov-29-2024_15-02-29.pth
+Fri 29 Nov 2024 15:04:09 INFO  epoch 3 training [time: 18.54s, train loss: 2064.3262]
+Fri 29 Nov 2024 15:04:09 INFO  epoch 3 evaluating [time: 0.32s, valid_score: 0.002700]
+Fri 29 Nov 2024 15:04:09 INFO  valid result: 
+recall@50 : 0.0172    recall@40 : 0.0138    recall@20 : 0.0075    recall@10 : 0.0036    recall@5 : 0.0019    recall@1 : 0.0004    mrr@50 : 0.0017    mrr@40 : 0.0016    mrr@20 : 0.0014    mrr@10 : 0.0011    mrr@5 : 0.0009    mrr@1 : 0.0004    ndcg@50 : 0.0046    ndcg@40 : 0.0039    ndcg@20 : 0.0027    ndcg@10 : 0.0017    ndcg@5 : 0.0011    ndcg@1 : 0.0004    precision@50 : 0.0003    precision@40 : 0.0003    precision@20 : 0.0004    precision@10 : 0.0004    precision@5 : 0.0004    precision@1 : 0.0004
+Fri 29 Nov 2024 15:04:10 INFO  Saving current: saved/GSAU-Nov-29-2024_15-02-29.pth
+Fri 29 Nov 2024 15:04:28 INFO  epoch 4 training [time: 18.54s, train loss: 2060.8012]
+Fri 29 Nov 2024 15:04:29 INFO  epoch 4 evaluating [time: 0.32s, valid_score: 0.003500]
+Fri 29 Nov 2024 15:04:29 INFO  valid result: 
+recall@50 : 0.0232    recall@40 : 0.0194    recall@20 : 0.0107    recall@10 : 0.0053    recall@5 : 0.0023    recall@1 : 0.0003    mrr@50 : 0.002    mrr@40 : 0.0019    mrr@20 : 0.0017    mrr@10 : 0.0013    mrr@5 : 0.0009    mrr@1 : 0.0003    ndcg@50 : 0.006    ndcg@40 : 0.0053    ndcg@20 : 0.0035    ndcg@10 : 0.0022    ndcg@5 : 0.0012    ndcg@1 : 0.0003    precision@50 : 0.0005    precision@40 : 0.0005    precision@20 : 0.0005    precision@10 : 0.0005    precision@5 : 0.0005    precision@1 : 0.0003
+Fri 29 Nov 2024 15:04:29 INFO  Saving current: saved/GSAU-Nov-29-2024_15-02-29.pth
+Fri 29 Nov 2024 15:04:47 INFO  epoch 5 training [time: 18.59s, train loss: 2057.7830]
+Fri 29 Nov 2024 15:04:48 INFO  epoch 5 evaluating [time: 0.32s, valid_score: 0.005700]
+Fri 29 Nov 2024 15:04:48 INFO  valid result: 
+recall@50 : 0.0346    recall@40 : 0.0283    recall@20 : 0.0157    recall@10 : 0.0091    recall@5 : 0.0049    recall@1 : 0.0007    mrr@50 : 0.0035    mrr@40 : 0.0034    mrr@20 : 0.003    mrr@10 : 0.0025    mrr@5 : 0.002    mrr@1 : 0.0007    ndcg@50 : 0.0094    ndcg@40 : 0.0082    ndcg@20 : 0.0057    ndcg@10 : 0.004    ndcg@5 : 0.0027    ndcg@1 : 0.0007    precision@50 : 0.0007    precision@40 : 0.0007    precision@20 : 0.0008    precision@10 : 0.0009    precision@5 : 0.001    precision@1 : 0.0007
+Fri 29 Nov 2024 15:04:48 INFO  Saving current: saved/GSAU-Nov-29-2024_15-02-29.pth
+Fri 29 Nov 2024 15:05:06 INFO  epoch 6 training [time: 18.78s, train loss: 2054.5384]
+Fri 29 Nov 2024 15:05:07 INFO  epoch 6 evaluating [time: 0.32s, valid_score: 0.007200]
+Fri 29 Nov 2024 15:05:07 INFO  valid result: 
+recall@50 : 0.0419    recall@40 : 0.0336    recall@20 : 0.0202    recall@10 : 0.0106    recall@5 : 0.0055    recall@1 : 0.001    mrr@50 : 0.0044    mrr@40 : 0.0042    mrr@20 : 0.0038    mrr@10 : 0.0031    mrr@5 : 0.0025    mrr@1 : 0.001    ndcg@50 : 0.0115    ndcg@40 : 0.01    ndcg@20 : 0.0072    ndcg@10 : 0.0048    ndcg@5 : 0.0032    ndcg@1 : 0.001    precision@50 : 0.0008    precision@40 : 0.0008    precision@20 : 0.001    precision@10 : 0.0011    precision@5 : 0.0011    precision@1 : 0.001
+Fri 29 Nov 2024 15:05:07 INFO  Saving current: saved/GSAU-Nov-29-2024_15-02-29.pth
+Fri 29 Nov 2024 15:05:25 INFO  epoch 7 training [time: 18.51s, train loss: 2050.2226]
+Fri 29 Nov 2024 15:05:26 INFO  epoch 7 evaluating [time: 0.34s, valid_score: 0.009000]
+Fri 29 Nov 2024 15:05:26 INFO  valid result: 
+recall@50 : 0.0504    recall@40 : 0.0423    recall@20 : 0.0243    recall@10 : 0.0139    recall@5 : 0.007    recall@1 : 0.0014    mrr@50 : 0.0057    mrr@40 : 0.0055    mrr@20 : 0.0049    mrr@10 : 0.0042    mrr@5 : 0.0033    mrr@1 : 0.0014    ndcg@50 : 0.0142    ndcg@40 : 0.0127    ndcg@20 : 0.009    ndcg@10 : 0.0064    ndcg@5 : 0.0042    ndcg@1 : 0.0014    precision@50 : 0.001    precision@40 : 0.0011    precision@20 : 0.0012    precision@10 : 0.0014    precision@5 : 0.0014    precision@1 : 0.0014
+Fri 29 Nov 2024 15:05:26 INFO  Saving current: saved/GSAU-Nov-29-2024_15-02-29.pth
+Fri 29 Nov 2024 15:05:44 INFO  epoch 8 training [time: 18.37s, train loss: 2045.4634]
+Fri 29 Nov 2024 15:05:44 INFO  epoch 8 evaluating [time: 0.41s, valid_score: 0.011100]
+Fri 29 Nov 2024 15:05:44 INFO  valid result: 
+recall@50 : 0.0615    recall@40 : 0.0509    recall@20 : 0.03    recall@10 : 0.0167    recall@5 : 0.0084    recall@1 : 0.002    mrr@50 : 0.0069    mrr@40 : 0.0067    mrr@20 : 0.006    mrr@10 : 0.0051    mrr@5 : 0.004    mrr@1 : 0.002    ndcg@50 : 0.0172    ndcg@40 : 0.0153    ndcg@20 : 0.0111    ndcg@10 : 0.0077    ndcg@5 : 0.0051    ndcg@1 : 0.002    precision@50 : 0.0012    precision@40 : 0.0013    precision@20 : 0.0015    precision@10 : 0.0017    precision@5 : 0.0017    precision@1 : 0.002
+Fri 29 Nov 2024 15:05:45 INFO  Saving current: saved/GSAU-Nov-29-2024_15-02-29.pth
+Fri 29 Nov 2024 15:06:03 INFO  epoch 9 training [time: 18.86s, train loss: 2040.2256]
+Fri 29 Nov 2024 15:06:04 INFO  epoch 9 evaluating [time: 0.46s, valid_score: 0.013600]
+Fri 29 Nov 2024 15:06:04 INFO  valid result: 
+recall@50 : 0.0722    recall@40 : 0.0606    recall@20 : 0.0363    recall@10 : 0.0215    recall@5 : 0.0104    recall@1 : 0.0026    mrr@50 : 0.0086    mrr@40 : 0.0083    mrr@20 : 0.0075    mrr@10 : 0.0065    mrr@5 : 0.0051    mrr@1 : 0.0026    ndcg@50 : 0.0206    ndcg@40 : 0.0186    ndcg@20 : 0.0136    ndcg@10 : 0.0099    ndcg@5 : 0.0064    ndcg@1 : 0.0026    precision@50 : 0.0014    precision@40 : 0.0015    precision@20 : 0.0018    precision@10 : 0.0021    precision@5 : 0.0021    precision@1 : 0.0026
+Fri 29 Nov 2024 15:06:04 INFO  Saving current: saved/GSAU-Nov-29-2024_15-02-29.pth
+Fri 29 Nov 2024 15:06:23 INFO  epoch 10 training [time: 18.82s, train loss: 2033.9626]
+Fri 29 Nov 2024 15:06:23 INFO  epoch 10 evaluating [time: 0.44s, valid_score: 0.016300]
+Fri 29 Nov 2024 15:06:23 INFO  valid result: 
+recall@50 : 0.0834    recall@40 : 0.0716    recall@20 : 0.0433    recall@10 : 0.0249    recall@5 : 0.0145    recall@1 : 0.0029    mrr@50 : 0.0103    mrr@40 : 0.01    mrr@20 : 0.009    mrr@10 : 0.0078    mrr@5 : 0.0064    mrr@1 : 0.0029    ndcg@50 : 0.0242    ndcg@40 : 0.0221    ndcg@20 : 0.0163    ndcg@10 : 0.0117    ndcg@5 : 0.0084    ndcg@1 : 0.0029    precision@50 : 0.0017    precision@40 : 0.0018    precision@20 : 0.0022    precision@10 : 0.0025    precision@5 : 0.0029    precision@1 : 0.0029
+Fri 29 Nov 2024 15:06:23 INFO  Saving current: saved/GSAU-Nov-29-2024_15-02-29.pth
+Fri 29 Nov 2024 15:06:42 INFO  epoch 11 training [time: 18.48s, train loss: 2026.8135]
+Fri 29 Nov 2024 15:06:42 INFO  epoch 11 evaluating [time: 0.32s, valid_score: 0.019100]
+Fri 29 Nov 2024 15:06:42 INFO  valid result: 
+recall@50 : 0.0933    recall@40 : 0.082    recall@20 : 0.0501    recall@10 : 0.0287    recall@5 : 0.016    recall@1 : 0.0037    mrr@50 : 0.0121    mrr@40 : 0.0119    mrr@20 : 0.0108    mrr@10 : 0.0093    mrr@5 : 0.0076    mrr@1 : 0.0037    ndcg@50 : 0.0277    ndcg@40 : 0.0256    ndcg@20 : 0.0191    ndcg@10 : 0.0138    ndcg@5 : 0.0097    ndcg@1 : 0.0037    precision@50 : 0.0019    precision@40 : 0.002    precision@20 : 0.0025    precision@10 : 0.0029    precision@5 : 0.0032    precision@1 : 0.0037
+Fri 29 Nov 2024 15:06:42 INFO  Saving current: saved/GSAU-Nov-29-2024_15-02-29.pth
+Fri 29 Nov 2024 15:07:01 INFO  epoch 12 training [time: 18.53s, train loss: 2018.9899]
+Fri 29 Nov 2024 15:07:01 INFO  epoch 12 evaluating [time: 0.32s, valid_score: 0.021900]
+Fri 29 Nov 2024 15:07:01 INFO  valid result: 
+recall@50 : 0.1026    recall@40 : 0.0877    recall@20 : 0.0554    recall@10 : 0.0339    recall@5 : 0.0195    recall@1 : 0.0048    mrr@50 : 0.0142    mrr@40 : 0.0139    mrr@20 : 0.0128    mrr@10 : 0.0113    mrr@5 : 0.0095    mrr@1 : 0.0048    ndcg@50 : 0.0312    ndcg@40 : 0.0285    ndcg@20 : 0.0219    ndcg@10 : 0.0165    ndcg@5 : 0.012    ndcg@1 : 0.0048    precision@50 : 0.0021    precision@40 : 0.0022    precision@20 : 0.0028    precision@10 : 0.0034    precision@5 : 0.0039    precision@1 : 0.0048
+Fri 29 Nov 2024 15:07:01 INFO  Saving current: saved/GSAU-Nov-29-2024_15-02-29.pth
+Fri 29 Nov 2024 15:07:20 INFO  epoch 13 training [time: 18.49s, train loss: 2010.3652]
+Fri 29 Nov 2024 15:07:20 INFO  epoch 13 evaluating [time: 0.32s, valid_score: 0.023900]
+Fri 29 Nov 2024 15:07:20 INFO  valid result: 
+recall@50 : 0.1079    recall@40 : 0.0951    recall@20 : 0.06    recall@10 : 0.0367    recall@5 : 0.0212    recall@1 : 0.0052    mrr@50 : 0.0156    mrr@40 : 0.0153    mrr@20 : 0.014    mrr@10 : 0.0125    mrr@5 : 0.0104    mrr@1 : 0.0052    ndcg@50 : 0.0334    ndcg@40 : 0.0311    ndcg@20 : 0.0239    ndcg@10 : 0.0181    ndcg@5 : 0.0131    ndcg@1 : 0.0052    precision@50 : 0.0022    precision@40 : 0.0024    precision@20 : 0.003    precision@10 : 0.0037    precision@5 : 0.0042    precision@1 : 0.0052
+Fri 29 Nov 2024 15:07:20 INFO  Saving current: saved/GSAU-Nov-29-2024_15-02-29.pth
+Fri 29 Nov 2024 15:07:38 INFO  epoch 14 training [time: 18.51s, train loss: 2000.7793]
+Fri 29 Nov 2024 15:07:39 INFO  epoch 14 evaluating [time: 0.32s, valid_score: 0.025800]
+Fri 29 Nov 2024 15:07:39 INFO  valid result: 
+recall@50 : 0.1126    recall@40 : 0.0983    recall@20 : 0.0643    recall@10 : 0.0385    recall@5 : 0.024    recall@1 : 0.0057    mrr@50 : 0.0168    mrr@40 : 0.0165    mrr@20 : 0.0153    mrr@10 : 0.0136    mrr@5 : 0.0117    mrr@1 : 0.0057    ndcg@50 : 0.0353    ndcg@40 : 0.0327    ndcg@20 : 0.0258    ndcg@10 : 0.0193    ndcg@5 : 0.0147    ndcg@1 : 0.0057    precision@50 : 0.0023    precision@40 : 0.0025    precision@20 : 0.0032    precision@10 : 0.0039    precision@5 : 0.0048    precision@1 : 0.0057
+Fri 29 Nov 2024 15:07:39 INFO  Saving current: saved/GSAU-Nov-29-2024_15-02-29.pth
+Fri 29 Nov 2024 15:07:57 INFO  epoch 15 training [time: 18.49s, train loss: 1990.5775]
+Fri 29 Nov 2024 15:07:58 INFO  epoch 15 evaluating [time: 0.33s, valid_score: 0.027400]
+Fri 29 Nov 2024 15:07:58 INFO  valid result: 
+recall@50 : 0.1172    recall@40 : 0.1022    recall@20 : 0.0683    recall@10 : 0.0402    recall@5 : 0.0251    recall@1 : 0.0058    mrr@50 : 0.0178    mrr@40 : 0.0174    mrr@20 : 0.0163    mrr@10 : 0.0143    mrr@5 : 0.0124    mrr@1 : 0.0058    ndcg@50 : 0.0371    ndcg@40 : 0.0343    ndcg@20 : 0.0274    ndcg@10 : 0.0203    ndcg@5 : 0.0155    ndcg@1 : 0.0058    precision@50 : 0.0023    precision@40 : 0.0026    precision@20 : 0.0034    precision@10 : 0.004    precision@5 : 0.005    precision@1 : 0.0058
+Fri 29 Nov 2024 15:07:58 INFO  Saving current: saved/GSAU-Nov-29-2024_15-02-29.pth
+Fri 29 Nov 2024 15:08:17 INFO  epoch 16 training [time: 19.21s, train loss: 1979.4668]
+Fri 29 Nov 2024 15:08:17 INFO  epoch 16 evaluating [time: 0.54s, valid_score: 0.028700]
+Fri 29 Nov 2024 15:08:17 INFO  valid result: 
+recall@50 : 0.1217    recall@40 : 0.1073    recall@20 : 0.0707    recall@10 : 0.0439    recall@5 : 0.0263    recall@1 : 0.0062    mrr@50 : 0.0188    mrr@40 : 0.0185    mrr@20 : 0.0172    mrr@10 : 0.0154    mrr@5 : 0.0131    mrr@1 : 0.0062    ndcg@50 : 0.0387    ndcg@40 : 0.0361    ndcg@20 : 0.0287    ndcg@10 : 0.022    ndcg@5 : 0.0164    ndcg@1 : 0.0062    precision@50 : 0.0024    precision@40 : 0.0027    precision@20 : 0.0035    precision@10 : 0.0044    precision@5 : 0.0053    precision@1 : 0.0062
+Fri 29 Nov 2024 15:08:18 INFO  Saving current: saved/GSAU-Nov-29-2024_15-02-29.pth
+Fri 29 Nov 2024 15:08:40 INFO  epoch 17 training [time: 22.71s, train loss: 1967.4732]
+Fri 29 Nov 2024 15:08:41 INFO  epoch 17 evaluating [time: 0.38s, valid_score: 0.029600]
+Fri 29 Nov 2024 15:08:41 INFO  valid result: 
+recall@50 : 0.1259    recall@40 : 0.1113    recall@20 : 0.0725    recall@10 : 0.0457    recall@5 : 0.0283    recall@1 : 0.0062    mrr@50 : 0.0195    mrr@40 : 0.0191    mrr@20 : 0.0178    mrr@10 : 0.016    mrr@5 : 0.0138    mrr@1 : 0.0062    ndcg@50 : 0.0401    ndcg@40 : 0.0375    ndcg@20 : 0.0296    ndcg@10 : 0.0229    ndcg@5 : 0.0173    ndcg@1 : 0.0062    precision@50 : 0.0025    precision@40 : 0.0028    precision@20 : 0.0036    precision@10 : 0.0046    precision@5 : 0.0057    precision@1 : 0.0062
+Fri 29 Nov 2024 15:08:41 INFO  Saving current: saved/GSAU-Nov-29-2024_15-02-29.pth
+Fri 29 Nov 2024 15:08:59 INFO  epoch 18 training [time: 18.33s, train loss: 1954.1126]
+Fri 29 Nov 2024 15:09:00 INFO  epoch 18 evaluating [time: 0.44s, valid_score: 0.030200]
+Fri 29 Nov 2024 15:09:00 INFO  valid result: 
+recall@50 : 0.1297    recall@40 : 0.1143    recall@20 : 0.0743    recall@10 : 0.0469    recall@5 : 0.0293    recall@1 : 0.0062    mrr@50 : 0.0198    mrr@40 : 0.0194    mrr@20 : 0.018    mrr@10 : 0.0162    mrr@5 : 0.014    mrr@1 : 0.0062    ndcg@50 : 0.0411    ndcg@40 : 0.0383    ndcg@20 : 0.0302    ndcg@10 : 0.0233    ndcg@5 : 0.0178    ndcg@1 : 0.0062    precision@50 : 0.0026    precision@40 : 0.0029    precision@20 : 0.0037    precision@10 : 0.0047    precision@5 : 0.0059    precision@1 : 0.0062
+Fri 29 Nov 2024 15:09:00 INFO  Saving current: saved/GSAU-Nov-29-2024_15-02-29.pth
+Fri 29 Nov 2024 15:09:18 INFO  epoch 19 training [time: 18.34s, train loss: 1939.7493]
+Fri 29 Nov 2024 15:09:18 INFO  epoch 19 evaluating [time: 0.32s, valid_score: 0.030900]
+Fri 29 Nov 2024 15:09:18 INFO  valid result: 
+recall@50 : 0.133    recall@40 : 0.1172    recall@20 : 0.0753    recall@10 : 0.0484    recall@5 : 0.0304    recall@1 : 0.0068    mrr@50 : 0.0205    mrr@40 : 0.0201    mrr@20 : 0.0187    mrr@10 : 0.0169    mrr@5 : 0.0145    mrr@1 : 0.0068    ndcg@50 : 0.0423    ndcg@40 : 0.0395    ndcg@20 : 0.0309    ndcg@10 : 0.0242    ndcg@5 : 0.0184    ndcg@1 : 0.0068    precision@50 : 0.0027    precision@40 : 0.0029    precision@20 : 0.0038    precision@10 : 0.0048    precision@5 : 0.0061    precision@1 : 0.0068
+Fri 29 Nov 2024 15:09:18 INFO  Saving current: saved/GSAU-Nov-29-2024_15-02-29.pth
+Fri 29 Nov 2024 15:09:37 INFO  epoch 20 training [time: 18.49s, train loss: 1924.9873]
+Fri 29 Nov 2024 15:09:37 INFO  epoch 20 evaluating [time: 0.32s, valid_score: 0.031900]
+Fri 29 Nov 2024 15:09:37 INFO  valid result: 
+recall@50 : 0.1363    recall@40 : 0.1198    recall@20 : 0.0778    recall@10 : 0.0497    recall@5 : 0.0316    recall@1 : 0.0067    mrr@50 : 0.0211    mrr@40 : 0.0207    mrr@20 : 0.0192    mrr@10 : 0.0173    mrr@5 : 0.0149    mrr@1 : 0.0067    ndcg@50 : 0.0434    ndcg@40 : 0.0405    ndcg@20 : 0.0319    ndcg@10 : 0.0249    ndcg@5 : 0.019    ndcg@1 : 0.0067    precision@50 : 0.0027    precision@40 : 0.003    precision@20 : 0.0039    precision@10 : 0.005    precision@5 : 0.0063    precision@1 : 0.0067
+Fri 29 Nov 2024 15:09:37 INFO  Saving current: saved/GSAU-Nov-29-2024_15-02-29.pth
+Fri 29 Nov 2024 15:09:56 INFO  epoch 21 training [time: 18.45s, train loss: 1908.5095]
+Fri 29 Nov 2024 15:09:56 INFO  epoch 21 evaluating [time: 0.32s, valid_score: 0.032800]
+Fri 29 Nov 2024 15:09:56 INFO  valid result: 
+recall@50 : 0.1381    recall@40 : 0.1221    recall@20 : 0.0807    recall@10 : 0.0503    recall@5 : 0.0318    recall@1 : 0.0069    mrr@50 : 0.0214    mrr@40 : 0.021    mrr@20 : 0.0196    mrr@10 : 0.0176    mrr@5 : 0.0151    mrr@1 : 0.0069    ndcg@50 : 0.0441    ndcg@40 : 0.0412    ndcg@20 : 0.0328    ndcg@10 : 0.0252    ndcg@5 : 0.0192    ndcg@1 : 0.0069    precision@50 : 0.0028    precision@40 : 0.0031    precision@20 : 0.004    precision@10 : 0.005    precision@5 : 0.0064    precision@1 : 0.0069
+Fri 29 Nov 2024 15:09:56 INFO  Saving current: saved/GSAU-Nov-29-2024_15-02-29.pth
+Fri 29 Nov 2024 15:10:15 INFO  epoch 22 training [time: 18.51s, train loss: 1892.1167]
+Fri 29 Nov 2024 15:10:15 INFO  epoch 22 evaluating [time: 0.43s, valid_score: 0.033400]
+Fri 29 Nov 2024 15:10:15 INFO  valid result: 
+recall@50 : 0.1397    recall@40 : 0.1223    recall@20 : 0.0816    recall@10 : 0.051    recall@5 : 0.0325    recall@1 : 0.0072    mrr@50 : 0.022    mrr@40 : 0.0216    mrr@20 : 0.0202    mrr@10 : 0.0181    mrr@5 : 0.0156    mrr@1 : 0.0072    ndcg@50 : 0.0449    ndcg@40 : 0.0417    ndcg@20 : 0.0334    ndcg@10 : 0.0257    ndcg@5 : 0.0198    ndcg@1 : 0.0072    precision@50 : 0.0028    precision@40 : 0.0031    precision@20 : 0.0041    precision@10 : 0.0051    precision@5 : 0.0065    precision@1 : 0.0072
+Fri 29 Nov 2024 15:10:15 INFO  Saving current: saved/GSAU-Nov-29-2024_15-02-29.pth
+Fri 29 Nov 2024 15:10:34 INFO  epoch 23 training [time: 18.31s, train loss: 1874.3831]
+Fri 29 Nov 2024 15:10:34 INFO  epoch 23 evaluating [time: 0.32s, valid_score: 0.034700]
+Fri 29 Nov 2024 15:10:34 INFO  valid result: 
+recall@50 : 0.1437    recall@40 : 0.126    recall@20 : 0.085    recall@10 : 0.0531    recall@5 : 0.0343    recall@1 : 0.0073    mrr@50 : 0.0227    mrr@40 : 0.0223    mrr@20 : 0.0208    mrr@10 : 0.0186    mrr@5 : 0.0162    mrr@1 : 0.0073    ndcg@50 : 0.0463    ndcg@40 : 0.0431    ndcg@20 : 0.0347    ndcg@10 : 0.0266    ndcg@5 : 0.0207    ndcg@1 : 0.0073    precision@50 : 0.0029    precision@40 : 0.0032    precision@20 : 0.0042    precision@10 : 0.0053    precision@5 : 0.0069    precision@1 : 0.0073
+Fri 29 Nov 2024 15:10:34 INFO  Saving current: saved/GSAU-Nov-29-2024_15-02-29.pth
+Fri 29 Nov 2024 15:10:52 INFO  epoch 24 training [time: 18.44s, train loss: 1857.0304]
+Fri 29 Nov 2024 15:10:53 INFO  epoch 24 evaluating [time: 0.32s, valid_score: 0.035500]
+Fri 29 Nov 2024 15:10:53 INFO  valid result: 
+recall@50 : 0.1462    recall@40 : 0.129    recall@20 : 0.0871    recall@10 : 0.0542    recall@5 : 0.0354    recall@1 : 0.0074    mrr@50 : 0.0231    mrr@40 : 0.0228    mrr@20 : 0.0213    mrr@10 : 0.0191    mrr@5 : 0.0166    mrr@1 : 0.0074    ndcg@50 : 0.0472    ndcg@40 : 0.0441    ndcg@20 : 0.0355    ndcg@10 : 0.0273    ndcg@5 : 0.0212    ndcg@1 : 0.0074    precision@50 : 0.0029    precision@40 : 0.0032    precision@20 : 0.0044    precision@10 : 0.0054    precision@5 : 0.0071    precision@1 : 0.0074
+Fri 29 Nov 2024 15:10:53 INFO  Saving current: saved/GSAU-Nov-29-2024_15-02-29.pth
+Fri 29 Nov 2024 15:11:11 INFO  epoch 25 training [time: 18.47s, train loss: 1838.6416]
+Fri 29 Nov 2024 15:11:12 INFO  epoch 25 evaluating [time: 0.32s, valid_score: 0.036000]
+Fri 29 Nov 2024 15:11:12 INFO  valid result: 
+recall@50 : 0.1481    recall@40 : 0.1316    recall@20 : 0.0875    recall@10 : 0.055    recall@5 : 0.0361    recall@1 : 0.0078    mrr@50 : 0.0237    mrr@40 : 0.0233    mrr@20 : 0.0218    mrr@10 : 0.0196    mrr@5 : 0.0171    mrr@1 : 0.0078    ndcg@50 : 0.048    ndcg@40 : 0.045    ndcg@20 : 0.036    ndcg@10 : 0.0278    ndcg@5 : 0.0218    ndcg@1 : 0.0078    precision@50 : 0.003    precision@40 : 0.0033    precision@20 : 0.0044    precision@10 : 0.0055    precision@5 : 0.0072    precision@1 : 0.0078
+Fri 29 Nov 2024 15:11:12 INFO  Saving current: saved/GSAU-Nov-29-2024_15-02-29.pth
+Fri 29 Nov 2024 15:11:30 INFO  epoch 26 training [time: 18.31s, train loss: 1820.9884]
+Fri 29 Nov 2024 15:11:30 INFO  epoch 26 evaluating [time: 0.32s, valid_score: 0.036800]
+Fri 29 Nov 2024 15:11:30 INFO  valid result: 
+recall@50 : 0.1502    recall@40 : 0.134    recall@20 : 0.0898    recall@10 : 0.0559    recall@5 : 0.0368    recall@1 : 0.0076    mrr@50 : 0.0241    mrr@40 : 0.0237    mrr@20 : 0.0222    mrr@10 : 0.0199    mrr@5 : 0.0173    mrr@1 : 0.0076    ndcg@50 : 0.0487    ndcg@40 : 0.0458    ndcg@20 : 0.0368    ndcg@10 : 0.0283    ndcg@5 : 0.0221    ndcg@1 : 0.0076    precision@50 : 0.003    precision@40 : 0.0033    precision@20 : 0.0045    precision@10 : 0.0056    precision@5 : 0.0074    precision@1 : 0.0076
+Fri 29 Nov 2024 15:11:30 INFO  Saving current: saved/GSAU-Nov-29-2024_15-02-29.pth
+Fri 29 Nov 2024 15:11:49 INFO  epoch 27 training [time: 18.46s, train loss: 1803.2392]
+Fri 29 Nov 2024 15:11:49 INFO  epoch 27 evaluating [time: 0.32s, valid_score: 0.038500]
+Fri 29 Nov 2024 15:11:49 INFO  valid result: 
+recall@50 : 0.1546    recall@40 : 0.1374    recall@20 : 0.0925    recall@10 : 0.0593    recall@5 : 0.0389    recall@1 : 0.0085    mrr@50 : 0.0255    mrr@40 : 0.0251    mrr@20 : 0.0235    mrr@10 : 0.0213    mrr@5 : 0.0186    mrr@1 : 0.0085    ndcg@50 : 0.0507    ndcg@40 : 0.0476    ndcg@20 : 0.0385    ndcg@10 : 0.0302    ndcg@5 : 0.0236    ndcg@1 : 0.0085    precision@50 : 0.0031    precision@40 : 0.0034    precision@20 : 0.0046    precision@10 : 0.0059    precision@5 : 0.0078    precision@1 : 0.0085
+Fri 29 Nov 2024 15:11:49 INFO  Saving current: saved/GSAU-Nov-29-2024_15-02-29.pth
+Fri 29 Nov 2024 15:12:08 INFO  epoch 28 training [time: 18.49s, train loss: 1786.1590]
+Fri 29 Nov 2024 15:12:08 INFO  epoch 28 evaluating [time: 0.32s, valid_score: 0.039500]
+Fri 29 Nov 2024 15:12:08 INFO  valid result: 
+recall@50 : 0.1575    recall@40 : 0.1383    recall@20 : 0.0937    recall@10 : 0.0608    recall@5 : 0.0402    recall@1 : 0.0095    mrr@50 : 0.0265    mrr@40 : 0.0261    mrr@20 : 0.0245    mrr@10 : 0.0223    mrr@5 : 0.0196    mrr@1 : 0.0095    ndcg@50 : 0.0521    ndcg@40 : 0.0486    ndcg@20 : 0.0395    ndcg@10 : 0.0313    ndcg@5 : 0.0246    ndcg@1 : 0.0095    precision@50 : 0.0031    precision@40 : 0.0035    precision@20 : 0.0047    precision@10 : 0.0061    precision@5 : 0.008    precision@1 : 0.0095
+Fri 29 Nov 2024 15:12:08 INFO  Saving current: saved/GSAU-Nov-29-2024_15-02-29.pth
+Fri 29 Nov 2024 15:12:27 INFO  epoch 29 training [time: 18.29s, train loss: 1769.3377]
+Fri 29 Nov 2024 15:12:27 INFO  epoch 29 evaluating [time: 0.41s, valid_score: 0.040200]
+Fri 29 Nov 2024 15:12:27 INFO  valid result: 
+recall@50 : 0.1589    recall@40 : 0.141    recall@20 : 0.0945    recall@10 : 0.0619    recall@5 : 0.0407    recall@1 : 0.0097    mrr@50 : 0.0271    mrr@40 : 0.0267    mrr@20 : 0.0251    mrr@10 : 0.0229    mrr@5 : 0.0201    mrr@1 : 0.0097    ndcg@50 : 0.0529    ndcg@40 : 0.0497    ndcg@20 : 0.0402    ndcg@10 : 0.032    ndcg@5 : 0.0252    ndcg@1 : 0.0097    precision@50 : 0.0032    precision@40 : 0.0035    precision@20 : 0.0047    precision@10 : 0.0062    precision@5 : 0.0081    precision@1 : 0.0097
+Fri 29 Nov 2024 15:12:27 INFO  Saving current: saved/GSAU-Nov-29-2024_15-02-29.pth
+Fri 29 Nov 2024 15:12:45 INFO  epoch 30 training [time: 18.31s, train loss: 1752.7185]
+Fri 29 Nov 2024 15:12:46 INFO  epoch 30 evaluating [time: 0.32s, valid_score: 0.041300]
+Fri 29 Nov 2024 15:12:46 INFO  valid result: 
+recall@50 : 0.1618    recall@40 : 0.1431    recall@20 : 0.0965    recall@10 : 0.0633    recall@5 : 0.0416    recall@1 : 0.0103    mrr@50 : 0.028    mrr@40 : 0.0275    mrr@20 : 0.0259    mrr@10 : 0.0237    mrr@5 : 0.0208    mrr@1 : 0.0103    ndcg@50 : 0.0541    ndcg@40 : 0.0508    ndcg@20 : 0.0413    ndcg@10 : 0.0329    ndcg@5 : 0.0259    ndcg@1 : 0.0103    precision@50 : 0.0032    precision@40 : 0.0036    precision@20 : 0.0048    precision@10 : 0.0063    precision@5 : 0.0083    precision@1 : 0.0103
+Fri 29 Nov 2024 15:12:46 INFO  Saving current: saved/GSAU-Nov-29-2024_15-02-29.pth
+Fri 29 Nov 2024 15:13:05 INFO  epoch 31 training [time: 19.27s, train loss: 1737.1828]
+Fri 29 Nov 2024 15:13:05 INFO  epoch 31 evaluating [time: 0.32s, valid_score: 0.041900]
+Fri 29 Nov 2024 15:13:05 INFO  valid result: 
+recall@50 : 0.1636    recall@40 : 0.1446    recall@20 : 0.0978    recall@10 : 0.0639    recall@5 : 0.0413    recall@1 : 0.0109    mrr@50 : 0.0285    mrr@40 : 0.0281    mrr@20 : 0.0265    mrr@10 : 0.0242    mrr@5 : 0.0212    mrr@1 : 0.0109    ndcg@50 : 0.0549    ndcg@40 : 0.0515    ndcg@20 : 0.0419    ndcg@10 : 0.0334    ndcg@5 : 0.0261    ndcg@1 : 0.0109    precision@50 : 0.0033    precision@40 : 0.0036    precision@20 : 0.0049    precision@10 : 0.0064    precision@5 : 0.0083    precision@1 : 0.0109
+Fri 29 Nov 2024 15:13:06 INFO  Saving current: saved/GSAU-Nov-29-2024_15-02-29.pth
+Fri 29 Nov 2024 15:13:24 INFO  epoch 32 training [time: 18.47s, train loss: 1722.2950]
+Fri 29 Nov 2024 15:13:24 INFO  epoch 32 evaluating [time: 0.32s, valid_score: 0.042600]
+Fri 29 Nov 2024 15:13:24 INFO  valid result: 
+recall@50 : 0.1677    recall@40 : 0.1473    recall@20 : 0.099    recall@10 : 0.0651    recall@5 : 0.0426    recall@1 : 0.011    mrr@50 : 0.0291    mrr@40 : 0.0287    mrr@20 : 0.027    mrr@10 : 0.0247    mrr@5 : 0.0217    mrr@1 : 0.011    ndcg@50 : 0.0562    ndcg@40 : 0.0525    ndcg@20 : 0.0426    ndcg@10 : 0.0341    ndcg@5 : 0.0268    ndcg@1 : 0.011    precision@50 : 0.0034    precision@40 : 0.0037    precision@20 : 0.0049    precision@10 : 0.0065    precision@5 : 0.0085    precision@1 : 0.011
+Fri 29 Nov 2024 15:13:24 INFO  Saving current: saved/GSAU-Nov-29-2024_15-02-29.pth
+Fri 29 Nov 2024 15:13:43 INFO  epoch 33 training [time: 18.33s, train loss: 1708.6607]
+Fri 29 Nov 2024 15:13:43 INFO  epoch 33 evaluating [time: 0.32s, valid_score: 0.043200]
+Fri 29 Nov 2024 15:13:43 INFO  valid result: 
+recall@50 : 0.1696    recall@40 : 0.1494    recall@20 : 0.1008    recall@10 : 0.0669    recall@5 : 0.0427    recall@1 : 0.011    mrr@50 : 0.0293    mrr@40 : 0.0288    mrr@20 : 0.0272    mrr@10 : 0.0248    mrr@5 : 0.0216    mrr@1 : 0.011    ndcg@50 : 0.0567    ndcg@40 : 0.053    ndcg@20 : 0.0432    ndcg@10 : 0.0346    ndcg@5 : 0.0268    ndcg@1 : 0.011    precision@50 : 0.0034    precision@40 : 0.0037    precision@20 : 0.005    precision@10 : 0.0067    precision@5 : 0.0085    precision@1 : 0.011
+Fri 29 Nov 2024 15:13:43 INFO  Saving current: saved/GSAU-Nov-29-2024_15-02-29.pth
+Fri 29 Nov 2024 15:14:02 INFO  epoch 34 training [time: 18.47s, train loss: 1695.1400]
+Fri 29 Nov 2024 15:14:02 INFO  epoch 34 evaluating [time: 0.32s, valid_score: 0.044300]
+Fri 29 Nov 2024 15:14:02 INFO  valid result: 
+recall@50 : 0.1713    recall@40 : 0.1516    recall@20 : 0.103    recall@10 : 0.0684    recall@5 : 0.0437    recall@1 : 0.0115    mrr@50 : 0.0301    mrr@40 : 0.0297    mrr@20 : 0.028    mrr@10 : 0.0257    mrr@5 : 0.0224    mrr@1 : 0.0115    ndcg@50 : 0.0577    ndcg@40 : 0.0542    ndcg@20 : 0.0443    ndcg@10 : 0.0356    ndcg@5 : 0.0276    ndcg@1 : 0.0115    precision@50 : 0.0034    precision@40 : 0.0038    precision@20 : 0.0051    precision@10 : 0.0068    precision@5 : 0.0087    precision@1 : 0.0115
+Fri 29 Nov 2024 15:14:04 INFO  Saving current: saved/GSAU-Nov-29-2024_15-02-29.pth
+Fri 29 Nov 2024 15:14:22 INFO  epoch 35 training [time: 18.35s, train loss: 1682.9824]
+Fri 29 Nov 2024 15:14:22 INFO  epoch 35 evaluating [time: 0.32s, valid_score: 0.045100]
+Fri 29 Nov 2024 15:14:22 INFO  valid result: 
+recall@50 : 0.1753    recall@40 : 0.1551    recall@20 : 0.1051    recall@10 : 0.0692    recall@5 : 0.0442    recall@1 : 0.0119    mrr@50 : 0.0307    mrr@40 : 0.0302    mrr@20 : 0.0285    mrr@10 : 0.026    mrr@5 : 0.0227    mrr@1 : 0.0119    ndcg@50 : 0.0589    ndcg@40 : 0.0553    ndcg@20 : 0.0451    ndcg@10 : 0.0361    ndcg@5 : 0.028    ndcg@1 : 0.0119    precision@50 : 0.0035    precision@40 : 0.0039    precision@20 : 0.0053    precision@10 : 0.0069    precision@5 : 0.0088    precision@1 : 0.0119
+Fri 29 Nov 2024 15:14:22 INFO  Saving current: saved/GSAU-Nov-29-2024_15-02-29.pth
+Fri 29 Nov 2024 15:14:41 INFO  epoch 36 training [time: 18.47s, train loss: 1670.9691]
+Fri 29 Nov 2024 15:14:41 INFO  epoch 36 evaluating [time: 0.32s, valid_score: 0.045400]
+Fri 29 Nov 2024 15:14:41 INFO  valid result: 
+recall@50 : 0.1775    recall@40 : 0.1568    recall@20 : 0.1052    recall@10 : 0.0699    recall@5 : 0.0447    recall@1 : 0.0123    mrr@50 : 0.0311    mrr@40 : 0.0306    mrr@20 : 0.0288    mrr@10 : 0.0264    mrr@5 : 0.0231    mrr@1 : 0.0123    ndcg@50 : 0.0597    ndcg@40 : 0.0559    ndcg@20 : 0.0454    ndcg@10 : 0.0365    ndcg@5 : 0.0284    ndcg@1 : 0.0123    precision@50 : 0.0036    precision@40 : 0.0039    precision@20 : 0.0053    precision@10 : 0.007    precision@5 : 0.0089    precision@1 : 0.0123
+Fri 29 Nov 2024 15:14:41 INFO  Saving current: saved/GSAU-Nov-29-2024_15-02-29.pth
+Fri 29 Nov 2024 15:15:00 INFO  epoch 37 training [time: 18.33s, train loss: 1659.1795]
+Fri 29 Nov 2024 15:15:00 INFO  epoch 37 evaluating [time: 0.32s, valid_score: 0.045800]
+Fri 29 Nov 2024 15:15:00 INFO  valid result: 
+recall@50 : 0.1785    recall@40 : 0.1578    recall@20 : 0.1073    recall@10 : 0.0719    recall@5 : 0.0452    recall@1 : 0.0115    mrr@50 : 0.0309    mrr@40 : 0.0305    mrr@20 : 0.0287    mrr@10 : 0.0263    mrr@5 : 0.0228    mrr@1 : 0.0115    ndcg@50 : 0.0598    ndcg@40 : 0.0561    ndcg@20 : 0.0458    ndcg@10 : 0.0369    ndcg@5 : 0.0283    ndcg@1 : 0.0115    precision@50 : 0.0036    precision@40 : 0.0039    precision@20 : 0.0054    precision@10 : 0.0072    precision@5 : 0.009    precision@1 : 0.0115
+Fri 29 Nov 2024 15:15:00 INFO  Saving current: saved/GSAU-Nov-29-2024_15-02-29.pth
+Fri 29 Nov 2024 15:15:18 INFO  epoch 38 training [time: 18.45s, train loss: 1648.6108]
+Fri 29 Nov 2024 15:15:19 INFO  epoch 38 evaluating [time: 0.32s, valid_score: 0.046700]
+Fri 29 Nov 2024 15:15:19 INFO  valid result: 
+recall@50 : 0.1812    recall@40 : 0.1609    recall@20 : 0.1088    recall@10 : 0.0735    recall@5 : 0.0455    recall@1 : 0.0119    mrr@50 : 0.0318    mrr@40 : 0.0313    mrr@20 : 0.0295    mrr@10 : 0.0271    mrr@5 : 0.0234    mrr@1 : 0.0119    ndcg@50 : 0.061    ndcg@40 : 0.0574    ndcg@20 : 0.0467    ndcg@10 : 0.0379    ndcg@5 : 0.0289    ndcg@1 : 0.0119    precision@50 : 0.0036    precision@40 : 0.004    precision@20 : 0.0054    precision@10 : 0.0074    precision@5 : 0.0091    precision@1 : 0.0119
+Fri 29 Nov 2024 15:15:19 INFO  Saving current: saved/GSAU-Nov-29-2024_15-02-29.pth
+Fri 29 Nov 2024 15:15:37 INFO  epoch 39 training [time: 18.44s, train loss: 1638.8077]
+Fri 29 Nov 2024 15:15:38 INFO  epoch 39 evaluating [time: 0.32s, valid_score: 0.047400]
+Fri 29 Nov 2024 15:15:38 INFO  valid result: 
+recall@50 : 0.1828    recall@40 : 0.1621    recall@20 : 0.1102    recall@10 : 0.0747    recall@5 : 0.0462    recall@1 : 0.0124    mrr@50 : 0.0322    mrr@40 : 0.0317    mrr@20 : 0.0299    mrr@10 : 0.0275    mrr@5 : 0.0238    mrr@1 : 0.0124    ndcg@50 : 0.0617    ndcg@40 : 0.0579    ndcg@20 : 0.0474    ndcg@10 : 0.0385    ndcg@5 : 0.0293    ndcg@1 : 0.0124    precision@50 : 0.0037    precision@40 : 0.0041    precision@20 : 0.0055    precision@10 : 0.0075    precision@5 : 0.0092    precision@1 : 0.0124
+Fri 29 Nov 2024 15:15:38 INFO  Saving current: saved/GSAU-Nov-29-2024_15-02-29.pth
+Fri 29 Nov 2024 15:15:56 INFO  epoch 40 training [time: 18.55s, train loss: 1629.2419]
+Fri 29 Nov 2024 15:15:57 INFO  epoch 40 evaluating [time: 0.32s, valid_score: 0.047500]
+Fri 29 Nov 2024 15:15:57 INFO  valid result: 
+recall@50 : 0.183    recall@40 : 0.1618    recall@20 : 0.1118    recall@10 : 0.0734    recall@5 : 0.0466    recall@1 : 0.0118    mrr@50 : 0.0319    mrr@40 : 0.0314    mrr@20 : 0.0297    mrr@10 : 0.027    mrr@5 : 0.0235    mrr@1 : 0.0118    ndcg@50 : 0.0615    ndcg@40 : 0.0576    ndcg@20 : 0.0475    ndcg@10 : 0.0378    ndcg@5 : 0.0292    ndcg@1 : 0.0118    precision@50 : 0.0037    precision@40 : 0.004    precision@20 : 0.0056    precision@10 : 0.0073    precision@5 : 0.0093    precision@1 : 0.0118
+Fri 29 Nov 2024 15:15:57 INFO  Saving current: saved/GSAU-Nov-29-2024_15-02-29.pth
+Fri 29 Nov 2024 15:16:15 INFO  epoch 41 training [time: 18.48s, train loss: 1620.7617]
+Fri 29 Nov 2024 15:16:15 INFO  epoch 41 evaluating [time: 0.32s, valid_score: 0.048300]
+Fri 29 Nov 2024 15:16:15 INFO  valid result: 
+recall@50 : 0.1862    recall@40 : 0.1637    recall@20 : 0.1129    recall@10 : 0.0752    recall@5 : 0.0472    recall@1 : 0.0123    mrr@50 : 0.0326    mrr@40 : 0.0321    mrr@20 : 0.0304    mrr@10 : 0.0278    mrr@5 : 0.0242    mrr@1 : 0.0123    ndcg@50 : 0.0627    ndcg@40 : 0.0586    ndcg@20 : 0.0483    ndcg@10 : 0.0388    ndcg@5 : 0.0298    ndcg@1 : 0.0123    precision@50 : 0.0037    precision@40 : 0.0041    precision@20 : 0.0056    precision@10 : 0.0075    precision@5 : 0.0094    precision@1 : 0.0123
+Fri 29 Nov 2024 15:16:15 INFO  Saving current: saved/GSAU-Nov-29-2024_15-02-29.pth
+Fri 29 Nov 2024 15:16:34 INFO  epoch 42 training [time: 18.32s, train loss: 1610.9997]
+Fri 29 Nov 2024 15:16:34 INFO  epoch 42 evaluating [time: 0.32s, valid_score: 0.049100]
+Fri 29 Nov 2024 15:16:34 INFO  valid result: 
+recall@50 : 0.1893    recall@40 : 0.167    recall@20 : 0.1146    recall@10 : 0.076    recall@5 : 0.0488    recall@1 : 0.0128    mrr@50 : 0.0333    mrr@40 : 0.0328    mrr@20 : 0.031    mrr@10 : 0.0283    mrr@5 : 0.0248    mrr@1 : 0.0128    ndcg@50 : 0.0638    ndcg@40 : 0.0598    ndcg@20 : 0.0491    ndcg@10 : 0.0394    ndcg@5 : 0.0307    ndcg@1 : 0.0128    precision@50 : 0.0038    precision@40 : 0.0042    precision@20 : 0.0057    precision@10 : 0.0076    precision@5 : 0.0098    precision@1 : 0.0128
+Fri 29 Nov 2024 15:16:34 INFO  Saving current: saved/GSAU-Nov-29-2024_15-02-29.pth
+Fri 29 Nov 2024 15:16:53 INFO  epoch 43 training [time: 18.44s, train loss: 1603.2788]
+Fri 29 Nov 2024 15:16:53 INFO  epoch 43 evaluating [time: 0.32s, valid_score: 0.049500]
+Fri 29 Nov 2024 15:16:53 INFO  valid result: 
+recall@50 : 0.1908    recall@40 : 0.1685    recall@20 : 0.1165    recall@10 : 0.0768    recall@5 : 0.0484    recall@1 : 0.0124    mrr@50 : 0.0333    mrr@40 : 0.0328    mrr@20 : 0.031    mrr@10 : 0.0283    mrr@5 : 0.0245    mrr@1 : 0.0124    ndcg@50 : 0.0641    ndcg@40 : 0.0601    ndcg@20 : 0.0495    ndcg@10 : 0.0395    ndcg@5 : 0.0304    ndcg@1 : 0.0124    precision@50 : 0.0038    precision@40 : 0.0042    precision@20 : 0.0058    precision@10 : 0.0077    precision@5 : 0.0097    precision@1 : 0.0124
+Fri 29 Nov 2024 15:16:53 INFO  Saving current: saved/GSAU-Nov-29-2024_15-02-29.pth
+Fri 29 Nov 2024 15:17:11 INFO  epoch 44 training [time: 18.36s, train loss: 1595.3912]
+Fri 29 Nov 2024 15:17:12 INFO  epoch 44 evaluating [time: 0.32s, valid_score: 0.049800]
+Fri 29 Nov 2024 15:17:12 INFO  valid result: 
+recall@50 : 0.1915    recall@40 : 0.1692    recall@20 : 0.1161    recall@10 : 0.0779    recall@5 : 0.0492    recall@1 : 0.0126    mrr@50 : 0.0337    mrr@40 : 0.0332    mrr@20 : 0.0314    mrr@10 : 0.0288    mrr@5 : 0.025    mrr@1 : 0.0126    ndcg@50 : 0.0646    ndcg@40 : 0.0606    ndcg@20 : 0.0498    ndcg@10 : 0.0402    ndcg@5 : 0.0309    ndcg@1 : 0.0126    precision@50 : 0.0038    precision@40 : 0.0042    precision@20 : 0.0058    precision@10 : 0.0078    precision@5 : 0.0098    precision@1 : 0.0126
+Fri 29 Nov 2024 15:17:12 INFO  Saving current: saved/GSAU-Nov-29-2024_15-02-29.pth
+Fri 29 Nov 2024 15:17:30 INFO  epoch 45 training [time: 18.48s, train loss: 1587.7194]
+Fri 29 Nov 2024 15:17:31 INFO  epoch 45 evaluating [time: 0.32s, valid_score: 0.050300]
+Fri 29 Nov 2024 15:17:31 INFO  valid result: 
+recall@50 : 0.1923    recall@40 : 0.1708    recall@20 : 0.1169    recall@10 : 0.0793    recall@5 : 0.0494    recall@1 : 0.0131    mrr@50 : 0.0341    mrr@40 : 0.0337    mrr@20 : 0.0318    mrr@10 : 0.0292    mrr@5 : 0.0253    mrr@1 : 0.0131    ndcg@50 : 0.0652    ndcg@40 : 0.0613    ndcg@20 : 0.0503    ndcg@10 : 0.0408    ndcg@5 : 0.0312    ndcg@1 : 0.0131    precision@50 : 0.0038    precision@40 : 0.0043    precision@20 : 0.0058    precision@10 : 0.0079    precision@5 : 0.0099    precision@1 : 0.0131
+Fri 29 Nov 2024 15:17:31 INFO  Saving current: saved/GSAU-Nov-29-2024_15-02-29.pth
+Fri 29 Nov 2024 15:17:49 INFO  epoch 46 training [time: 18.32s, train loss: 1581.0419]
+Fri 29 Nov 2024 15:17:49 INFO  epoch 46 evaluating [time: 0.44s, valid_score: 0.051100]
+Fri 29 Nov 2024 15:17:49 INFO  valid result: 
+recall@50 : 0.1924    recall@40 : 0.1705    recall@20 : 0.1194    recall@10 : 0.0793    recall@5 : 0.0495    recall@1 : 0.0134    mrr@50 : 0.0345    mrr@40 : 0.034    mrr@20 : 0.0322    mrr@10 : 0.0295    mrr@5 : 0.0256    mrr@1 : 0.0134    ndcg@50 : 0.0655    ndcg@40 : 0.0615    ndcg@20 : 0.0511    ndcg@10 : 0.0411    ndcg@5 : 0.0314    ndcg@1 : 0.0134    precision@50 : 0.0038    precision@40 : 0.0043    precision@20 : 0.006    precision@10 : 0.0079    precision@5 : 0.0099    precision@1 : 0.0134
+Fri 29 Nov 2024 15:17:50 INFO  Saving current: saved/GSAU-Nov-29-2024_15-02-29.pth
+Fri 29 Nov 2024 15:18:08 INFO  epoch 47 training [time: 18.33s, train loss: 1574.4176]
+Fri 29 Nov 2024 15:18:08 INFO  epoch 47 evaluating [time: 0.32s, valid_score: 0.051400]
+Fri 29 Nov 2024 15:18:08 INFO  valid result: 
+recall@50 : 0.1945    recall@40 : 0.1705    recall@20 : 0.1195    recall@10 : 0.0799    recall@5 : 0.0503    recall@1 : 0.0135    mrr@50 : 0.0348    mrr@40 : 0.0343    mrr@20 : 0.0325    mrr@10 : 0.0298    mrr@5 : 0.0259    mrr@1 : 0.0135    ndcg@50 : 0.0661    ndcg@40 : 0.0618    ndcg@20 : 0.0514    ndcg@10 : 0.0414    ndcg@5 : 0.0319    ndcg@1 : 0.0135    precision@50 : 0.0039    precision@40 : 0.0043    precision@20 : 0.006    precision@10 : 0.008    precision@5 : 0.0101    precision@1 : 0.0135
+Fri 29 Nov 2024 15:18:08 INFO  Saving current: saved/GSAU-Nov-29-2024_15-02-29.pth
+Fri 29 Nov 2024 15:18:27 INFO  epoch 48 training [time: 18.46s, train loss: 1568.9905]
+Fri 29 Nov 2024 15:18:27 INFO  epoch 48 evaluating [time: 0.32s, valid_score: 0.051900]
+Fri 29 Nov 2024 15:18:27 INFO  valid result: 
+recall@50 : 0.1962    recall@40 : 0.1736    recall@20 : 0.1213    recall@10 : 0.0803    recall@5 : 0.0511    recall@1 : 0.0135    mrr@50 : 0.035    mrr@40 : 0.0344    mrr@20 : 0.0326    mrr@10 : 0.0298    mrr@5 : 0.026    mrr@1 : 0.0135    ndcg@50 : 0.0666    ndcg@40 : 0.0625    ndcg@20 : 0.0519    ndcg@10 : 0.0416    ndcg@5 : 0.0322    ndcg@1 : 0.0135    precision@50 : 0.0039    precision@40 : 0.0043    precision@20 : 0.0061    precision@10 : 0.008    precision@5 : 0.0102    precision@1 : 0.0135
+Fri 29 Nov 2024 15:18:27 INFO  Saving current: saved/GSAU-Nov-29-2024_15-02-29.pth
+Fri 29 Nov 2024 15:18:45 INFO  epoch 49 training [time: 18.32s, train loss: 1561.9130]
+Fri 29 Nov 2024 15:18:46 INFO  epoch 49 evaluating [time: 0.32s, valid_score: 0.052500]
+Fri 29 Nov 2024 15:18:46 INFO  valid result: 
+recall@50 : 0.1984    recall@40 : 0.1767    recall@20 : 0.1219    recall@10 : 0.0807    recall@5 : 0.052    recall@1 : 0.0135    mrr@50 : 0.0356    mrr@40 : 0.0351    mrr@20 : 0.0332    mrr@10 : 0.0303    mrr@5 : 0.0266    mrr@1 : 0.0135    ndcg@50 : 0.0675    ndcg@40 : 0.0636    ndcg@20 : 0.0525    ndcg@10 : 0.0421    ndcg@5 : 0.0328    ndcg@1 : 0.0135    precision@50 : 0.004    precision@40 : 0.0044    precision@20 : 0.0061    precision@10 : 0.0081    precision@5 : 0.0104    precision@1 : 0.0135
+Fri 29 Nov 2024 15:18:48 INFO  Saving current: saved/GSAU-Nov-29-2024_15-02-29.pth
+Fri 29 Nov 2024 15:19:07 INFO  epoch 50 training [time: 18.32s, train loss: 1555.6282]
+Fri 29 Nov 2024 15:19:07 INFO  epoch 50 evaluating [time: 0.32s, valid_score: 0.053100]
+Fri 29 Nov 2024 15:19:07 INFO  valid result: 
+recall@50 : 0.1991    recall@40 : 0.1777    recall@20 : 0.123    recall@10 : 0.0825    recall@5 : 0.0533    recall@1 : 0.0141    mrr@50 : 0.0361    mrr@40 : 0.0356    mrr@20 : 0.0337    mrr@10 : 0.0309    mrr@5 : 0.0271    mrr@1 : 0.0141    ndcg@50 : 0.0681    ndcg@40 : 0.0643    ndcg@20 : 0.0531    ndcg@10 : 0.0429    ndcg@5 : 0.0336    ndcg@1 : 0.0141    precision@50 : 0.004    precision@40 : 0.0044    precision@20 : 0.0062    precision@10 : 0.0083    precision@5 : 0.0107    precision@1 : 0.0141
+Fri 29 Nov 2024 15:19:07 INFO  Saving current: saved/GSAU-Nov-29-2024_15-02-29.pth
+Fri 29 Nov 2024 15:19:26 INFO  epoch 51 training [time: 18.46s, train loss: 1549.4905]
+Fri 29 Nov 2024 15:19:26 INFO  epoch 51 evaluating [time: 0.32s, valid_score: 0.053800]
+Fri 29 Nov 2024 15:19:26 INFO  valid result: 
+recall@50 : 0.1999    recall@40 : 0.1788    recall@20 : 0.1248    recall@10 : 0.0827    recall@5 : 0.0529    recall@1 : 0.0145    mrr@50 : 0.0364    mrr@40 : 0.036    mrr@20 : 0.0341    mrr@10 : 0.0312    mrr@5 : 0.0273    mrr@1 : 0.0145    ndcg@50 : 0.0686    ndcg@40 : 0.0647    ndcg@20 : 0.0538    ndcg@10 : 0.0432    ndcg@5 : 0.0336    ndcg@1 : 0.0145    precision@50 : 0.004    precision@40 : 0.0045    precision@20 : 0.0062    precision@10 : 0.0083    precision@5 : 0.0106    precision@1 : 0.0145
+Fri 29 Nov 2024 15:19:26 INFO  Saving current: saved/GSAU-Nov-29-2024_15-02-29.pth
+Fri 29 Nov 2024 15:19:44 INFO  epoch 52 training [time: 18.37s, train loss: 1545.0372]
+Fri 29 Nov 2024 15:19:45 INFO  epoch 52 evaluating [time: 0.32s, valid_score: 0.053700]
+Fri 29 Nov 2024 15:19:45 INFO  valid result: 
+recall@50 : 0.2008    recall@40 : 0.1797    recall@20 : 0.1254    recall@10 : 0.0836    recall@5 : 0.0543    recall@1 : 0.014    mrr@50 : 0.0362    mrr@40 : 0.0357    mrr@20 : 0.0339    mrr@10 : 0.031    mrr@5 : 0.0272    mrr@1 : 0.014    ndcg@50 : 0.0686    ndcg@40 : 0.0648    ndcg@20 : 0.0537    ndcg@10 : 0.0432    ndcg@5 : 0.0339    ndcg@1 : 0.014    precision@50 : 0.004    precision@40 : 0.0045    precision@20 : 0.0063    precision@10 : 0.0084    precision@5 : 0.0109    precision@1 : 0.014
+Fri 29 Nov 2024 15:20:03 INFO  epoch 53 training [time: 18.48s, train loss: 1539.9157]
+Fri 29 Nov 2024 15:20:03 INFO  epoch 53 evaluating [time: 0.32s, valid_score: 0.053800]
+Fri 29 Nov 2024 15:20:03 INFO  valid result: 
+recall@50 : 0.2028    recall@40 : 0.18    recall@20 : 0.1247    recall@10 : 0.0845    recall@5 : 0.0538    recall@1 : 0.0138    mrr@50 : 0.0365    mrr@40 : 0.036    mrr@20 : 0.0341    mrr@10 : 0.0313    mrr@5 : 0.0273    mrr@1 : 0.0138    ndcg@50 : 0.0692    ndcg@40 : 0.0651    ndcg@20 : 0.0538    ndcg@10 : 0.0436    ndcg@5 : 0.0338    ndcg@1 : 0.0138    precision@50 : 0.0041    precision@40 : 0.0045    precision@20 : 0.0062    precision@10 : 0.0084    precision@5 : 0.0108    precision@1 : 0.0138
+Fri 29 Nov 2024 15:20:03 INFO  Saving current: saved/GSAU-Nov-29-2024_15-02-29.pth
+Fri 29 Nov 2024 15:20:22 INFO  epoch 54 training [time: 18.34s, train loss: 1535.4700]
+Fri 29 Nov 2024 15:20:22 INFO  epoch 54 evaluating [time: 0.32s, valid_score: 0.054300]
+Fri 29 Nov 2024 15:20:22 INFO  valid result: 
+recall@50 : 0.2029    recall@40 : 0.1802    recall@20 : 0.125    recall@10 : 0.0846    recall@5 : 0.0542    recall@1 : 0.0145    mrr@50 : 0.037    mrr@40 : 0.0365    mrr@20 : 0.0345    mrr@10 : 0.0317    mrr@5 : 0.0277    mrr@1 : 0.0145    ndcg@50 : 0.0696    ndcg@40 : 0.0655    ndcg@20 : 0.0543    ndcg@10 : 0.044    ndcg@5 : 0.0343    ndcg@1 : 0.0145    precision@50 : 0.0041    precision@40 : 0.0045    precision@20 : 0.0063    precision@10 : 0.0085    precision@5 : 0.0108    precision@1 : 0.0145
+Fri 29 Nov 2024 15:20:22 INFO  Saving current: saved/GSAU-Nov-29-2024_15-02-29.pth
+Fri 29 Nov 2024 15:20:41 INFO  epoch 55 training [time: 18.45s, train loss: 1530.1871]
+Fri 29 Nov 2024 15:20:41 INFO  epoch 55 evaluating [time: 0.32s, valid_score: 0.055000]
+Fri 29 Nov 2024 15:20:41 INFO  valid result: 
+recall@50 : 0.2036    recall@40 : 0.1818    recall@20 : 0.1273    recall@10 : 0.0857    recall@5 : 0.0548    recall@1 : 0.0146    mrr@50 : 0.0372    mrr@40 : 0.0368    mrr@20 : 0.0349    mrr@10 : 0.032    mrr@5 : 0.028    mrr@1 : 0.0146    ndcg@50 : 0.07    ndcg@40 : 0.0661    ndcg@20 : 0.055    ndcg@10 : 0.0445    ndcg@5 : 0.0346    ndcg@1 : 0.0146    precision@50 : 0.0041    precision@40 : 0.0045    precision@20 : 0.0064    precision@10 : 0.0086    precision@5 : 0.011    precision@1 : 0.0146
+Fri 29 Nov 2024 15:20:41 INFO  Saving current: saved/GSAU-Nov-29-2024_15-02-29.pth
+Fri 29 Nov 2024 15:20:59 INFO  epoch 56 training [time: 18.34s, train loss: 1524.2401]
+Fri 29 Nov 2024 15:21:00 INFO  epoch 56 evaluating [time: 0.32s, valid_score: 0.055100]
+Fri 29 Nov 2024 15:21:00 INFO  valid result: 
+recall@50 : 0.2056    recall@40 : 0.1847    recall@20 : 0.1281    recall@10 : 0.0856    recall@5 : 0.056    recall@1 : 0.0136    mrr@50 : 0.0372    mrr@40 : 0.0367    mrr@20 : 0.0347    mrr@10 : 0.0318    mrr@5 : 0.0279    mrr@1 : 0.0136    ndcg@50 : 0.0704    ndcg@40 : 0.0666    ndcg@20 : 0.0551    ndcg@10 : 0.0444    ndcg@5 : 0.0348    ndcg@1 : 0.0136    precision@50 : 0.0041    precision@40 : 0.0046    precision@20 : 0.0064    precision@10 : 0.0086    precision@5 : 0.0112    precision@1 : 0.0136
+Fri 29 Nov 2024 15:21:00 INFO  Saving current: saved/GSAU-Nov-29-2024_15-02-29.pth
+Fri 29 Nov 2024 15:21:18 INFO  epoch 57 training [time: 18.45s, train loss: 1520.8773]
+Fri 29 Nov 2024 15:21:19 INFO  epoch 57 evaluating [time: 0.32s, valid_score: 0.056100]
+Fri 29 Nov 2024 15:21:19 INFO  valid result: 
+recall@50 : 0.2061    recall@40 : 0.1839    recall@20 : 0.1299    recall@10 : 0.0865    recall@5 : 0.0566    recall@1 : 0.0147    mrr@50 : 0.038    mrr@40 : 0.0375    mrr@20 : 0.0356    mrr@10 : 0.0326    mrr@5 : 0.0287    mrr@1 : 0.0147    ndcg@50 : 0.0712    ndcg@40 : 0.0671    ndcg@20 : 0.0561    ndcg@10 : 0.0452    ndcg@5 : 0.0356    ndcg@1 : 0.0147    precision@50 : 0.0041    precision@40 : 0.0046    precision@20 : 0.0065    precision@10 : 0.0086    precision@5 : 0.0113    precision@1 : 0.0147
+Fri 29 Nov 2024 15:21:19 INFO  Saving current: saved/GSAU-Nov-29-2024_15-02-29.pth
+Fri 29 Nov 2024 15:21:37 INFO  epoch 58 training [time: 18.53s, train loss: 1516.3363]
+Fri 29 Nov 2024 15:21:38 INFO  epoch 58 evaluating [time: 0.32s, valid_score: 0.056100]
+Fri 29 Nov 2024 15:21:38 INFO  valid result: 
+recall@50 : 0.2063    recall@40 : 0.185    recall@20 : 0.1306    recall@10 : 0.0872    recall@5 : 0.0556    recall@1 : 0.0142    mrr@50 : 0.0378    mrr@40 : 0.0373    mrr@20 : 0.0354    mrr@10 : 0.0325    mrr@5 : 0.0283    mrr@1 : 0.0142    ndcg@50 : 0.071    ndcg@40 : 0.0672    ndcg@20 : 0.0561    ndcg@10 : 0.0452    ndcg@5 : 0.035    ndcg@1 : 0.0142    precision@50 : 0.0041    precision@40 : 0.0046    precision@20 : 0.0065    precision@10 : 0.0087    precision@5 : 0.0111    precision@1 : 0.0142
+Fri 29 Nov 2024 15:21:38 INFO  Saving current: saved/GSAU-Nov-29-2024_15-02-29.pth
+Fri 29 Nov 2024 15:21:56 INFO  epoch 59 training [time: 18.47s, train loss: 1511.6651]
+Fri 29 Nov 2024 15:21:56 INFO  epoch 59 evaluating [time: 0.32s, valid_score: 0.055900]
+Fri 29 Nov 2024 15:21:56 INFO  valid result: 
+recall@50 : 0.207    recall@40 : 0.1858    recall@20 : 0.1303    recall@10 : 0.0876    recall@5 : 0.0571    recall@1 : 0.0139    mrr@50 : 0.0377    mrr@40 : 0.0372    mrr@20 : 0.0353    mrr@10 : 0.0324    mrr@5 : 0.0284    mrr@1 : 0.0139    ndcg@50 : 0.0711    ndcg@40 : 0.0673    ndcg@20 : 0.0559    ndcg@10 : 0.0452    ndcg@5 : 0.0354    ndcg@1 : 0.0139    precision@50 : 0.0041    precision@40 : 0.0046    precision@20 : 0.0065    precision@10 : 0.0088    precision@5 : 0.0114    precision@1 : 0.0139
+Fri 29 Nov 2024 15:22:15 INFO  epoch 60 training [time: 18.35s, train loss: 1507.5544]
+Fri 29 Nov 2024 15:22:15 INFO  epoch 60 evaluating [time: 0.32s, valid_score: 0.056400]
+Fri 29 Nov 2024 15:22:15 INFO  valid result: 
+recall@50 : 0.2078    recall@40 : 0.1864    recall@20 : 0.1311    recall@10 : 0.0884    recall@5 : 0.0566    recall@1 : 0.0143    mrr@50 : 0.0381    mrr@40 : 0.0376    mrr@20 : 0.0356    mrr@10 : 0.0327    mrr@5 : 0.0285    mrr@1 : 0.0143    ndcg@50 : 0.0716    ndcg@40 : 0.0677    ndcg@20 : 0.0564    ndcg@10 : 0.0457    ndcg@5 : 0.0354    ndcg@1 : 0.0143    precision@50 : 0.0042    precision@40 : 0.0047    precision@20 : 0.0066    precision@10 : 0.0088    precision@5 : 0.0113    precision@1 : 0.0143
+Fri 29 Nov 2024 15:22:16 INFO  Saving current: saved/GSAU-Nov-29-2024_15-02-29.pth
+Fri 29 Nov 2024 15:22:34 INFO  epoch 61 training [time: 18.47s, train loss: 1503.5771]
+Fri 29 Nov 2024 15:22:34 INFO  epoch 61 evaluating [time: 0.32s, valid_score: 0.057500]
+Fri 29 Nov 2024 15:22:34 INFO  valid result: 
+recall@50 : 0.2076    recall@40 : 0.1872    recall@20 : 0.1327    recall@10 : 0.0892    recall@5 : 0.058    recall@1 : 0.0149    mrr@50 : 0.0389    mrr@40 : 0.0385    mrr@20 : 0.0365    mrr@10 : 0.0336    mrr@5 : 0.0295    mrr@1 : 0.0149    ndcg@50 : 0.0723    ndcg@40 : 0.0686    ndcg@20 : 0.0575    ndcg@10 : 0.0465    ndcg@5 : 0.0365    ndcg@1 : 0.0149    precision@50 : 0.0042    precision@40 : 0.0047    precision@20 : 0.0066    precision@10 : 0.0089    precision@5 : 0.0116    precision@1 : 0.0149
+Fri 29 Nov 2024 15:22:34 INFO  Saving current: saved/GSAU-Nov-29-2024_15-02-29.pth
+Fri 29 Nov 2024 15:22:53 INFO  epoch 62 training [time: 18.33s, train loss: 1499.8911]
+Fri 29 Nov 2024 15:22:53 INFO  epoch 62 evaluating [time: 0.32s, valid_score: 0.057500]
+Fri 29 Nov 2024 15:22:53 INFO  valid result: 
+recall@50 : 0.209    recall@40 : 0.1881    recall@20 : 0.1332    recall@10 : 0.09    recall@5 : 0.058    recall@1 : 0.0144    mrr@50 : 0.0388    mrr@40 : 0.0384    mrr@20 : 0.0364    mrr@10 : 0.0335    mrr@5 : 0.0293    mrr@1 : 0.0144    ndcg@50 : 0.0725    ndcg@40 : 0.0688    ndcg@20 : 0.0575    ndcg@10 : 0.0467    ndcg@5 : 0.0364    ndcg@1 : 0.0144    precision@50 : 0.0042    precision@40 : 0.0047    precision@20 : 0.0067    precision@10 : 0.009    precision@5 : 0.0116    precision@1 : 0.0144
+Fri 29 Nov 2024 15:22:53 INFO  Saving current: saved/GSAU-Nov-29-2024_15-02-29.pth
+Fri 29 Nov 2024 15:23:12 INFO  epoch 63 training [time: 18.35s, train loss: 1495.7840]
+Fri 29 Nov 2024 15:23:12 INFO  epoch 63 evaluating [time: 0.32s, valid_score: 0.058400]
+Fri 29 Nov 2024 15:23:12 INFO  valid result: 
+recall@50 : 0.2101    recall@40 : 0.1903    recall@20 : 0.1349    recall@10 : 0.09    recall@5 : 0.0574    recall@1 : 0.0158    mrr@50 : 0.0395    mrr@40 : 0.0391    mrr@20 : 0.0371    mrr@10 : 0.0341    mrr@5 : 0.0298    mrr@1 : 0.0158    ndcg@50 : 0.0732    ndcg@40 : 0.0697    ndcg@20 : 0.0584    ndcg@10 : 0.0471    ndcg@5 : 0.0366    ndcg@1 : 0.0158    precision@50 : 0.0042    precision@40 : 0.0048    precision@20 : 0.0067    precision@10 : 0.009    precision@5 : 0.0115    precision@1 : 0.0158
+Fri 29 Nov 2024 15:23:12 INFO  Saving current: saved/GSAU-Nov-29-2024_15-02-29.pth
+Fri 29 Nov 2024 15:23:30 INFO  epoch 64 training [time: 18.43s, train loss: 1491.3611]
+Fri 29 Nov 2024 15:23:31 INFO  epoch 64 evaluating [time: 0.32s, valid_score: 0.058100]
+Fri 29 Nov 2024 15:23:31 INFO  valid result: 
+recall@50 : 0.2102    recall@40 : 0.1897    recall@20 : 0.1346    recall@10 : 0.09    recall@5 : 0.0585    recall@1 : 0.0149    mrr@50 : 0.0392    mrr@40 : 0.0388    mrr@20 : 0.0369    mrr@10 : 0.0338    mrr@5 : 0.0296    mrr@1 : 0.0149    ndcg@50 : 0.0731    ndcg@40 : 0.0694    ndcg@20 : 0.0581    ndcg@10 : 0.0469    ndcg@5 : 0.0367    ndcg@1 : 0.0149    precision@50 : 0.0042    precision@40 : 0.0047    precision@20 : 0.0067    precision@10 : 0.009    precision@5 : 0.0117    precision@1 : 0.0149
+Fri 29 Nov 2024 15:23:49 INFO  epoch 65 training [time: 18.33s, train loss: 1488.3220]
+Fri 29 Nov 2024 15:23:49 INFO  epoch 65 evaluating [time: 0.32s, valid_score: 0.058600]
+Fri 29 Nov 2024 15:23:49 INFO  valid result: 
+recall@50 : 0.2106    recall@40 : 0.1893    recall@20 : 0.1357    recall@10 : 0.0913    recall@5 : 0.059    recall@1 : 0.0149    mrr@50 : 0.0395    mrr@40 : 0.0391    mrr@20 : 0.0372    mrr@10 : 0.0341    mrr@5 : 0.0299    mrr@1 : 0.0149    ndcg@50 : 0.0734    ndcg@40 : 0.0696    ndcg@20 : 0.0586    ndcg@10 : 0.0474    ndcg@5 : 0.0371    ndcg@1 : 0.0149    precision@50 : 0.0042    precision@40 : 0.0047    precision@20 : 0.0068    precision@10 : 0.0091    precision@5 : 0.0118    precision@1 : 0.0149
+Fri 29 Nov 2024 15:23:49 INFO  Saving current: saved/GSAU-Nov-29-2024_15-02-29.pth
+Fri 29 Nov 2024 15:24:08 INFO  epoch 66 training [time: 18.48s, train loss: 1484.6780]
+Fri 29 Nov 2024 15:24:08 INFO  epoch 66 evaluating [time: 0.32s, valid_score: 0.059400]
+Fri 29 Nov 2024 15:24:08 INFO  valid result: 
+recall@50 : 0.2127    recall@40 : 0.1913    recall@20 : 0.1373    recall@10 : 0.0919    recall@5 : 0.0598    recall@1 : 0.0155    mrr@50 : 0.0401    mrr@40 : 0.0397    mrr@20 : 0.0378    mrr@10 : 0.0347    mrr@5 : 0.0304    mrr@1 : 0.0155    ndcg@50 : 0.0743    ndcg@40 : 0.0704    ndcg@20 : 0.0594    ndcg@10 : 0.048    ndcg@5 : 0.0377    ndcg@1 : 0.0155    precision@50 : 0.0043    precision@40 : 0.0048    precision@20 : 0.0069    precision@10 : 0.0092    precision@5 : 0.012    precision@1 : 0.0155
+Fri 29 Nov 2024 15:24:09 INFO  Saving current: saved/GSAU-Nov-29-2024_15-02-29.pth
+Fri 29 Nov 2024 15:24:27 INFO  epoch 67 training [time: 18.37s, train loss: 1480.4842]
+Fri 29 Nov 2024 15:24:27 INFO  epoch 67 evaluating [time: 0.32s, valid_score: 0.059600]
+Fri 29 Nov 2024 15:24:27 INFO  valid result: 
+recall@50 : 0.2128    recall@40 : 0.1909    recall@20 : 0.1372    recall@10 : 0.0916    recall@5 : 0.0605    recall@1 : 0.0155    mrr@50 : 0.0404    mrr@40 : 0.0399    mrr@20 : 0.038    mrr@10 : 0.0348    mrr@5 : 0.0307    mrr@1 : 0.0155    ndcg@50 : 0.0745    ndcg@40 : 0.0706    ndcg@20 : 0.0596    ndcg@10 : 0.0481    ndcg@5 : 0.0381    ndcg@1 : 0.0155    precision@50 : 0.0043    precision@40 : 0.0048    precision@20 : 0.0069    precision@10 : 0.0092    precision@5 : 0.0121    precision@1 : 0.0155
+Fri 29 Nov 2024 15:24:27 INFO  Saving current: saved/GSAU-Nov-29-2024_15-02-29.pth
+Fri 29 Nov 2024 15:24:46 INFO  epoch 68 training [time: 18.42s, train loss: 1478.5972]
+Fri 29 Nov 2024 15:24:46 INFO  epoch 68 evaluating [time: 0.40s, valid_score: 0.059800]
+Fri 29 Nov 2024 15:24:46 INFO  valid result: 
+recall@50 : 0.2121    recall@40 : 0.1925    recall@20 : 0.1374    recall@10 : 0.0912    recall@5 : 0.061    recall@1 : 0.0158    mrr@50 : 0.0406    mrr@40 : 0.0401    mrr@20 : 0.0382    mrr@10 : 0.035    mrr@5 : 0.031    mrr@1 : 0.0158    ndcg@50 : 0.0746    ndcg@40 : 0.071    ndcg@20 : 0.0598    ndcg@10 : 0.0481    ndcg@5 : 0.0384    ndcg@1 : 0.0158    precision@50 : 0.0042    precision@40 : 0.0048    precision@20 : 0.0069    precision@10 : 0.0091    precision@5 : 0.0122    precision@1 : 0.0158
+Fri 29 Nov 2024 15:24:46 INFO  Saving current: saved/GSAU-Nov-29-2024_15-02-29.pth
+Fri 29 Nov 2024 15:25:04 INFO  epoch 69 training [time: 18.34s, train loss: 1475.1836]
+Fri 29 Nov 2024 15:25:05 INFO  epoch 69 evaluating [time: 0.32s, valid_score: 0.060200]
+Fri 29 Nov 2024 15:25:05 INFO  valid result: 
+recall@50 : 0.2132    recall@40 : 0.1928    recall@20 : 0.1382    recall@10 : 0.0926    recall@5 : 0.0608    recall@1 : 0.0158    mrr@50 : 0.0408    mrr@40 : 0.0404    mrr@20 : 0.0385    mrr@10 : 0.0353    mrr@5 : 0.0311    mrr@1 : 0.0158    ndcg@50 : 0.075    ndcg@40 : 0.0713    ndcg@20 : 0.0602    ndcg@10 : 0.0487    ndcg@5 : 0.0384    ndcg@1 : 0.0158    precision@50 : 0.0043    precision@40 : 0.0048    precision@20 : 0.0069    precision@10 : 0.0093    precision@5 : 0.0122    precision@1 : 0.0158
+Fri 29 Nov 2024 15:25:05 INFO  Saving current: saved/GSAU-Nov-29-2024_15-02-29.pth
+Fri 29 Nov 2024 15:25:23 INFO  epoch 70 training [time: 18.37s, train loss: 1471.7153]
+Fri 29 Nov 2024 15:25:24 INFO  epoch 70 evaluating [time: 0.32s, valid_score: 0.060700]
+Fri 29 Nov 2024 15:25:24 INFO  valid result: 
+recall@50 : 0.2148    recall@40 : 0.1929    recall@20 : 0.1397    recall@10 : 0.0928    recall@5 : 0.0616    recall@1 : 0.0159    mrr@50 : 0.041    mrr@40 : 0.0405    mrr@20 : 0.0387    mrr@10 : 0.0355    mrr@5 : 0.0313    mrr@1 : 0.0159    ndcg@50 : 0.0755    ndcg@40 : 0.0715    ndcg@20 : 0.0607    ndcg@10 : 0.0488    ndcg@5 : 0.0388    ndcg@1 : 0.0159    precision@50 : 0.0043    precision@40 : 0.0048    precision@20 : 0.007    precision@10 : 0.0093    precision@5 : 0.0123    precision@1 : 0.0159
+Fri 29 Nov 2024 15:25:24 INFO  Saving current: saved/GSAU-Nov-29-2024_15-02-29.pth
+Fri 29 Nov 2024 15:25:42 INFO  epoch 71 training [time: 18.50s, train loss: 1468.5567]
+Fri 29 Nov 2024 15:25:42 INFO  epoch 71 evaluating [time: 0.32s, valid_score: 0.061000]
+Fri 29 Nov 2024 15:25:42 INFO  valid result: 
+recall@50 : 0.2145    recall@40 : 0.195    recall@20 : 0.1397    recall@10 : 0.0933    recall@5 : 0.0614    recall@1 : 0.0164    mrr@50 : 0.0414    mrr@40 : 0.041    mrr@20 : 0.0391    mrr@10 : 0.0359    mrr@5 : 0.0317    mrr@1 : 0.0164    ndcg@50 : 0.0758    ndcg@40 : 0.0723    ndcg@20 : 0.061    ndcg@10 : 0.0493    ndcg@5 : 0.039    ndcg@1 : 0.0164    precision@50 : 0.0043    precision@40 : 0.0049    precision@20 : 0.007    precision@10 : 0.0093    precision@5 : 0.0123    precision@1 : 0.0164
+Fri 29 Nov 2024 15:25:42 INFO  Saving current: saved/GSAU-Nov-29-2024_15-02-29.pth
+Fri 29 Nov 2024 15:26:01 INFO  epoch 72 training [time: 18.32s, train loss: 1465.9744]
+Fri 29 Nov 2024 15:26:01 INFO  epoch 72 evaluating [time: 0.32s, valid_score: 0.061300]
+Fri 29 Nov 2024 15:26:01 INFO  valid result: 
+recall@50 : 0.2158    recall@40 : 0.196    recall@20 : 0.1416    recall@10 : 0.0937    recall@5 : 0.0617    recall@1 : 0.0163    mrr@50 : 0.0414    mrr@40 : 0.0409    mrr@20 : 0.0391    mrr@10 : 0.0357    mrr@5 : 0.0315    mrr@1 : 0.0163    ndcg@50 : 0.076    ndcg@40 : 0.0724    ndcg@20 : 0.0613    ndcg@10 : 0.0492    ndcg@5 : 0.039    ndcg@1 : 0.0163    precision@50 : 0.0043    precision@40 : 0.0049    precision@20 : 0.0071    precision@10 : 0.0094    precision@5 : 0.0123    precision@1 : 0.0163
+Fri 29 Nov 2024 15:26:01 INFO  Saving current: saved/GSAU-Nov-29-2024_15-02-29.pth
+Fri 29 Nov 2024 15:26:19 INFO  epoch 73 training [time: 18.33s, train loss: 1462.3928]
+Fri 29 Nov 2024 15:26:20 INFO  epoch 73 evaluating [time: 0.32s, valid_score: 0.061500]
+Fri 29 Nov 2024 15:26:20 INFO  valid result: 
+recall@50 : 0.2168    recall@40 : 0.1961    recall@20 : 0.1413    recall@10 : 0.0946    recall@5 : 0.0627    recall@1 : 0.0164    mrr@50 : 0.0416    mrr@40 : 0.0412    mrr@20 : 0.0393    mrr@10 : 0.0361    mrr@5 : 0.0319    mrr@1 : 0.0164    ndcg@50 : 0.0764    ndcg@40 : 0.0727    ndcg@20 : 0.0615    ndcg@10 : 0.0497    ndcg@5 : 0.0395    ndcg@1 : 0.0164    precision@50 : 0.0043    precision@40 : 0.0049    precision@20 : 0.0071    precision@10 : 0.0095    precision@5 : 0.0125    precision@1 : 0.0164
+Fri 29 Nov 2024 15:26:20 INFO  Saving current: saved/GSAU-Nov-29-2024_15-02-29.pth
+Fri 29 Nov 2024 15:26:39 INFO  epoch 74 training [time: 18.34s, train loss: 1459.5514]
+Fri 29 Nov 2024 15:26:39 INFO  epoch 74 evaluating [time: 0.32s, valid_score: 0.061200]
+Fri 29 Nov 2024 15:26:39 INFO  valid result: 
+recall@50 : 0.2168    recall@40 : 0.1959    recall@20 : 0.1412    recall@10 : 0.0944    recall@5 : 0.0621    recall@1 : 0.016    mrr@50 : 0.0413    mrr@40 : 0.0408    mrr@20 : 0.0389    mrr@10 : 0.0357    mrr@5 : 0.0315    mrr@1 : 0.016    ndcg@50 : 0.0761    ndcg@40 : 0.0723    ndcg@20 : 0.0612    ndcg@10 : 0.0494    ndcg@5 : 0.039    ndcg@1 : 0.016    precision@50 : 0.0043    precision@40 : 0.0049    precision@20 : 0.0071    precision@10 : 0.0094    precision@5 : 0.0124    precision@1 : 0.016
+Fri 29 Nov 2024 15:26:57 INFO  epoch 75 training [time: 18.33s, train loss: 1455.7879]
+Fri 29 Nov 2024 15:26:57 INFO  epoch 75 evaluating [time: 0.32s, valid_score: 0.062000]
+Fri 29 Nov 2024 15:26:57 INFO  valid result: 
+recall@50 : 0.2175    recall@40 : 0.197    recall@20 : 0.1422    recall@10 : 0.0956    recall@5 : 0.0622    recall@1 : 0.0162    mrr@50 : 0.042    mrr@40 : 0.0416    mrr@20 : 0.0397    mrr@10 : 0.0365    mrr@5 : 0.032    mrr@1 : 0.0162    ndcg@50 : 0.0769    ndcg@40 : 0.0732    ndcg@20 : 0.062    ndcg@10 : 0.0503    ndcg@5 : 0.0395    ndcg@1 : 0.0162    precision@50 : 0.0044    precision@40 : 0.0049    precision@20 : 0.0071    precision@10 : 0.0096    precision@5 : 0.0124    precision@1 : 0.0162
+Fri 29 Nov 2024 15:26:58 INFO  Saving current: saved/GSAU-Nov-29-2024_15-02-29.pth
+Fri 29 Nov 2024 15:27:16 INFO  epoch 76 training [time: 18.44s, train loss: 1453.0038]
+Fri 29 Nov 2024 15:27:16 INFO  epoch 76 evaluating [time: 0.36s, valid_score: 0.062000]
+Fri 29 Nov 2024 15:27:16 INFO  valid result: 
+recall@50 : 0.2179    recall@40 : 0.1967    recall@20 : 0.1424    recall@10 : 0.0954    recall@5 : 0.0623    recall@1 : 0.0162    mrr@50 : 0.042    mrr@40 : 0.0415    mrr@20 : 0.0397    mrr@10 : 0.0364    mrr@5 : 0.032    mrr@1 : 0.0162    ndcg@50 : 0.0769    ndcg@40 : 0.0731    ndcg@20 : 0.062    ndcg@10 : 0.0502    ndcg@5 : 0.0395    ndcg@1 : 0.0162    precision@50 : 0.0044    precision@40 : 0.0049    precision@20 : 0.0071    precision@10 : 0.0095    precision@5 : 0.0125    precision@1 : 0.0162
+Fri 29 Nov 2024 15:27:16 INFO  Saving current: saved/GSAU-Nov-29-2024_15-02-29.pth
+Fri 29 Nov 2024 15:27:35 INFO  epoch 77 training [time: 18.53s, train loss: 1450.4623]
+Fri 29 Nov 2024 15:27:35 INFO  epoch 77 evaluating [time: 0.32s, valid_score: 0.062200]
+Fri 29 Nov 2024 15:27:35 INFO  valid result: 
+recall@50 : 0.2189    recall@40 : 0.1987    recall@20 : 0.1433    recall@10 : 0.0964    recall@5 : 0.0632    recall@1 : 0.0158    mrr@50 : 0.042    mrr@40 : 0.0415    mrr@20 : 0.0396    mrr@10 : 0.0364    mrr@5 : 0.032    mrr@1 : 0.0158    ndcg@50 : 0.0771    ndcg@40 : 0.0735    ndcg@20 : 0.0622    ndcg@10 : 0.0504    ndcg@5 : 0.0397    ndcg@1 : 0.0158    precision@50 : 0.0044    precision@40 : 0.005    precision@20 : 0.0072    precision@10 : 0.0096    precision@5 : 0.0126    precision@1 : 0.0158
+Fri 29 Nov 2024 15:27:37 INFO  Saving current: saved/GSAU-Nov-29-2024_15-02-29.pth
+Fri 29 Nov 2024 15:27:55 INFO  epoch 78 training [time: 18.47s, train loss: 1448.3140]
+Fri 29 Nov 2024 15:27:56 INFO  epoch 78 evaluating [time: 0.32s, valid_score: 0.062300]
+Fri 29 Nov 2024 15:27:56 INFO  valid result: 
+recall@50 : 0.2179    recall@40 : 0.197    recall@20 : 0.1432    recall@10 : 0.0964    recall@5 : 0.0635    recall@1 : 0.0161    mrr@50 : 0.0421    mrr@40 : 0.0416    mrr@20 : 0.0397    mrr@10 : 0.0365    mrr@5 : 0.0321    mrr@1 : 0.0161    ndcg@50 : 0.077    ndcg@40 : 0.0733    ndcg@20 : 0.0623    ndcg@10 : 0.0504    ndcg@5 : 0.0399    ndcg@1 : 0.0161    precision@50 : 0.0044    precision@40 : 0.0049    precision@20 : 0.0072    precision@10 : 0.0096    precision@5 : 0.0127    precision@1 : 0.0161
+Fri 29 Nov 2024 15:27:56 INFO  Saving current: saved/GSAU-Nov-29-2024_15-02-29.pth
+Fri 29 Nov 2024 15:28:14 INFO  epoch 79 training [time: 18.36s, train loss: 1445.6325]
+Fri 29 Nov 2024 15:28:14 INFO  epoch 79 evaluating [time: 0.32s, valid_score: 0.062700]
+Fri 29 Nov 2024 15:28:14 INFO  valid result: 
+recall@50 : 0.2179    recall@40 : 0.1966    recall@20 : 0.144    recall@10 : 0.0974    recall@5 : 0.0642    recall@1 : 0.0162    mrr@50 : 0.0424    mrr@40 : 0.0419    mrr@20 : 0.0401    mrr@10 : 0.0368    mrr@5 : 0.0324    mrr@1 : 0.0162    ndcg@50 : 0.0773    ndcg@40 : 0.0735    ndcg@20 : 0.0627    ndcg@10 : 0.051    ndcg@5 : 0.0402    ndcg@1 : 0.0162    precision@50 : 0.0044    precision@40 : 0.0049    precision@20 : 0.0072    precision@10 : 0.0097    precision@5 : 0.0128    precision@1 : 0.0162
+Fri 29 Nov 2024 15:28:14 INFO  Saving current: saved/GSAU-Nov-29-2024_15-02-29.pth
+Fri 29 Nov 2024 15:28:33 INFO  epoch 80 training [time: 18.33s, train loss: 1443.3464]
+Fri 29 Nov 2024 15:28:33 INFO  epoch 80 evaluating [time: 0.32s, valid_score: 0.062300]
+Fri 29 Nov 2024 15:28:33 INFO  valid result: 
+recall@50 : 0.2191    recall@40 : 0.1977    recall@20 : 0.1431    recall@10 : 0.0966    recall@5 : 0.0637    recall@1 : 0.016    mrr@50 : 0.0421    mrr@40 : 0.0417    mrr@20 : 0.0398    mrr@10 : 0.0365    mrr@5 : 0.0322    mrr@1 : 0.016    ndcg@50 : 0.0773    ndcg@40 : 0.0734    ndcg@20 : 0.0623    ndcg@10 : 0.0505    ndcg@5 : 0.04    ndcg@1 : 0.016    precision@50 : 0.0044    precision@40 : 0.0049    precision@20 : 0.0072    precision@10 : 0.0097    precision@5 : 0.0127    precision@1 : 0.016
+Fri 29 Nov 2024 15:28:51 INFO  epoch 81 training [time: 18.34s, train loss: 1441.0815]
+Fri 29 Nov 2024 15:28:52 INFO  epoch 81 evaluating [time: 0.44s, valid_score: 0.062900]
+Fri 29 Nov 2024 15:28:52 INFO  valid result: 
+recall@50 : 0.2198    recall@40 : 0.1991    recall@20 : 0.1441    recall@10 : 0.098    recall@5 : 0.0635    recall@1 : 0.0162    mrr@50 : 0.0426    mrr@40 : 0.0421    mrr@20 : 0.0402    mrr@10 : 0.037    mrr@5 : 0.0324    mrr@1 : 0.0162    ndcg@50 : 0.0778    ndcg@40 : 0.0741    ndcg@20 : 0.0629    ndcg@10 : 0.0512    ndcg@5 : 0.0401    ndcg@1 : 0.0162    precision@50 : 0.0044    precision@40 : 0.005    precision@20 : 0.0072    precision@10 : 0.0098    precision@5 : 0.0127    precision@1 : 0.0162
+Fri 29 Nov 2024 15:28:52 INFO  Saving current: saved/GSAU-Nov-29-2024_15-02-29.pth
+Fri 29 Nov 2024 15:29:10 INFO  epoch 82 training [time: 18.33s, train loss: 1438.3436]
+Fri 29 Nov 2024 15:29:11 INFO  epoch 82 evaluating [time: 0.32s, valid_score: 0.063000]
+Fri 29 Nov 2024 15:29:11 INFO  valid result: 
+recall@50 : 0.2186    recall@40 : 0.1989    recall@20 : 0.1441    recall@10 : 0.0991    recall@5 : 0.0646    recall@1 : 0.0163    mrr@50 : 0.0426    mrr@40 : 0.0422    mrr@20 : 0.0403    mrr@10 : 0.0372    mrr@5 : 0.0326    mrr@1 : 0.0163    ndcg@50 : 0.0777    ndcg@40 : 0.0741    ndcg@20 : 0.063    ndcg@10 : 0.0516    ndcg@5 : 0.0405    ndcg@1 : 0.0163    precision@50 : 0.0044    precision@40 : 0.005    precision@20 : 0.0072    precision@10 : 0.0099    precision@5 : 0.0129    precision@1 : 0.0163
+Fri 29 Nov 2024 15:29:11 INFO  Saving current: saved/GSAU-Nov-29-2024_15-02-29.pth
+Fri 29 Nov 2024 15:29:29 INFO  epoch 83 training [time: 18.34s, train loss: 1436.9732]
+Fri 29 Nov 2024 15:29:29 INFO  epoch 83 evaluating [time: 0.32s, valid_score: 0.062800]
+Fri 29 Nov 2024 15:29:29 INFO  valid result: 
+recall@50 : 0.2206    recall@40 : 0.2    recall@20 : 0.144    recall@10 : 0.0983    recall@5 : 0.065    recall@1 : 0.0159    mrr@50 : 0.0425    mrr@40 : 0.0421    mrr@20 : 0.0401    mrr@10 : 0.037    mrr@5 : 0.0326    mrr@1 : 0.0159    ndcg@50 : 0.078    ndcg@40 : 0.0743    ndcg@20 : 0.0628    ndcg@10 : 0.0513    ndcg@5 : 0.0406    ndcg@1 : 0.0159    precision@50 : 0.0044    precision@40 : 0.005    precision@20 : 0.0072    precision@10 : 0.0098    precision@5 : 0.013    precision@1 : 0.0159
+Fri 29 Nov 2024 15:29:48 INFO  epoch 84 training [time: 18.36s, train loss: 1433.9432]
+Fri 29 Nov 2024 15:29:48 INFO  epoch 84 evaluating [time: 0.32s, valid_score: 0.063200]
+Fri 29 Nov 2024 15:29:48 INFO  valid result: 
+recall@50 : 0.2198    recall@40 : 0.1994    recall@20 : 0.1448    recall@10 : 0.0994    recall@5 : 0.0648    recall@1 : 0.016    mrr@50 : 0.0427    mrr@40 : 0.0423    mrr@20 : 0.0404    mrr@10 : 0.0372    mrr@5 : 0.0326    mrr@1 : 0.016    ndcg@50 : 0.078    ndcg@40 : 0.0743    ndcg@20 : 0.0632    ndcg@10 : 0.0517    ndcg@5 : 0.0406    ndcg@1 : 0.016    precision@50 : 0.0044    precision@40 : 0.005    precision@20 : 0.0072    precision@10 : 0.0099    precision@5 : 0.013    precision@1 : 0.016
+Fri 29 Nov 2024 15:29:48 INFO  Saving current: saved/GSAU-Nov-29-2024_15-02-29.pth
+Fri 29 Nov 2024 15:30:06 INFO  epoch 85 training [time: 18.48s, train loss: 1430.7848]
+Fri 29 Nov 2024 15:30:07 INFO  epoch 85 evaluating [time: 0.32s, valid_score: 0.062800]
+Fri 29 Nov 2024 15:30:07 INFO  valid result: 
+recall@50 : 0.2202    recall@40 : 0.1988    recall@20 : 0.1437    recall@10 : 0.0988    recall@5 : 0.0649    recall@1 : 0.0162    mrr@50 : 0.0426    mrr@40 : 0.0421    mrr@20 : 0.0402    mrr@10 : 0.0371    mrr@5 : 0.0326    mrr@1 : 0.0162    ndcg@50 : 0.078    ndcg@40 : 0.0741    ndcg@20 : 0.0628    ndcg@10 : 0.0515    ndcg@5 : 0.0406    ndcg@1 : 0.0162    precision@50 : 0.0044    precision@40 : 0.005    precision@20 : 0.0072    precision@10 : 0.0099    precision@5 : 0.013    precision@1 : 0.0162
+Fri 29 Nov 2024 15:30:25 INFO  epoch 86 training [time: 18.34s, train loss: 1429.6178]
+Fri 29 Nov 2024 15:30:25 INFO  epoch 86 evaluating [time: 0.32s, valid_score: 0.063200]
+Fri 29 Nov 2024 15:30:25 INFO  valid result: 
+recall@50 : 0.2214    recall@40 : 0.2005    recall@20 : 0.1443    recall@10 : 0.1    recall@5 : 0.0646    recall@1 : 0.0162    mrr@50 : 0.0429    mrr@40 : 0.0425    mrr@20 : 0.0405    mrr@10 : 0.0375    mrr@5 : 0.0327    mrr@1 : 0.0162    ndcg@50 : 0.0785    ndcg@40 : 0.0747    ndcg@20 : 0.0632    ndcg@10 : 0.052    ndcg@5 : 0.0406    ndcg@1 : 0.0162    precision@50 : 0.0044    precision@40 : 0.005    precision@20 : 0.0072    precision@10 : 0.01    precision@5 : 0.0129    precision@1 : 0.0162
+Fri 29 Nov 2024 15:30:26 INFO  Saving current: saved/GSAU-Nov-29-2024_15-02-29.pth
+Fri 29 Nov 2024 15:30:44 INFO  epoch 87 training [time: 18.34s, train loss: 1426.4272]
+Fri 29 Nov 2024 15:30:44 INFO  epoch 87 evaluating [time: 0.32s, valid_score: 0.064200]
+Fri 29 Nov 2024 15:30:44 INFO  valid result: 
+recall@50 : 0.2217    recall@40 : 0.1994    recall@20 : 0.147    recall@10 : 0.1005    recall@5 : 0.0664    recall@1 : 0.0161    mrr@50 : 0.0434    mrr@40 : 0.0429    mrr@20 : 0.0411    mrr@10 : 0.0379    mrr@5 : 0.0333    mrr@1 : 0.0161    ndcg@50 : 0.0789    ndcg@40 : 0.0749    ndcg@20 : 0.0642    ndcg@10 : 0.0525    ndcg@5 : 0.0415    ndcg@1 : 0.0161    precision@50 : 0.0044    precision@40 : 0.005    precision@20 : 0.0074    precision@10 : 0.0101    precision@5 : 0.0133    precision@1 : 0.0161
+Fri 29 Nov 2024 15:30:44 INFO  Saving current: saved/GSAU-Nov-29-2024_15-02-29.pth
+Fri 29 Nov 2024 15:31:03 INFO  epoch 88 training [time: 18.43s, train loss: 1423.7442]
+Fri 29 Nov 2024 15:31:03 INFO  epoch 88 evaluating [time: 0.34s, valid_score: 0.064000]
+Fri 29 Nov 2024 15:31:03 INFO  valid result: 
+recall@50 : 0.222    recall@40 : 0.2017    recall@20 : 0.1452    recall@10 : 0.0992    recall@5 : 0.0682    recall@1 : 0.0166    mrr@50 : 0.0437    mrr@40 : 0.0432    mrr@20 : 0.0413    mrr@10 : 0.0381    mrr@5 : 0.034    mrr@1 : 0.0166    ndcg@50 : 0.0792    ndcg@40 : 0.0755    ndcg@20 : 0.064    ndcg@10 : 0.0524    ndcg@5 : 0.0424    ndcg@1 : 0.0166    precision@50 : 0.0044    precision@40 : 0.005    precision@20 : 0.0073    precision@10 : 0.0099    precision@5 : 0.0136    precision@1 : 0.0166
+Fri 29 Nov 2024 15:31:21 INFO  epoch 89 training [time: 18.33s, train loss: 1422.9299]
+Fri 29 Nov 2024 15:31:22 INFO  epoch 89 evaluating [time: 0.32s, valid_score: 0.063900]
+Fri 29 Nov 2024 15:31:22 INFO  valid result: 
+recall@50 : 0.2226    recall@40 : 0.2026    recall@20 : 0.1458    recall@10 : 0.1009    recall@5 : 0.0667    recall@1 : 0.0157    mrr@50 : 0.0434    mrr@40 : 0.0429    mrr@20 : 0.0409    mrr@10 : 0.0378    mrr@5 : 0.0333    mrr@1 : 0.0157    ndcg@50 : 0.0791    ndcg@40 : 0.0755    ndcg@20 : 0.0639    ndcg@10 : 0.0526    ndcg@5 : 0.0415    ndcg@1 : 0.0157    precision@50 : 0.0045    precision@40 : 0.0051    precision@20 : 0.0073    precision@10 : 0.0101    precision@5 : 0.0133    precision@1 : 0.0157
+Fri 29 Nov 2024 15:31:40 INFO  epoch 90 training [time: 18.35s, train loss: 1420.0189]
+Fri 29 Nov 2024 15:31:40 INFO  epoch 90 evaluating [time: 0.32s, valid_score: 0.064000]
+Fri 29 Nov 2024 15:31:40 INFO  valid result: 
+recall@50 : 0.2223    recall@40 : 0.2012    recall@20 : 0.1463    recall@10 : 0.1011    recall@5 : 0.0668    recall@1 : 0.0156    mrr@50 : 0.0433    mrr@40 : 0.0428    mrr@20 : 0.0409    mrr@10 : 0.0378    mrr@5 : 0.0332    mrr@1 : 0.0156    ndcg@50 : 0.079    ndcg@40 : 0.0752    ndcg@20 : 0.064    ndcg@10 : 0.0526    ndcg@5 : 0.0415    ndcg@1 : 0.0156    precision@50 : 0.0044    precision@40 : 0.005    precision@20 : 0.0073    precision@10 : 0.0101    precision@5 : 0.0134    precision@1 : 0.0156
+Fri 29 Nov 2024 15:31:59 INFO  epoch 91 training [time: 18.32s, train loss: 1416.9056]
+Fri 29 Nov 2024 15:31:59 INFO  epoch 91 evaluating [time: 0.32s, valid_score: 0.064300]
+Fri 29 Nov 2024 15:31:59 INFO  valid result: 
+recall@50 : 0.2231    recall@40 : 0.2029    recall@20 : 0.147    recall@10 : 0.1012    recall@5 : 0.0681    recall@1 : 0.0157    mrr@50 : 0.0434    mrr@40 : 0.043    mrr@20 : 0.041    mrr@10 : 0.0379    mrr@5 : 0.0335    mrr@1 : 0.0157    ndcg@50 : 0.0793    ndcg@40 : 0.0756    ndcg@20 : 0.0643    ndcg@10 : 0.0527    ndcg@5 : 0.042    ndcg@1 : 0.0157    precision@50 : 0.0045    precision@40 : 0.0051    precision@20 : 0.0073    precision@10 : 0.0101    precision@5 : 0.0136    precision@1 : 0.0157
+Fri 29 Nov 2024 15:32:00 INFO  Saving current: saved/GSAU-Nov-29-2024_15-02-29.pth
+Fri 29 Nov 2024 15:32:18 INFO  epoch 92 training [time: 18.43s, train loss: 1415.7845]
+Fri 29 Nov 2024 15:32:18 INFO  epoch 92 evaluating [time: 0.32s, valid_score: 0.064200]
+Fri 29 Nov 2024 15:32:18 INFO  valid result: 
+recall@50 : 0.2228    recall@40 : 0.2023    recall@20 : 0.1465    recall@10 : 0.1013    recall@5 : 0.0675    recall@1 : 0.0161    mrr@50 : 0.0435    mrr@40 : 0.0431    mrr@20 : 0.0411    mrr@10 : 0.038    mrr@5 : 0.0335    mrr@1 : 0.0161    ndcg@50 : 0.0793    ndcg@40 : 0.0756    ndcg@20 : 0.0642    ndcg@10 : 0.0528    ndcg@5 : 0.0419    ndcg@1 : 0.0161    precision@50 : 0.0045    precision@40 : 0.0051    precision@20 : 0.0073    precision@10 : 0.0101    precision@5 : 0.0135    precision@1 : 0.0161
+Fri 29 Nov 2024 15:32:37 INFO  epoch 93 training [time: 18.31s, train loss: 1412.7042]
+Fri 29 Nov 2024 15:32:37 INFO  epoch 93 evaluating [time: 0.32s, valid_score: 0.064700]
+Fri 29 Nov 2024 15:32:37 INFO  valid result: 
+recall@50 : 0.2227    recall@40 : 0.203    recall@20 : 0.1482    recall@10 : 0.1012    recall@5 : 0.0686    recall@1 : 0.0159    mrr@50 : 0.0436    mrr@40 : 0.0432    mrr@20 : 0.0413    mrr@10 : 0.038    mrr@5 : 0.0337    mrr@1 : 0.0159    ndcg@50 : 0.0794    ndcg@40 : 0.0758    ndcg@20 : 0.0647    ndcg@10 : 0.0528    ndcg@5 : 0.0423    ndcg@1 : 0.0159    precision@50 : 0.0045    precision@40 : 0.0051    precision@20 : 0.0074    precision@10 : 0.0101    precision@5 : 0.0137    precision@1 : 0.0159
+Fri 29 Nov 2024 15:32:37 INFO  Saving current: saved/GSAU-Nov-29-2024_15-02-29.pth
+Fri 29 Nov 2024 15:32:55 INFO  epoch 94 training [time: 18.31s, train loss: 1412.1477]
+Fri 29 Nov 2024 15:32:56 INFO  epoch 94 evaluating [time: 0.32s, valid_score: 0.064400]
+Fri 29 Nov 2024 15:32:56 INFO  valid result: 
+recall@50 : 0.2237    recall@40 : 0.2025    recall@20 : 0.1473    recall@10 : 0.1026    recall@5 : 0.0678    recall@1 : 0.0155    mrr@50 : 0.0435    mrr@40 : 0.043    mrr@20 : 0.0411    mrr@10 : 0.038    mrr@5 : 0.0334    mrr@1 : 0.0155    ndcg@50 : 0.0795    ndcg@40 : 0.0756    ndcg@20 : 0.0644    ndcg@10 : 0.0531    ndcg@5 : 0.0419    ndcg@1 : 0.0155    precision@50 : 0.0045    precision@40 : 0.0051    precision@20 : 0.0074    precision@10 : 0.0103    precision@5 : 0.0136    precision@1 : 0.0155
+Fri 29 Nov 2024 15:33:14 INFO  epoch 95 training [time: 18.33s, train loss: 1408.4596]
+Fri 29 Nov 2024 15:33:14 INFO  epoch 95 evaluating [time: 0.32s, valid_score: 0.064600]
+Fri 29 Nov 2024 15:33:14 INFO  valid result: 
+recall@50 : 0.2238    recall@40 : 0.2031    recall@20 : 0.1476    recall@10 : 0.1019    recall@5 : 0.0672    recall@1 : 0.0158    mrr@50 : 0.0437    mrr@40 : 0.0432    mrr@20 : 0.0413    mrr@10 : 0.0381    mrr@5 : 0.0335    mrr@1 : 0.0158    ndcg@50 : 0.0796    ndcg@40 : 0.0759    ndcg@20 : 0.0646    ndcg@10 : 0.053    ndcg@5 : 0.0418    ndcg@1 : 0.0158    precision@50 : 0.0045    precision@40 : 0.0051    precision@20 : 0.0074    precision@10 : 0.0102    precision@5 : 0.0134    precision@1 : 0.0158
+Fri 29 Nov 2024 15:33:33 INFO  epoch 96 training [time: 18.46s, train loss: 1407.8130]
+Fri 29 Nov 2024 15:33:33 INFO  epoch 96 evaluating [time: 0.32s, valid_score: 0.065100]
+Fri 29 Nov 2024 15:33:33 INFO  valid result: 
+recall@50 : 0.2236    recall@40 : 0.2044    recall@20 : 0.1484    recall@10 : 0.103    recall@5 : 0.0687    recall@1 : 0.016    mrr@50 : 0.0442    mrr@40 : 0.0437    mrr@20 : 0.0418    mrr@10 : 0.0387    mrr@5 : 0.0341    mrr@1 : 0.016    ndcg@50 : 0.08    ndcg@40 : 0.0766    ndcg@20 : 0.0651    ndcg@10 : 0.0537    ndcg@5 : 0.0427    ndcg@1 : 0.016    precision@50 : 0.0045    precision@40 : 0.0051    precision@20 : 0.0074    precision@10 : 0.0103    precision@5 : 0.0137    precision@1 : 0.016
+Fri 29 Nov 2024 15:33:33 INFO  Saving current: saved/GSAU-Nov-29-2024_15-02-29.pth
+Fri 29 Nov 2024 15:33:52 INFO  epoch 97 training [time: 18.53s, train loss: 1404.8408]
+Fri 29 Nov 2024 15:33:52 INFO  epoch 97 evaluating [time: 0.32s, valid_score: 0.064800]
+Fri 29 Nov 2024 15:33:52 INFO  valid result: 
+recall@50 : 0.2239    recall@40 : 0.2032    recall@20 : 0.1476    recall@10 : 0.101    recall@5 : 0.0687    recall@1 : 0.0161    mrr@50 : 0.044    mrr@40 : 0.0436    mrr@20 : 0.0416    mrr@10 : 0.0384    mrr@5 : 0.0341    mrr@1 : 0.0161    ndcg@50 : 0.0799    ndcg@40 : 0.0762    ndcg@20 : 0.0648    ndcg@10 : 0.0531    ndcg@5 : 0.0427    ndcg@1 : 0.0161    precision@50 : 0.0045    precision@40 : 0.0051    precision@20 : 0.0074    precision@10 : 0.0101    precision@5 : 0.0137    precision@1 : 0.0161
+Fri 29 Nov 2024 15:34:10 INFO  epoch 98 training [time: 18.35s, train loss: 1402.2607]
+Fri 29 Nov 2024 15:34:11 INFO  epoch 98 evaluating [time: 0.32s, valid_score: 0.065000]
+Fri 29 Nov 2024 15:34:11 INFO  valid result: 
+recall@50 : 0.2247    recall@40 : 0.2034    recall@20 : 0.1486    recall@10 : 0.1031    recall@5 : 0.0685    recall@1 : 0.0155    mrr@50 : 0.044    mrr@40 : 0.0435    mrr@20 : 0.0416    mrr@10 : 0.0385    mrr@5 : 0.0339    mrr@1 : 0.0155    ndcg@50 : 0.0801    ndcg@40 : 0.0762    ndcg@20 : 0.065    ndcg@10 : 0.0536    ndcg@5 : 0.0425    ndcg@1 : 0.0155    precision@50 : 0.0045    precision@40 : 0.0051    precision@20 : 0.0074    precision@10 : 0.0103    precision@5 : 0.0137    precision@1 : 0.0155
+Fri 29 Nov 2024 15:34:29 INFO  epoch 99 training [time: 18.33s, train loss: 1401.9799]
+Fri 29 Nov 2024 15:34:29 INFO  epoch 99 evaluating [time: 0.32s, valid_score: 0.065200]
+Fri 29 Nov 2024 15:34:29 INFO  valid result: 
+recall@50 : 0.2239    recall@40 : 0.2044    recall@20 : 0.1485    recall@10 : 0.1029    recall@5 : 0.0696    recall@1 : 0.0158    mrr@50 : 0.0441    mrr@40 : 0.0437    mrr@20 : 0.0417    mrr@10 : 0.0386    mrr@5 : 0.0341    mrr@1 : 0.0158    ndcg@50 : 0.0801    ndcg@40 : 0.0766    ndcg@20 : 0.0652    ndcg@10 : 0.0536    ndcg@5 : 0.0429    ndcg@1 : 0.0158    precision@50 : 0.0045    precision@40 : 0.0051    precision@20 : 0.0074    precision@10 : 0.0103    precision@5 : 0.0139    precision@1 : 0.0158
+Fri 29 Nov 2024 15:34:30 INFO  Saving current: saved/GSAU-Nov-29-2024_15-02-29.pth
+Fri 29 Nov 2024 15:34:48 INFO  epoch 100 training [time: 18.34s, train loss: 1399.6123]
+Fri 29 Nov 2024 15:34:48 INFO  epoch 100 evaluating [time: 0.39s, valid_score: 0.065500]
+Fri 29 Nov 2024 15:34:48 INFO  valid result: 
+recall@50 : 0.2248    recall@40 : 0.2055    recall@20 : 0.1487    recall@10 : 0.1025    recall@5 : 0.0698    recall@1 : 0.0165    mrr@50 : 0.0446    mrr@40 : 0.0441    mrr@20 : 0.0422    mrr@10 : 0.0389    mrr@5 : 0.0346    mrr@1 : 0.0165    ndcg@50 : 0.0806    ndcg@40 : 0.0771    ndcg@20 : 0.0655    ndcg@10 : 0.0538    ndcg@5 : 0.0433    ndcg@1 : 0.0165    precision@50 : 0.0045    precision@40 : 0.0051    precision@20 : 0.0074    precision@10 : 0.0103    precision@5 : 0.014    precision@1 : 0.0165
+Fri 29 Nov 2024 15:34:48 INFO  Saving current: saved/GSAU-Nov-29-2024_15-02-29.pth
+Fri 29 Nov 2024 15:35:07 INFO  epoch 101 training [time: 18.37s, train loss: 1398.7596]
+Fri 29 Nov 2024 15:35:07 INFO  epoch 101 evaluating [time: 0.32s, valid_score: 0.065400]
+Fri 29 Nov 2024 15:35:07 INFO  valid result: 
+recall@50 : 0.2249    recall@40 : 0.2046    recall@20 : 0.1486    recall@10 : 0.1029    recall@5 : 0.0697    recall@1 : 0.0158    mrr@50 : 0.0444    mrr@40 : 0.0439    mrr@20 : 0.042    mrr@10 : 0.0388    mrr@5 : 0.0344    mrr@1 : 0.0158    ndcg@50 : 0.0804    ndcg@40 : 0.0768    ndcg@20 : 0.0654    ndcg@10 : 0.0538    ndcg@5 : 0.0431    ndcg@1 : 0.0158    precision@50 : 0.0045    precision@40 : 0.0051    precision@20 : 0.0074    precision@10 : 0.0103    precision@5 : 0.0139    precision@1 : 0.0158
+Fri 29 Nov 2024 15:35:25 INFO  epoch 102 training [time: 18.35s, train loss: 1396.3719]
+Fri 29 Nov 2024 15:35:26 INFO  epoch 102 evaluating [time: 0.32s, valid_score: 0.065400]
+Fri 29 Nov 2024 15:35:26 INFO  valid result: 
+recall@50 : 0.2244    recall@40 : 0.205    recall@20 : 0.149    recall@10 : 0.1031    recall@5 : 0.0689    recall@1 : 0.016    mrr@50 : 0.0442    mrr@40 : 0.0438    mrr@20 : 0.0419    mrr@10 : 0.0387    mrr@5 : 0.0341    mrr@1 : 0.016    ndcg@50 : 0.0803    ndcg@40 : 0.0768    ndcg@20 : 0.0654    ndcg@10 : 0.0538    ndcg@5 : 0.0427    ndcg@1 : 0.016    precision@50 : 0.0045    precision@40 : 0.0051    precision@20 : 0.0075    precision@10 : 0.0103    precision@5 : 0.0138    precision@1 : 0.016
+Fri 29 Nov 2024 15:35:44 INFO  epoch 103 training [time: 18.33s, train loss: 1394.8938]
+Fri 29 Nov 2024 15:35:44 INFO  epoch 103 evaluating [time: 0.32s, valid_score: 0.065100]
+Fri 29 Nov 2024 15:35:44 INFO  valid result: 
+recall@50 : 0.2257    recall@40 : 0.2051    recall@20 : 0.1489    recall@10 : 0.1033    recall@5 : 0.0699    recall@1 : 0.0153    mrr@50 : 0.0439    mrr@40 : 0.0435    mrr@20 : 0.0415    mrr@10 : 0.0384    mrr@5 : 0.0339    mrr@1 : 0.0153    ndcg@50 : 0.0803    ndcg@40 : 0.0765    ndcg@20 : 0.0651    ndcg@10 : 0.0536    ndcg@5 : 0.0428    ndcg@1 : 0.0153    precision@50 : 0.0045    precision@40 : 0.0051    precision@20 : 0.0074    precision@10 : 0.0103    precision@5 : 0.014    precision@1 : 0.0153
+Fri 29 Nov 2024 15:36:03 INFO  epoch 104 training [time: 18.64s, train loss: 1393.7856]
+Fri 29 Nov 2024 15:36:03 INFO  epoch 104 evaluating [time: 0.32s, valid_score: 0.065900]
+Fri 29 Nov 2024 15:36:03 INFO  valid result: 
+recall@50 : 0.2251    recall@40 : 0.2049    recall@20 : 0.1506    recall@10 : 0.1043    recall@5 : 0.0692    recall@1 : 0.0158    mrr@50 : 0.0445    mrr@40 : 0.044    mrr@20 : 0.0421    mrr@10 : 0.0389    mrr@5 : 0.0343    mrr@1 : 0.0158    ndcg@50 : 0.0806    ndcg@40 : 0.077    ndcg@20 : 0.0659    ndcg@10 : 0.0542    ndcg@5 : 0.0429    ndcg@1 : 0.0158    precision@50 : 0.0045    precision@40 : 0.0051    precision@20 : 0.0075    precision@10 : 0.0104    precision@5 : 0.0138    precision@1 : 0.0158
+Fri 29 Nov 2024 15:36:03 INFO  Saving current: saved/GSAU-Nov-29-2024_15-02-29.pth
+Fri 29 Nov 2024 15:36:22 INFO  epoch 105 training [time: 18.32s, train loss: 1390.4286]
+Fri 29 Nov 2024 15:36:22 INFO  epoch 105 evaluating [time: 0.44s, valid_score: 0.065700]
+Fri 29 Nov 2024 15:36:22 INFO  valid result: 
+recall@50 : 0.2261    recall@40 : 0.2044    recall@20 : 0.1496    recall@10 : 0.1038    recall@5 : 0.0696    recall@1 : 0.016    mrr@50 : 0.0444    mrr@40 : 0.044    mrr@20 : 0.0421    mrr@10 : 0.0389    mrr@5 : 0.0343    mrr@1 : 0.016    ndcg@50 : 0.0807    ndcg@40 : 0.0768    ndcg@20 : 0.0657    ndcg@10 : 0.0541    ndcg@5 : 0.043    ndcg@1 : 0.016    precision@50 : 0.0045    precision@40 : 0.0051    precision@20 : 0.0075    precision@10 : 0.0104    precision@5 : 0.0139    precision@1 : 0.016
+Fri 29 Nov 2024 15:36:41 INFO  epoch 106 training [time: 18.31s, train loss: 1388.8863]
+Fri 29 Nov 2024 15:36:41 INFO  epoch 106 evaluating [time: 0.32s, valid_score: 0.065600]
+Fri 29 Nov 2024 15:36:41 INFO  valid result: 
+recall@50 : 0.226    recall@40 : 0.206    recall@20 : 0.1501    recall@10 : 0.1034    recall@5 : 0.069    recall@1 : 0.0155    mrr@50 : 0.0442    mrr@40 : 0.0438    mrr@20 : 0.0418    mrr@10 : 0.0386    mrr@5 : 0.034    mrr@1 : 0.0155    ndcg@50 : 0.0806    ndcg@40 : 0.077    ndcg@20 : 0.0656    ndcg@10 : 0.0538    ndcg@5 : 0.0426    ndcg@1 : 0.0155    precision@50 : 0.0045    precision@40 : 0.0051    precision@20 : 0.0075    precision@10 : 0.0103    precision@5 : 0.0138    precision@1 : 0.0155
+Fri 29 Nov 2024 15:36:59 INFO  epoch 107 training [time: 18.31s, train loss: 1387.3428]
+Fri 29 Nov 2024 15:36:59 INFO  epoch 107 evaluating [time: 0.32s, valid_score: 0.065800]
+Fri 29 Nov 2024 15:36:59 INFO  valid result: 
+recall@50 : 0.2285    recall@40 : 0.2072    recall@20 : 0.1509    recall@10 : 0.1047    recall@5 : 0.0707    recall@1 : 0.0154    mrr@50 : 0.0443    mrr@40 : 0.0438    mrr@20 : 0.0419    mrr@10 : 0.0387    mrr@5 : 0.0342    mrr@1 : 0.0154    ndcg@50 : 0.0811    ndcg@40 : 0.0773    ndcg@20 : 0.0658    ndcg@10 : 0.0542    ndcg@5 : 0.0432    ndcg@1 : 0.0154    precision@50 : 0.0046    precision@40 : 0.0052    precision@20 : 0.0075    precision@10 : 0.0105    precision@5 : 0.0141    precision@1 : 0.0154
+Fri 29 Nov 2024 15:37:18 INFO  epoch 108 training [time: 18.34s, train loss: 1386.2503]
+Fri 29 Nov 2024 15:37:18 INFO  epoch 108 evaluating [time: 0.32s, valid_score: 0.066200]
+Fri 29 Nov 2024 15:37:18 INFO  valid result: 
+recall@50 : 0.2283    recall@40 : 0.2082    recall@20 : 0.1511    recall@10 : 0.1048    recall@5 : 0.0705    recall@1 : 0.0152    mrr@50 : 0.0447    mrr@40 : 0.0443    mrr@20 : 0.0423    mrr@10 : 0.0391    mrr@5 : 0.0345    mrr@1 : 0.0152    ndcg@50 : 0.0815    ndcg@40 : 0.0778    ndcg@20 : 0.0662    ndcg@10 : 0.0545    ndcg@5 : 0.0434    ndcg@1 : 0.0152    precision@50 : 0.0046    precision@40 : 0.0052    precision@20 : 0.0076    precision@10 : 0.0105    precision@5 : 0.0141    precision@1 : 0.0152
+Fri 29 Nov 2024 15:37:18 INFO  Saving current: saved/GSAU-Nov-29-2024_15-02-29.pth
+Fri 29 Nov 2024 15:37:37 INFO  epoch 109 training [time: 18.32s, train loss: 1384.7256]
+Fri 29 Nov 2024 15:37:37 INFO  epoch 109 evaluating [time: 0.32s, valid_score: 0.066000]
+Fri 29 Nov 2024 15:37:37 INFO  valid result: 
+recall@50 : 0.2284    recall@40 : 0.2064    recall@20 : 0.1505    recall@10 : 0.1045    recall@5 : 0.0699    recall@1 : 0.0152    mrr@50 : 0.0447    mrr@40 : 0.0442    mrr@20 : 0.0422    mrr@10 : 0.039    mrr@5 : 0.0344    mrr@1 : 0.0152    ndcg@50 : 0.0814    ndcg@40 : 0.0774    ndcg@20 : 0.066    ndcg@10 : 0.0544    ndcg@5 : 0.0431    ndcg@1 : 0.0152    precision@50 : 0.0046    precision@40 : 0.0052    precision@20 : 0.0075    precision@10 : 0.0104    precision@5 : 0.014    precision@1 : 0.0152
+Fri 29 Nov 2024 15:37:55 INFO  epoch 110 training [time: 18.33s, train loss: 1383.5695]
+Fri 29 Nov 2024 15:37:55 INFO  epoch 110 evaluating [time: 0.32s, valid_score: 0.066600]
+Fri 29 Nov 2024 15:37:55 INFO  valid result: 
+recall@50 : 0.2259    recall@40 : 0.2068    recall@20 : 0.1515    recall@10 : 0.1061    recall@5 : 0.0697    recall@1 : 0.016    mrr@50 : 0.045    mrr@40 : 0.0446    mrr@20 : 0.0427    mrr@10 : 0.0395    mrr@5 : 0.0347    mrr@1 : 0.016    ndcg@50 : 0.0813    ndcg@40 : 0.0778    ndcg@20 : 0.0666    ndcg@10 : 0.0551    ndcg@5 : 0.0433    ndcg@1 : 0.016    precision@50 : 0.0045    precision@40 : 0.0052    precision@20 : 0.0076    precision@10 : 0.0106    precision@5 : 0.0139    precision@1 : 0.016
+Fri 29 Nov 2024 15:37:56 INFO  Saving current: saved/GSAU-Nov-29-2024_15-02-29.pth
+Fri 29 Nov 2024 15:38:14 INFO  epoch 111 training [time: 18.34s, train loss: 1381.3652]
+Fri 29 Nov 2024 15:38:14 INFO  epoch 111 evaluating [time: 0.44s, valid_score: 0.065700]
+Fri 29 Nov 2024 15:38:14 INFO  valid result: 
+recall@50 : 0.2284    recall@40 : 0.2072    recall@20 : 0.1508    recall@10 : 0.106    recall@5 : 0.0702    recall@1 : 0.0145    mrr@50 : 0.0441    mrr@40 : 0.0436    mrr@20 : 0.0417    mrr@10 : 0.0386    mrr@5 : 0.0338    mrr@1 : 0.0145    ndcg@50 : 0.081    ndcg@40 : 0.0772    ndcg@20 : 0.0657    ndcg@10 : 0.0544    ndcg@5 : 0.0428    ndcg@1 : 0.0145    precision@50 : 0.0046    precision@40 : 0.0052    precision@20 : 0.0075    precision@10 : 0.0106    precision@5 : 0.014    precision@1 : 0.0145
+Fri 29 Nov 2024 15:38:33 INFO  epoch 112 training [time: 18.34s, train loss: 1379.6014]
+Fri 29 Nov 2024 15:38:33 INFO  epoch 112 evaluating [time: 0.32s, valid_score: 0.066400]
+Fri 29 Nov 2024 15:38:33 INFO  valid result: 
+recall@50 : 0.2272    recall@40 : 0.2078    recall@20 : 0.1517    recall@10 : 0.1063    recall@5 : 0.0701    recall@1 : 0.0154    mrr@50 : 0.0447    mrr@40 : 0.0443    mrr@20 : 0.0423    mrr@10 : 0.0392    mrr@5 : 0.0344    mrr@1 : 0.0154    ndcg@50 : 0.0813    ndcg@40 : 0.0778    ndcg@20 : 0.0664    ndcg@10 : 0.0549    ndcg@5 : 0.0432    ndcg@1 : 0.0154    precision@50 : 0.0045    precision@40 : 0.0052    precision@20 : 0.0076    precision@10 : 0.0106    precision@5 : 0.014    precision@1 : 0.0154
+Fri 29 Nov 2024 15:39:02 INFO  epoch 113 training [time: 29.12s, train loss: 1378.3101]
+Fri 29 Nov 2024 15:39:03 INFO  epoch 113 evaluating [time: 0.65s, valid_score: 0.066300]
+Fri 29 Nov 2024 15:39:03 INFO  valid result: 
+recall@50 : 0.2272    recall@40 : 0.2057    recall@20 : 0.1509    recall@10 : 0.1064    recall@5 : 0.0702    recall@1 : 0.0152    mrr@50 : 0.0448    mrr@40 : 0.0443    mrr@20 : 0.0424    mrr@10 : 0.0393    mrr@5 : 0.0345    mrr@1 : 0.0152    ndcg@50 : 0.0813    ndcg@40 : 0.0774    ndcg@20 : 0.0663    ndcg@10 : 0.055    ndcg@5 : 0.0433    ndcg@1 : 0.0152    precision@50 : 0.0045    precision@40 : 0.0051    precision@20 : 0.0075    precision@10 : 0.0106    precision@5 : 0.014    precision@1 : 0.0152
+Fri 29 Nov 2024 15:39:50 INFO  epoch 114 training [time: 47.12s, train loss: 1375.5612]
+Fri 29 Nov 2024 15:39:53 INFO  epoch 114 evaluating [time: 2.56s, valid_score: 0.066000]
+Fri 29 Nov 2024 15:39:53 INFO  valid result: 
+recall@50 : 0.2282    recall@40 : 0.2089    recall@20 : 0.1516    recall@10 : 0.1053    recall@5 : 0.0699    recall@1 : 0.0146    mrr@50 : 0.0443    mrr@40 : 0.0439    mrr@20 : 0.0419    mrr@10 : 0.0387    mrr@5 : 0.0339    mrr@1 : 0.0146    ndcg@50 : 0.0812    ndcg@40 : 0.0777    ndcg@20 : 0.066    ndcg@10 : 0.0543    ndcg@5 : 0.0428    ndcg@1 : 0.0146    precision@50 : 0.0046    precision@40 : 0.0052    precision@20 : 0.0076    precision@10 : 0.0105    precision@5 : 0.014    precision@1 : 0.0146
+Fri 29 Nov 2024 15:40:11 INFO  epoch 115 training [time: 18.32s, train loss: 1375.3191]
+Fri 29 Nov 2024 15:40:11 INFO  epoch 115 evaluating [time: 0.32s, valid_score: 0.066700]
+Fri 29 Nov 2024 15:40:11 INFO  valid result: 
+recall@50 : 0.2287    recall@40 : 0.2077    recall@20 : 0.1538    recall@10 : 0.1066    recall@5 : 0.0711    recall@1 : 0.0145    mrr@50 : 0.0446    mrr@40 : 0.0441    mrr@20 : 0.0422    mrr@10 : 0.039    mrr@5 : 0.0343    mrr@1 : 0.0145    ndcg@50 : 0.0815    ndcg@40 : 0.0777    ndcg@20 : 0.0667    ndcg@10 : 0.0548    ndcg@5 : 0.0434    ndcg@1 : 0.0145    precision@50 : 0.0046    precision@40 : 0.0052    precision@20 : 0.0077    precision@10 : 0.0107    precision@5 : 0.0142    precision@1 : 0.0145
+Fri 29 Nov 2024 15:40:13 INFO  Saving current: saved/GSAU-Nov-29-2024_15-02-29.pth
+Fri 29 Nov 2024 15:40:31 INFO  epoch 116 training [time: 18.28s, train loss: 1373.4764]
+Fri 29 Nov 2024 15:40:31 INFO  epoch 116 evaluating [time: 0.32s, valid_score: 0.066200]
+Fri 29 Nov 2024 15:40:31 INFO  valid result: 
+recall@50 : 0.2281    recall@40 : 0.2093    recall@20 : 0.1519    recall@10 : 0.1067    recall@5 : 0.0712    recall@1 : 0.0147    mrr@50 : 0.0444    mrr@40 : 0.044    mrr@20 : 0.042    mrr@10 : 0.0389    mrr@5 : 0.0341    mrr@1 : 0.0147    ndcg@50 : 0.0813    ndcg@40 : 0.0779    ndcg@20 : 0.0662    ndcg@10 : 0.0548    ndcg@5 : 0.0433    ndcg@1 : 0.0147    precision@50 : 0.0046    precision@40 : 0.0052    precision@20 : 0.0076    precision@10 : 0.0107    precision@5 : 0.0142    precision@1 : 0.0147
+Fri 29 Nov 2024 15:40:49 INFO  epoch 117 training [time: 18.29s, train loss: 1373.1006]
+Fri 29 Nov 2024 15:40:50 INFO  epoch 117 evaluating [time: 0.32s, valid_score: 0.066200]
+Fri 29 Nov 2024 15:40:50 INFO  valid result: 
+recall@50 : 0.2282    recall@40 : 0.2094    recall@20 : 0.1521    recall@10 : 0.1064    recall@5 : 0.071    recall@1 : 0.0146    mrr@50 : 0.0444    mrr@40 : 0.044    mrr@20 : 0.042    mrr@10 : 0.0388    mrr@5 : 0.0341    mrr@1 : 0.0146    ndcg@50 : 0.0813    ndcg@40 : 0.0779    ndcg@20 : 0.0662    ndcg@10 : 0.0546    ndcg@5 : 0.0432    ndcg@1 : 0.0146    precision@50 : 0.0046    precision@40 : 0.0052    precision@20 : 0.0076    precision@10 : 0.0106    precision@5 : 0.0142    precision@1 : 0.0146
+Fri 29 Nov 2024 15:41:08 INFO  epoch 118 training [time: 18.30s, train loss: 1370.2454]
+Fri 29 Nov 2024 15:41:09 INFO  epoch 118 evaluating [time: 0.45s, valid_score: 0.066500]
+Fri 29 Nov 2024 15:41:09 INFO  valid result: 
+recall@50 : 0.2287    recall@40 : 0.2084    recall@20 : 0.153    recall@10 : 0.107    recall@5 : 0.0717    recall@1 : 0.0145    mrr@50 : 0.0445    mrr@40 : 0.0441    mrr@20 : 0.0422    mrr@10 : 0.039    mrr@5 : 0.0343    mrr@1 : 0.0145    ndcg@50 : 0.0815    ndcg@40 : 0.0778    ndcg@20 : 0.0665    ndcg@10 : 0.0549    ndcg@5 : 0.0435    ndcg@1 : 0.0145    precision@50 : 0.0046    precision@40 : 0.0052    precision@20 : 0.0076    precision@10 : 0.0107    precision@5 : 0.0143    precision@1 : 0.0145
+Fri 29 Nov 2024 15:41:27 INFO  epoch 119 training [time: 18.29s, train loss: 1369.0586]
+Fri 29 Nov 2024 15:41:27 INFO  epoch 119 evaluating [time: 0.32s, valid_score: 0.066900]
+Fri 29 Nov 2024 15:41:27 INFO  valid result: 
+recall@50 : 0.228    recall@40 : 0.2088    recall@20 : 0.154    recall@10 : 0.1071    recall@5 : 0.0719    recall@1 : 0.0144    mrr@50 : 0.0447    mrr@40 : 0.0442    mrr@20 : 0.0423    mrr@10 : 0.0391    mrr@5 : 0.0344    mrr@1 : 0.0144    ndcg@50 : 0.0815    ndcg@40 : 0.078    ndcg@20 : 0.0669    ndcg@10 : 0.0551    ndcg@5 : 0.0437    ndcg@1 : 0.0144    precision@50 : 0.0046    precision@40 : 0.0052    precision@20 : 0.0077    precision@10 : 0.0107    precision@5 : 0.0144    precision@1 : 0.0144
+Fri 29 Nov 2024 15:41:27 INFO  Saving current: saved/GSAU-Nov-29-2024_15-02-29.pth
+Fri 29 Nov 2024 15:41:45 INFO  epoch 120 training [time: 18.28s, train loss: 1366.8856]
+Fri 29 Nov 2024 15:41:46 INFO  epoch 120 evaluating [time: 0.32s, valid_score: 0.066500]
+Fri 29 Nov 2024 15:41:46 INFO  valid result: 
+recall@50 : 0.2286    recall@40 : 0.2086    recall@20 : 0.1526    recall@10 : 0.108    recall@5 : 0.0718    recall@1 : 0.0144    mrr@50 : 0.0445    mrr@40 : 0.0441    mrr@20 : 0.0422    mrr@10 : 0.0391    mrr@5 : 0.0343    mrr@1 : 0.0144    ndcg@50 : 0.0815    ndcg@40 : 0.0779    ndcg@20 : 0.0665    ndcg@10 : 0.0552    ndcg@5 : 0.0435    ndcg@1 : 0.0144    precision@50 : 0.0046    precision@40 : 0.0052    precision@20 : 0.0076    precision@10 : 0.0108    precision@5 : 0.0144    precision@1 : 0.0144
+Fri 29 Nov 2024 15:42:04 INFO  epoch 121 training [time: 18.31s, train loss: 1366.5287]
+Fri 29 Nov 2024 15:42:04 INFO  epoch 121 evaluating [time: 0.32s, valid_score: 0.066800]
+Fri 29 Nov 2024 15:42:04 INFO  valid result: 
+recall@50 : 0.2279    recall@40 : 0.2077    recall@20 : 0.1545    recall@10 : 0.108    recall@5 : 0.0717    recall@1 : 0.0139    mrr@50 : 0.0443    mrr@40 : 0.0439    mrr@20 : 0.042    mrr@10 : 0.0388    mrr@5 : 0.034    mrr@1 : 0.0139    ndcg@50 : 0.0813    ndcg@40 : 0.0776    ndcg@20 : 0.0668    ndcg@10 : 0.055    ndcg@5 : 0.0433    ndcg@1 : 0.0139    precision@50 : 0.0046    precision@40 : 0.0052    precision@20 : 0.0077    precision@10 : 0.0108    precision@5 : 0.0143    precision@1 : 0.0139
+Fri 29 Nov 2024 15:42:23 INFO  epoch 122 training [time: 18.28s, train loss: 1363.9764]
+Fri 29 Nov 2024 15:42:23 INFO  epoch 122 evaluating [time: 0.32s, valid_score: 0.066600]
+Fri 29 Nov 2024 15:42:23 INFO  valid result: 
+recall@50 : 0.2285    recall@40 : 0.2089    recall@20 : 0.1541    recall@10 : 0.1063    recall@5 : 0.0718    recall@1 : 0.0139    mrr@50 : 0.0443    mrr@40 : 0.0438    mrr@20 : 0.0419    mrr@10 : 0.0386    mrr@5 : 0.034    mrr@1 : 0.0139    ndcg@50 : 0.0813    ndcg@40 : 0.0778    ndcg@20 : 0.0666    ndcg@10 : 0.0545    ndcg@5 : 0.0434    ndcg@1 : 0.0139    precision@50 : 0.0046    precision@40 : 0.0052    precision@20 : 0.0077    precision@10 : 0.0106    precision@5 : 0.0144    precision@1 : 0.0139
+Fri 29 Nov 2024 15:42:41 INFO  epoch 123 training [time: 18.31s, train loss: 1363.4899]
+Fri 29 Nov 2024 15:42:42 INFO  epoch 123 evaluating [time: 0.32s, valid_score: 0.066700]
+Fri 29 Nov 2024 15:42:42 INFO  valid result: 
+recall@50 : 0.2289    recall@40 : 0.2078    recall@20 : 0.1541    recall@10 : 0.1086    recall@5 : 0.0719    recall@1 : 0.0134    mrr@50 : 0.0443    mrr@40 : 0.0439    mrr@20 : 0.042    mrr@10 : 0.0389    mrr@5 : 0.034    mrr@1 : 0.0134    ndcg@50 : 0.0815    ndcg@40 : 0.0776    ndcg@20 : 0.0667    ndcg@10 : 0.0552    ndcg@5 : 0.0434    ndcg@1 : 0.0134    precision@50 : 0.0046    precision@40 : 0.0052    precision@20 : 0.0077    precision@10 : 0.0109    precision@5 : 0.0144    precision@1 : 0.0134
+Fri 29 Nov 2024 15:43:00 INFO  epoch 124 training [time: 18.29s, train loss: 1362.0543]
+Fri 29 Nov 2024 15:43:00 INFO  epoch 124 evaluating [time: 0.32s, valid_score: 0.066700]
+Fri 29 Nov 2024 15:43:00 INFO  valid result: 
+recall@50 : 0.2299    recall@40 : 0.2095    recall@20 : 0.1537    recall@10 : 0.108    recall@5 : 0.0726    recall@1 : 0.0142    mrr@50 : 0.0446    mrr@40 : 0.0441    mrr@20 : 0.0422    mrr@10 : 0.039    mrr@5 : 0.0343    mrr@1 : 0.0142    ndcg@50 : 0.0818    ndcg@40 : 0.0781    ndcg@20 : 0.0667    ndcg@10 : 0.0552    ndcg@5 : 0.0438    ndcg@1 : 0.0142    precision@50 : 0.0046    precision@40 : 0.0052    precision@20 : 0.0077    precision@10 : 0.0108    precision@5 : 0.0145    precision@1 : 0.0142
+Fri 29 Nov 2024 15:43:19 INFO  epoch 125 training [time: 18.40s, train loss: 1360.5251]
+Fri 29 Nov 2024 15:43:19 INFO  epoch 125 evaluating [time: 0.32s, valid_score: 0.067100]
+Fri 29 Nov 2024 15:43:19 INFO  valid result: 
+recall@50 : 0.2295    recall@40 : 0.2096    recall@20 : 0.1548    recall@10 : 0.1081    recall@5 : 0.0716    recall@1 : 0.0143    mrr@50 : 0.0447    mrr@40 : 0.0443    mrr@20 : 0.0424    mrr@10 : 0.0392    mrr@5 : 0.0343    mrr@1 : 0.0143    ndcg@50 : 0.0819    ndcg@40 : 0.0783    ndcg@20 : 0.0671    ndcg@10 : 0.0553    ndcg@5 : 0.0435    ndcg@1 : 0.0143    precision@50 : 0.0046    precision@40 : 0.0052    precision@20 : 0.0077    precision@10 : 0.0108    precision@5 : 0.0143    precision@1 : 0.0143
+Fri 29 Nov 2024 15:43:19 INFO  Saving current: saved/GSAU-Nov-29-2024_15-02-29.pth
+Fri 29 Nov 2024 15:43:37 INFO  epoch 126 training [time: 18.30s, train loss: 1359.8338]
+Fri 29 Nov 2024 15:43:38 INFO  epoch 126 evaluating [time: 0.32s, valid_score: 0.067100]
+Fri 29 Nov 2024 15:43:38 INFO  valid result: 
+recall@50 : 0.2294    recall@40 : 0.209    recall@20 : 0.154    recall@10 : 0.108    recall@5 : 0.073    recall@1 : 0.0142    mrr@50 : 0.0449    mrr@40 : 0.0445    mrr@20 : 0.0425    mrr@10 : 0.0394    mrr@5 : 0.0347    mrr@1 : 0.0142    ndcg@50 : 0.082    ndcg@40 : 0.0783    ndcg@20 : 0.0671    ndcg@10 : 0.0555    ndcg@5 : 0.0442    ndcg@1 : 0.0142    precision@50 : 0.0046    precision@40 : 0.0052    precision@20 : 0.0077    precision@10 : 0.0108    precision@5 : 0.0146    precision@1 : 0.0142
+Fri 29 Nov 2024 15:43:38 INFO  Saving current: saved/GSAU-Nov-29-2024_15-02-29.pth
+Fri 29 Nov 2024 15:43:56 INFO  epoch 127 training [time: 18.26s, train loss: 1358.1360]
+Fri 29 Nov 2024 15:43:56 INFO  epoch 127 evaluating [time: 0.32s, valid_score: 0.066800]
+Fri 29 Nov 2024 15:43:56 INFO  valid result: 
+recall@50 : 0.2303    recall@40 : 0.2094    recall@20 : 0.1545    recall@10 : 0.1077    recall@5 : 0.072    recall@1 : 0.0139    mrr@50 : 0.0444    mrr@40 : 0.044    mrr@20 : 0.0421    mrr@10 : 0.0389    mrr@5 : 0.0341    mrr@1 : 0.0139    ndcg@50 : 0.0818    ndcg@40 : 0.078    ndcg@20 : 0.0668    ndcg@10 : 0.055    ndcg@5 : 0.0435    ndcg@1 : 0.0139    precision@50 : 0.0046    precision@40 : 0.0052    precision@20 : 0.0077    precision@10 : 0.0108    precision@5 : 0.0144    precision@1 : 0.0139
+Fri 29 Nov 2024 15:44:15 INFO  epoch 128 training [time: 18.27s, train loss: 1356.5396]
+Fri 29 Nov 2024 15:44:15 INFO  epoch 128 evaluating [time: 0.35s, valid_score: 0.066800]
+Fri 29 Nov 2024 15:44:15 INFO  valid result: 
+recall@50 : 0.2281    recall@40 : 0.2084    recall@20 : 0.1536    recall@10 : 0.1081    recall@5 : 0.0725    recall@1 : 0.0138    mrr@50 : 0.0446    mrr@40 : 0.0442    mrr@20 : 0.0422    mrr@10 : 0.0391    mrr@5 : 0.0344    mrr@1 : 0.0138    ndcg@50 : 0.0815    ndcg@40 : 0.078    ndcg@20 : 0.0668    ndcg@10 : 0.0553    ndcg@5 : 0.0438    ndcg@1 : 0.0138    precision@50 : 0.0046    precision@40 : 0.0052    precision@20 : 0.0077    precision@10 : 0.0108    precision@5 : 0.0145    precision@1 : 0.0138
+Fri 29 Nov 2024 15:44:33 INFO  epoch 129 training [time: 18.32s, train loss: 1355.6808]
+Fri 29 Nov 2024 15:44:34 INFO  epoch 129 evaluating [time: 0.39s, valid_score: 0.066400]
+Fri 29 Nov 2024 15:44:34 INFO  valid result: 
+recall@50 : 0.2288    recall@40 : 0.2091    recall@20 : 0.1537    recall@10 : 0.1079    recall@5 : 0.0724    recall@1 : 0.0129    mrr@50 : 0.0441    mrr@40 : 0.0437    mrr@20 : 0.0417    mrr@10 : 0.0386    mrr@5 : 0.0339    mrr@1 : 0.0129    ndcg@50 : 0.0813    ndcg@40 : 0.0777    ndcg@20 : 0.0664    ndcg@10 : 0.0548    ndcg@5 : 0.0434    ndcg@1 : 0.0129    precision@50 : 0.0046    precision@40 : 0.0052    precision@20 : 0.0077    precision@10 : 0.0108    precision@5 : 0.0145    precision@1 : 0.0129
+Fri 29 Nov 2024 15:44:52 INFO  epoch 130 training [time: 18.29s, train loss: 1353.3678]
+Fri 29 Nov 2024 15:44:52 INFO  epoch 130 evaluating [time: 0.32s, valid_score: 0.066800]
+Fri 29 Nov 2024 15:44:52 INFO  valid result: 
+recall@50 : 0.2295    recall@40 : 0.2108    recall@20 : 0.1549    recall@10 : 0.1087    recall@5 : 0.0727    recall@1 : 0.0134    mrr@50 : 0.0443    mrr@40 : 0.0439    mrr@20 : 0.0419    mrr@10 : 0.0388    mrr@5 : 0.034    mrr@1 : 0.0134    ndcg@50 : 0.0816    ndcg@40 : 0.0782    ndcg@20 : 0.0668    ndcg@10 : 0.0552    ndcg@5 : 0.0435    ndcg@1 : 0.0134    precision@50 : 0.0046    precision@40 : 0.0053    precision@20 : 0.0077    precision@10 : 0.0109    precision@5 : 0.0145    precision@1 : 0.0134
+Fri 29 Nov 2024 15:45:11 INFO  epoch 131 training [time: 18.28s, train loss: 1352.7060]
+Fri 29 Nov 2024 15:45:11 INFO  epoch 131 evaluating [time: 0.32s, valid_score: 0.066200]
+Fri 29 Nov 2024 15:45:11 INFO  valid result: 
+recall@50 : 0.2296    recall@40 : 0.209    recall@20 : 0.1541    recall@10 : 0.1089    recall@5 : 0.0727    recall@1 : 0.0124    mrr@50 : 0.0438    mrr@40 : 0.0433    mrr@20 : 0.0414    mrr@10 : 0.0383    mrr@5 : 0.0335    mrr@1 : 0.0124    ndcg@50 : 0.0812    ndcg@40 : 0.0774    ndcg@20 : 0.0662    ndcg@10 : 0.0548    ndcg@5 : 0.0432    ndcg@1 : 0.0124    precision@50 : 0.0046    precision@40 : 0.0052    precision@20 : 0.0077    precision@10 : 0.0109    precision@5 : 0.0145    precision@1 : 0.0124
+Fri 29 Nov 2024 15:45:29 INFO  epoch 132 training [time: 18.28s, train loss: 1351.6791]
+Fri 29 Nov 2024 15:45:30 INFO  epoch 132 evaluating [time: 0.32s, valid_score: 0.066800]
+Fri 29 Nov 2024 15:45:30 INFO  valid result: 
+recall@50 : 0.2305    recall@40 : 0.2105    recall@20 : 0.1543    recall@10 : 0.1094    recall@5 : 0.0726    recall@1 : 0.0131    mrr@50 : 0.0445    mrr@40 : 0.044    mrr@20 : 0.042    mrr@10 : 0.039    mrr@5 : 0.0341    mrr@1 : 0.0131    ndcg@50 : 0.0819    ndcg@40 : 0.0783    ndcg@20 : 0.0668    ndcg@10 : 0.0555    ndcg@5 : 0.0436    ndcg@1 : 0.0131    precision@50 : 0.0046    precision@40 : 0.0053    precision@20 : 0.0077    precision@10 : 0.0109    precision@5 : 0.0145    precision@1 : 0.0131
+Fri 29 Nov 2024 15:45:48 INFO  epoch 133 training [time: 18.27s, train loss: 1350.4269]
+Fri 29 Nov 2024 15:45:48 INFO  epoch 133 evaluating [time: 0.32s, valid_score: 0.067300]
+Fri 29 Nov 2024 15:45:48 INFO  valid result: 
+recall@50 : 0.231    recall@40 : 0.2111    recall@20 : 0.1561    recall@10 : 0.1104    recall@5 : 0.0728    recall@1 : 0.0132    mrr@50 : 0.0445    mrr@40 : 0.0441    mrr@20 : 0.0422    mrr@10 : 0.0391    mrr@5 : 0.0341    mrr@1 : 0.0132    ndcg@50 : 0.0821    ndcg@40 : 0.0785    ndcg@20 : 0.0673    ndcg@10 : 0.0558    ndcg@5 : 0.0437    ndcg@1 : 0.0132    precision@50 : 0.0046    precision@40 : 0.0053    precision@20 : 0.0078    precision@10 : 0.011    precision@5 : 0.0146    precision@1 : 0.0132
+Fri 29 Nov 2024 15:45:48 INFO  Saving current: saved/GSAU-Nov-29-2024_15-02-29.pth
+Fri 29 Nov 2024 15:46:07 INFO  epoch 134 training [time: 18.49s, train loss: 1349.0956]
+Fri 29 Nov 2024 15:46:07 INFO  epoch 134 evaluating [time: 0.32s, valid_score: 0.067200]
+Fri 29 Nov 2024 15:46:07 INFO  valid result: 
+recall@50 : 0.231    recall@40 : 0.211    recall@20 : 0.1559    recall@10 : 0.1101    recall@5 : 0.0724    recall@1 : 0.0134    mrr@50 : 0.0445    mrr@40 : 0.044    mrr@20 : 0.0421    mrr@10 : 0.039    mrr@5 : 0.034    mrr@1 : 0.0134    ndcg@50 : 0.082    ndcg@40 : 0.0784    ndcg@20 : 0.0672    ndcg@10 : 0.0556    ndcg@5 : 0.0435    ndcg@1 : 0.0134    precision@50 : 0.0046    precision@40 : 0.0053    precision@20 : 0.0078    precision@10 : 0.011    precision@5 : 0.0145    precision@1 : 0.0134
+Fri 29 Nov 2024 15:46:25 INFO  epoch 135 training [time: 18.28s, train loss: 1347.2954]
+Fri 29 Nov 2024 15:46:26 INFO  epoch 135 evaluating [time: 0.32s, valid_score: 0.067000]
+Fri 29 Nov 2024 15:46:26 INFO  valid result: 
+recall@50 : 0.2314    recall@40 : 0.2106    recall@20 : 0.1556    recall@10 : 0.1096    recall@5 : 0.0728    recall@1 : 0.013    mrr@50 : 0.0444    mrr@40 : 0.0439    mrr@20 : 0.042    mrr@10 : 0.0388    mrr@5 : 0.0339    mrr@1 : 0.013    ndcg@50 : 0.082    ndcg@40 : 0.0782    ndcg@20 : 0.067    ndcg@10 : 0.0554    ndcg@5 : 0.0436    ndcg@1 : 0.013    precision@50 : 0.0046    precision@40 : 0.0053    precision@20 : 0.0078    precision@10 : 0.011    precision@5 : 0.0146    precision@1 : 0.013
+Fri 29 Nov 2024 15:46:44 INFO  epoch 136 training [time: 18.28s, train loss: 1347.3198]
+Fri 29 Nov 2024 15:46:44 INFO  epoch 136 evaluating [time: 0.32s, valid_score: 0.067100]
+Fri 29 Nov 2024 15:46:44 INFO  valid result: 
+recall@50 : 0.2313    recall@40 : 0.2109    recall@20 : 0.1556    recall@10 : 0.1097    recall@5 : 0.0734    recall@1 : 0.0128    mrr@50 : 0.0444    mrr@40 : 0.0439    mrr@20 : 0.042    mrr@10 : 0.0389    mrr@5 : 0.034    mrr@1 : 0.0128    ndcg@50 : 0.082    ndcg@40 : 0.0783    ndcg@20 : 0.0671    ndcg@10 : 0.0555    ndcg@5 : 0.0438    ndcg@1 : 0.0128    precision@50 : 0.0046    precision@40 : 0.0053    precision@20 : 0.0078    precision@10 : 0.011    precision@5 : 0.0147    precision@1 : 0.0128
+Fri 29 Nov 2024 15:47:02 INFO  epoch 137 training [time: 18.30s, train loss: 1343.7235]
+Fri 29 Nov 2024 15:47:03 INFO  epoch 137 evaluating [time: 0.32s, valid_score: 0.067200]
+Fri 29 Nov 2024 15:47:03 INFO  valid result: 
+recall@50 : 0.2308    recall@40 : 0.2103    recall@20 : 0.1569    recall@10 : 0.1099    recall@5 : 0.0728    recall@1 : 0.0126    mrr@50 : 0.0442    mrr@40 : 0.0437    mrr@20 : 0.0418    mrr@10 : 0.0386    mrr@5 : 0.0337    mrr@1 : 0.0126    ndcg@50 : 0.0818    ndcg@40 : 0.0781    ndcg@20 : 0.0672    ndcg@10 : 0.0553    ndcg@5 : 0.0433    ndcg@1 : 0.0126    precision@50 : 0.0046    precision@40 : 0.0053    precision@20 : 0.0078    precision@10 : 0.011    precision@5 : 0.0146    precision@1 : 0.0126
+Fri 29 Nov 2024 15:47:21 INFO  epoch 138 training [time: 18.30s, train loss: 1344.3983]
+Fri 29 Nov 2024 15:47:21 INFO  epoch 138 evaluating [time: 0.32s, valid_score: 0.067100]
+Fri 29 Nov 2024 15:47:21 INFO  valid result: 
+recall@50 : 0.2312    recall@40 : 0.2109    recall@20 : 0.1565    recall@10 : 0.11    recall@5 : 0.0737    recall@1 : 0.0126    mrr@50 : 0.0441    mrr@40 : 0.0437    mrr@20 : 0.0418    mrr@10 : 0.0386    mrr@5 : 0.0338    mrr@1 : 0.0126    ndcg@50 : 0.0818    ndcg@40 : 0.0781    ndcg@20 : 0.0671    ndcg@10 : 0.0554    ndcg@5 : 0.0437    ndcg@1 : 0.0126    precision@50 : 0.0046    precision@40 : 0.0053    precision@20 : 0.0078    precision@10 : 0.011    precision@5 : 0.0147    precision@1 : 0.0126
+Fri 29 Nov 2024 15:47:40 INFO  epoch 139 training [time: 18.29s, train loss: 1343.4138]
+Fri 29 Nov 2024 15:47:40 INFO  epoch 139 evaluating [time: 0.32s, valid_score: 0.067400]
+Fri 29 Nov 2024 15:47:40 INFO  valid result: 
+recall@50 : 0.2328    recall@40 : 0.2117    recall@20 : 0.1569    recall@10 : 0.1102    recall@5 : 0.0735    recall@1 : 0.0128    mrr@50 : 0.0445    mrr@40 : 0.0441    mrr@20 : 0.0422    mrr@10 : 0.039    mrr@5 : 0.0341    mrr@1 : 0.0128    ndcg@50 : 0.0824    ndcg@40 : 0.0786    ndcg@20 : 0.0674    ndcg@10 : 0.0557    ndcg@5 : 0.0438    ndcg@1 : 0.0128    precision@50 : 0.0047    precision@40 : 0.0053    precision@20 : 0.0078    precision@10 : 0.011    precision@5 : 0.0147    precision@1 : 0.0128
+Fri 29 Nov 2024 15:47:40 INFO  Saving current: saved/GSAU-Nov-29-2024_15-02-29.pth
+Fri 29 Nov 2024 15:47:58 INFO  epoch 140 training [time: 18.26s, train loss: 1341.7733]
+Fri 29 Nov 2024 15:47:59 INFO  epoch 140 evaluating [time: 0.32s, valid_score: 0.067100]
+Fri 29 Nov 2024 15:47:59 INFO  valid result: 
+recall@50 : 0.2325    recall@40 : 0.2124    recall@20 : 0.1556    recall@10 : 0.1104    recall@5 : 0.0741    recall@1 : 0.0126    mrr@50 : 0.0445    mrr@40 : 0.044    mrr@20 : 0.042    mrr@10 : 0.0389    mrr@5 : 0.0341    mrr@1 : 0.0126    ndcg@50 : 0.0823    ndcg@40 : 0.0787    ndcg@20 : 0.0671    ndcg@10 : 0.0557    ndcg@5 : 0.044    ndcg@1 : 0.0126    precision@50 : 0.0046    precision@40 : 0.0053    precision@20 : 0.0078    precision@10 : 0.011    precision@5 : 0.0148    precision@1 : 0.0126
+Fri 29 Nov 2024 15:48:17 INFO  epoch 141 training [time: 18.29s, train loss: 1340.4287]
+Fri 29 Nov 2024 15:48:17 INFO  epoch 141 evaluating [time: 0.32s, valid_score: 0.066800]
+Fri 29 Nov 2024 15:48:17 INFO  valid result: 
+recall@50 : 0.2321    recall@40 : 0.2116    recall@20 : 0.1551    recall@10 : 0.11    recall@5 : 0.0738    recall@1 : 0.0122    mrr@50 : 0.0443    mrr@40 : 0.0438    mrr@20 : 0.0418    mrr@10 : 0.0388    mrr@5 : 0.0339    mrr@1 : 0.0122    ndcg@50 : 0.0821    ndcg@40 : 0.0784    ndcg@20 : 0.0668    ndcg@10 : 0.0555    ndcg@5 : 0.0438    ndcg@1 : 0.0122    precision@50 : 0.0046    precision@40 : 0.0053    precision@20 : 0.0078    precision@10 : 0.011    precision@5 : 0.0148    precision@1 : 0.0122
+Fri 29 Nov 2024 15:48:36 INFO  epoch 142 training [time: 18.28s, train loss: 1338.5353]
+Fri 29 Nov 2024 15:48:36 INFO  epoch 142 evaluating [time: 0.32s, valid_score: 0.066900]
+Fri 29 Nov 2024 15:48:36 INFO  valid result: 
+recall@50 : 0.2321    recall@40 : 0.2106    recall@20 : 0.1559    recall@10 : 0.1098    recall@5 : 0.0733    recall@1 : 0.0125    mrr@50 : 0.0442    mrr@40 : 0.0437    mrr@20 : 0.0418    mrr@10 : 0.0386    mrr@5 : 0.0338    mrr@1 : 0.0125    ndcg@50 : 0.082    ndcg@40 : 0.0781    ndcg@20 : 0.0669    ndcg@10 : 0.0553    ndcg@5 : 0.0436    ndcg@1 : 0.0125    precision@50 : 0.0046    precision@40 : 0.0053    precision@20 : 0.0078    precision@10 : 0.011    precision@5 : 0.0147    precision@1 : 0.0125
+Fri 29 Nov 2024 15:48:54 INFO  epoch 143 training [time: 18.27s, train loss: 1338.1320]
+Fri 29 Nov 2024 15:48:55 INFO  epoch 143 evaluating [time: 0.32s, valid_score: 0.067100]
+Fri 29 Nov 2024 15:48:55 INFO  valid result: 
+recall@50 : 0.2318    recall@40 : 0.2122    recall@20 : 0.1557    recall@10 : 0.1108    recall@5 : 0.0737    recall@1 : 0.0127    mrr@50 : 0.0444    mrr@40 : 0.044    mrr@20 : 0.042    mrr@10 : 0.0389    mrr@5 : 0.034    mrr@1 : 0.0127    ndcg@50 : 0.0822    ndcg@40 : 0.0786    ndcg@20 : 0.0671    ndcg@10 : 0.0558    ndcg@5 : 0.0438    ndcg@1 : 0.0127    precision@50 : 0.0046    precision@40 : 0.0053    precision@20 : 0.0078    precision@10 : 0.0111    precision@5 : 0.0147    precision@1 : 0.0127
+Fri 29 Nov 2024 15:49:13 INFO  epoch 144 training [time: 18.29s, train loss: 1337.3586]
+Fri 29 Nov 2024 15:49:13 INFO  epoch 144 evaluating [time: 0.32s, valid_score: 0.066800]
+Fri 29 Nov 2024 15:49:13 INFO  valid result: 
+recall@50 : 0.2311    recall@40 : 0.2108    recall@20 : 0.1559    recall@10 : 0.1109    recall@5 : 0.0734    recall@1 : 0.0123    mrr@50 : 0.044    mrr@40 : 0.0435    mrr@20 : 0.0416    mrr@10 : 0.0385    mrr@5 : 0.0335    mrr@1 : 0.0123    ndcg@50 : 0.0817    ndcg@40 : 0.078    ndcg@20 : 0.0668    ndcg@10 : 0.0555    ndcg@5 : 0.0434    ndcg@1 : 0.0123    precision@50 : 0.0046    precision@40 : 0.0053    precision@20 : 0.0078    precision@10 : 0.0111    precision@5 : 0.0147    precision@1 : 0.0123
+Fri 29 Nov 2024 15:49:31 INFO  epoch 145 training [time: 18.28s, train loss: 1337.0995]
+Fri 29 Nov 2024 15:49:32 INFO  epoch 145 evaluating [time: 0.32s, valid_score: 0.066600]
+Fri 29 Nov 2024 15:49:32 INFO  valid result: 
+recall@50 : 0.2304    recall@40 : 0.2101    recall@20 : 0.1552    recall@10 : 0.1114    recall@5 : 0.0734    recall@1 : 0.0115    mrr@50 : 0.0439    mrr@40 : 0.0434    mrr@20 : 0.0415    mrr@10 : 0.0385    mrr@5 : 0.0335    mrr@1 : 0.0115    ndcg@50 : 0.0815    ndcg@40 : 0.0778    ndcg@20 : 0.0666    ndcg@10 : 0.0556    ndcg@5 : 0.0433    ndcg@1 : 0.0115    precision@50 : 0.0046    precision@40 : 0.0053    precision@20 : 0.0078    precision@10 : 0.0111    precision@5 : 0.0147    precision@1 : 0.0115
+Fri 29 Nov 2024 15:49:50 INFO  epoch 146 training [time: 18.38s, train loss: 1334.7011]
+Fri 29 Nov 2024 15:49:50 INFO  epoch 146 evaluating [time: 0.32s, valid_score: 0.067200]
+Fri 29 Nov 2024 15:49:50 INFO  valid result: 
+recall@50 : 0.2324    recall@40 : 0.2116    recall@20 : 0.1568    recall@10 : 0.1098    recall@5 : 0.0736    recall@1 : 0.0121    mrr@50 : 0.0442    mrr@40 : 0.0438    mrr@20 : 0.0419    mrr@10 : 0.0387    mrr@5 : 0.0339    mrr@1 : 0.0121    ndcg@50 : 0.0821    ndcg@40 : 0.0784    ndcg@20 : 0.0672    ndcg@10 : 0.0554    ndcg@5 : 0.0437    ndcg@1 : 0.0121    precision@50 : 0.0046    precision@40 : 0.0053    precision@20 : 0.0078    precision@10 : 0.011    precision@5 : 0.0147    precision@1 : 0.0121
+Fri 29 Nov 2024 15:50:09 INFO  epoch 147 training [time: 18.28s, train loss: 1332.8454]
+Fri 29 Nov 2024 15:50:09 INFO  epoch 147 evaluating [time: 0.32s, valid_score: 0.066800]
+Fri 29 Nov 2024 15:50:09 INFO  valid result: 
+recall@50 : 0.2308    recall@40 : 0.2115    recall@20 : 0.1554    recall@10 : 0.1095    recall@5 : 0.0733    recall@1 : 0.0127    mrr@50 : 0.0442    mrr@40 : 0.0437    mrr@20 : 0.0418    mrr@10 : 0.0386    mrr@5 : 0.0338    mrr@1 : 0.0127    ndcg@50 : 0.0818    ndcg@40 : 0.0783    ndcg@20 : 0.0668    ndcg@10 : 0.0553    ndcg@5 : 0.0435    ndcg@1 : 0.0127    precision@50 : 0.0046    precision@40 : 0.0053    precision@20 : 0.0078    precision@10 : 0.011    precision@5 : 0.0147    precision@1 : 0.0127
+Fri 29 Nov 2024 15:50:34 INFO  epoch 148 training [time: 24.65s, train loss: 1333.7381]
+Fri 29 Nov 2024 15:50:34 INFO  epoch 148 evaluating [time: 0.45s, valid_score: 0.067500]
+Fri 29 Nov 2024 15:50:34 INFO  valid result: 
+recall@50 : 0.2315    recall@40 : 0.2113    recall@20 : 0.1571    recall@10 : 0.1117    recall@5 : 0.0742    recall@1 : 0.013    mrr@50 : 0.0445    mrr@40 : 0.0441    mrr@20 : 0.0422    mrr@10 : 0.0391    mrr@5 : 0.0341    mrr@1 : 0.013    ndcg@50 : 0.0822    ndcg@40 : 0.0786    ndcg@20 : 0.0675    ndcg@10 : 0.0561    ndcg@5 : 0.044    ndcg@1 : 0.013    precision@50 : 0.0046    precision@40 : 0.0053    precision@20 : 0.0079    precision@10 : 0.0112    precision@5 : 0.0148    precision@1 : 0.013
+Fri 29 Nov 2024 15:50:34 INFO  Saving current: saved/GSAU-Nov-29-2024_15-02-29.pth
+Fri 29 Nov 2024 15:50:52 INFO  epoch 149 training [time: 18.14s, train loss: 1332.4364]
+Fri 29 Nov 2024 15:50:53 INFO  epoch 149 evaluating [time: 0.43s, valid_score: 0.067600]
+Fri 29 Nov 2024 15:50:53 INFO  valid result: 
+recall@50 : 0.2327    recall@40 : 0.2108    recall@20 : 0.1566    recall@10 : 0.1106    recall@5 : 0.0741    recall@1 : 0.0131    mrr@50 : 0.0449    mrr@40 : 0.0444    mrr@20 : 0.0425    mrr@10 : 0.0393    mrr@5 : 0.0345    mrr@1 : 0.0131    ndcg@50 : 0.0827    ndcg@40 : 0.0787    ndcg@20 : 0.0676    ndcg@10 : 0.0561    ndcg@5 : 0.0443    ndcg@1 : 0.0131    precision@50 : 0.0047    precision@40 : 0.0053    precision@20 : 0.0078    precision@10 : 0.0111    precision@5 : 0.0148    precision@1 : 0.0131
+Fri 29 Nov 2024 15:50:53 INFO  Saving current: saved/GSAU-Nov-29-2024_15-02-29.pth
+Fri 29 Nov 2024 15:51:11 INFO  epoch 150 training [time: 18.29s, train loss: 1330.5249]
+Fri 29 Nov 2024 15:51:12 INFO  epoch 150 evaluating [time: 0.34s, valid_score: 0.067500]
+Fri 29 Nov 2024 15:51:12 INFO  valid result: 
+recall@50 : 0.2321    recall@40 : 0.2118    recall@20 : 0.1574    recall@10 : 0.1113    recall@5 : 0.0731    recall@1 : 0.0123    mrr@50 : 0.0444    mrr@40 : 0.044    mrr@20 : 0.0421    mrr@10 : 0.0389    mrr@5 : 0.0338    mrr@1 : 0.0123    ndcg@50 : 0.0823    ndcg@40 : 0.0786    ndcg@20 : 0.0675    ndcg@10 : 0.0559    ndcg@5 : 0.0435    ndcg@1 : 0.0123    precision@50 : 0.0046    precision@40 : 0.0053    precision@20 : 0.0079    precision@10 : 0.0111    precision@5 : 0.0146    precision@1 : 0.0123
+Fri 29 Nov 2024 15:51:30 INFO  epoch 151 training [time: 18.17s, train loss: 1329.9702]
+Fri 29 Nov 2024 15:51:30 INFO  epoch 151 evaluating [time: 0.39s, valid_score: 0.067400]
+Fri 29 Nov 2024 15:51:30 INFO  valid result: 
+recall@50 : 0.232    recall@40 : 0.2119    recall@20 : 0.1564    recall@10 : 0.1123    recall@5 : 0.0741    recall@1 : 0.0123    mrr@50 : 0.0446    mrr@40 : 0.0441    mrr@20 : 0.0422    mrr@10 : 0.0391    mrr@5 : 0.0341    mrr@1 : 0.0123    ndcg@50 : 0.0824    ndcg@40 : 0.0787    ndcg@20 : 0.0674    ndcg@10 : 0.0563    ndcg@5 : 0.044    ndcg@1 : 0.0123    precision@50 : 0.0046    precision@40 : 0.0053    precision@20 : 0.0078    precision@10 : 0.0112    precision@5 : 0.0148    precision@1 : 0.0123
+Fri 29 Nov 2024 15:51:48 INFO  epoch 152 training [time: 18.19s, train loss: 1329.3069]
+Fri 29 Nov 2024 15:51:49 INFO  epoch 152 evaluating [time: 0.38s, valid_score: 0.067400]
+Fri 29 Nov 2024 15:51:49 INFO  valid result: 
+recall@50 : 0.2312    recall@40 : 0.2108    recall@20 : 0.157    recall@10 : 0.1116    recall@5 : 0.0742    recall@1 : 0.012    mrr@50 : 0.0443    mrr@40 : 0.0439    mrr@20 : 0.042    mrr@10 : 0.0389    mrr@5 : 0.0339    mrr@1 : 0.012    ndcg@50 : 0.0821    ndcg@40 : 0.0784    ndcg@20 : 0.0674    ndcg@10 : 0.056    ndcg@5 : 0.0439    ndcg@1 : 0.012    precision@50 : 0.0046    precision@40 : 0.0053    precision@20 : 0.0079    precision@10 : 0.0112    precision@5 : 0.0148    precision@1 : 0.012
+Fri 29 Nov 2024 15:52:07 INFO  epoch 153 training [time: 18.14s, train loss: 1326.3386]
+Fri 29 Nov 2024 15:52:07 INFO  epoch 153 evaluating [time: 0.44s, valid_score: 0.067200]
+Fri 29 Nov 2024 15:52:07 INFO  valid result: 
+recall@50 : 0.2319    recall@40 : 0.2118    recall@20 : 0.1566    recall@10 : 0.1127    recall@5 : 0.0748    recall@1 : 0.0117    mrr@50 : 0.0442    mrr@40 : 0.0438    mrr@20 : 0.0418    mrr@10 : 0.0388    mrr@5 : 0.0338    mrr@1 : 0.0117    ndcg@50 : 0.0821    ndcg@40 : 0.0785    ndcg@20 : 0.0672    ndcg@10 : 0.0561    ndcg@5 : 0.0439    ndcg@1 : 0.0117    precision@50 : 0.0046    precision@40 : 0.0053    precision@20 : 0.0078    precision@10 : 0.0113    precision@5 : 0.015    precision@1 : 0.0117
+Fri 29 Nov 2024 15:52:26 INFO  epoch 154 training [time: 18.34s, train loss: 1326.9329]
+Fri 29 Nov 2024 15:52:26 INFO  epoch 154 evaluating [time: 0.45s, valid_score: 0.067700]
+Fri 29 Nov 2024 15:52:26 INFO  valid result: 
+recall@50 : 0.2327    recall@40 : 0.2139    recall@20 : 0.157    recall@10 : 0.1121    recall@5 : 0.0741    recall@1 : 0.0125    mrr@50 : 0.0447    mrr@40 : 0.0443    mrr@20 : 0.0423    mrr@10 : 0.0392    mrr@5 : 0.0341    mrr@1 : 0.0125    ndcg@50 : 0.0827    ndcg@40 : 0.0793    ndcg@20 : 0.0677    ndcg@10 : 0.0563    ndcg@5 : 0.044    ndcg@1 : 0.0125    precision@50 : 0.0047    precision@40 : 0.0053    precision@20 : 0.0079    precision@10 : 0.0112    precision@5 : 0.0148    precision@1 : 0.0125
+Fri 29 Nov 2024 15:52:26 INFO  Saving current: saved/GSAU-Nov-29-2024_15-02-29.pth
+Fri 29 Nov 2024 15:52:44 INFO  epoch 155 training [time: 18.13s, train loss: 1325.2179]
+Fri 29 Nov 2024 15:52:45 INFO  epoch 155 evaluating [time: 0.45s, valid_score: 0.067800]
+Fri 29 Nov 2024 15:52:45 INFO  valid result: 
+recall@50 : 0.2323    recall@40 : 0.2121    recall@20 : 0.1575    recall@10 : 0.1134    recall@5 : 0.075    recall@1 : 0.0122    mrr@50 : 0.0447    mrr@40 : 0.0443    mrr@20 : 0.0424    mrr@10 : 0.0394    mrr@5 : 0.0343    mrr@1 : 0.0122    ndcg@50 : 0.0826    ndcg@40 : 0.079    ndcg@20 : 0.0678    ndcg@10 : 0.0568    ndcg@5 : 0.0444    ndcg@1 : 0.0122    precision@50 : 0.0046    precision@40 : 0.0053    precision@20 : 0.0079    precision@10 : 0.0113    precision@5 : 0.015    precision@1 : 0.0122
+Fri 29 Nov 2024 15:52:45 INFO  Saving current: saved/GSAU-Nov-29-2024_15-02-29.pth
+Fri 29 Nov 2024 15:53:03 INFO  epoch 156 training [time: 18.12s, train loss: 1324.3799]
+Fri 29 Nov 2024 15:53:03 INFO  epoch 156 evaluating [time: 0.37s, valid_score: 0.067400]
+Fri 29 Nov 2024 15:53:03 INFO  valid result: 
+recall@50 : 0.2323    recall@40 : 0.2129    recall@20 : 0.1569    recall@10 : 0.1118    recall@5 : 0.0742    recall@1 : 0.0118    mrr@50 : 0.0443    mrr@40 : 0.0439    mrr@20 : 0.042    mrr@10 : 0.0389    mrr@5 : 0.0338    mrr@1 : 0.0118    ndcg@50 : 0.0823    ndcg@40 : 0.0788    ndcg@20 : 0.0674    ndcg@10 : 0.056    ndcg@5 : 0.0438    ndcg@1 : 0.0118    precision@50 : 0.0046    precision@40 : 0.0053    precision@20 : 0.0078    precision@10 : 0.0112    precision@5 : 0.0148    precision@1 : 0.0118
+Fri 29 Nov 2024 15:53:21 INFO  epoch 157 training [time: 18.22s, train loss: 1324.5017]
+Fri 29 Nov 2024 15:53:22 INFO  epoch 157 evaluating [time: 0.32s, valid_score: 0.067300]
+Fri 29 Nov 2024 15:53:22 INFO  valid result: 
+recall@50 : 0.2322    recall@40 : 0.2131    recall@20 : 0.156    recall@10 : 0.1133    recall@5 : 0.0738    recall@1 : 0.0119    mrr@50 : 0.0445    mrr@40 : 0.044    mrr@20 : 0.042    mrr@10 : 0.0391    mrr@5 : 0.0339    mrr@1 : 0.0119    ndcg@50 : 0.0824    ndcg@40 : 0.0789    ndcg@20 : 0.0673    ndcg@10 : 0.0565    ndcg@5 : 0.0438    ndcg@1 : 0.0119    precision@50 : 0.0046    precision@40 : 0.0053    precision@20 : 0.0078    precision@10 : 0.0113    precision@5 : 0.0148    precision@1 : 0.0119
+Fri 29 Nov 2024 15:53:40 INFO  epoch 158 training [time: 18.28s, train loss: 1322.0296]
+Fri 29 Nov 2024 15:53:40 INFO  epoch 158 evaluating [time: 0.32s, valid_score: 0.067400]
+Fri 29 Nov 2024 15:53:40 INFO  valid result: 
+recall@50 : 0.2334    recall@40 : 0.2136    recall@20 : 0.1575    recall@10 : 0.1132    recall@5 : 0.0744    recall@1 : 0.0116    mrr@50 : 0.0442    mrr@40 : 0.0438    mrr@20 : 0.0418    mrr@10 : 0.0388    mrr@5 : 0.0337    mrr@1 : 0.0116    ndcg@50 : 0.0824    ndcg@40 : 0.0789    ndcg@20 : 0.0674    ndcg@10 : 0.0563    ndcg@5 : 0.0438    ndcg@1 : 0.0116    precision@50 : 0.0047    precision@40 : 0.0053    precision@20 : 0.0079    precision@10 : 0.0113    precision@5 : 0.0149    precision@1 : 0.0116
+Fri 29 Nov 2024 15:53:59 INFO  epoch 159 training [time: 18.27s, train loss: 1320.7788]
+Fri 29 Nov 2024 15:53:59 INFO  epoch 159 evaluating [time: 0.32s, valid_score: 0.067500]
+Fri 29 Nov 2024 15:53:59 INFO  valid result: 
+recall@50 : 0.2329    recall@40 : 0.2135    recall@20 : 0.1574    recall@10 : 0.1121    recall@5 : 0.0754    recall@1 : 0.0117    mrr@50 : 0.0445    mrr@40 : 0.044    mrr@20 : 0.0421    mrr@10 : 0.039    mrr@5 : 0.0341    mrr@1 : 0.0117    ndcg@50 : 0.0825    ndcg@40 : 0.079    ndcg@20 : 0.0675    ndcg@10 : 0.0561    ndcg@5 : 0.0443    ndcg@1 : 0.0117    precision@50 : 0.0047    precision@40 : 0.0053    precision@20 : 0.0079    precision@10 : 0.0112    precision@5 : 0.0151    precision@1 : 0.0117
+Fri 29 Nov 2024 15:54:17 INFO  epoch 160 training [time: 18.27s, train loss: 1322.1419]
+Fri 29 Nov 2024 15:54:18 INFO  epoch 160 evaluating [time: 0.32s, valid_score: 0.067300]
+Fri 29 Nov 2024 15:54:18 INFO  valid result: 
+recall@50 : 0.2326    recall@40 : 0.2122    recall@20 : 0.1571    recall@10 : 0.1128    recall@5 : 0.0751    recall@1 : 0.0114    mrr@50 : 0.0441    mrr@40 : 0.0437    mrr@20 : 0.0417    mrr@10 : 0.0387    mrr@5 : 0.0337    mrr@1 : 0.0114    ndcg@50 : 0.0822    ndcg@40 : 0.0785    ndcg@20 : 0.0673    ndcg@10 : 0.0561    ndcg@5 : 0.0439    ndcg@1 : 0.0114    precision@50 : 0.0047    precision@40 : 0.0053    precision@20 : 0.0079    precision@10 : 0.0113    precision@5 : 0.015    precision@1 : 0.0114
+Fri 29 Nov 2024 15:54:36 INFO  epoch 161 training [time: 18.29s, train loss: 1321.1736]
+Fri 29 Nov 2024 15:54:36 INFO  epoch 161 evaluating [time: 0.32s, valid_score: 0.068000]
+Fri 29 Nov 2024 15:54:36 INFO  valid result: 
+recall@50 : 0.2326    recall@40 : 0.2138    recall@20 : 0.1586    recall@10 : 0.1136    recall@5 : 0.0758    recall@1 : 0.0116    mrr@50 : 0.0446    mrr@40 : 0.0442    mrr@20 : 0.0423    mrr@10 : 0.0392    mrr@5 : 0.0342    mrr@1 : 0.0116    ndcg@50 : 0.0827    ndcg@40 : 0.0793    ndcg@20 : 0.068    ndcg@10 : 0.0567    ndcg@5 : 0.0445    ndcg@1 : 0.0116    precision@50 : 0.0047    precision@40 : 0.0053    precision@20 : 0.0079    precision@10 : 0.0114    precision@5 : 0.0152    precision@1 : 0.0116
+Fri 29 Nov 2024 15:54:36 INFO  Saving current: saved/GSAU-Nov-29-2024_15-02-29.pth
+Fri 29 Nov 2024 15:54:55 INFO  epoch 162 training [time: 18.29s, train loss: 1318.2320]
+Fri 29 Nov 2024 15:54:55 INFO  epoch 162 evaluating [time: 0.32s, valid_score: 0.067700]
+Fri 29 Nov 2024 15:54:55 INFO  valid result: 
+recall@50 : 0.233    recall@40 : 0.2131    recall@20 : 0.1572    recall@10 : 0.1143    recall@5 : 0.0757    recall@1 : 0.0116    mrr@50 : 0.0446    mrr@40 : 0.0441    mrr@20 : 0.0422    mrr@10 : 0.0392    mrr@5 : 0.0341    mrr@1 : 0.0116    ndcg@50 : 0.0827    ndcg@40 : 0.0791    ndcg@20 : 0.0677    ndcg@10 : 0.0568    ndcg@5 : 0.0444    ndcg@1 : 0.0116    precision@50 : 0.0047    precision@40 : 0.0053    precision@20 : 0.0079    precision@10 : 0.0114    precision@5 : 0.0151    precision@1 : 0.0116
+Fri 29 Nov 2024 15:55:13 INFO  epoch 163 training [time: 18.28s, train loss: 1318.5443]
+Fri 29 Nov 2024 15:55:14 INFO  epoch 163 evaluating [time: 0.32s, valid_score: 0.067500]
+Fri 29 Nov 2024 15:55:14 INFO  valid result: 
+recall@50 : 0.2331    recall@40 : 0.2131    recall@20 : 0.1575    recall@10 : 0.1131    recall@5 : 0.0752    recall@1 : 0.0114    mrr@50 : 0.0444    mrr@40 : 0.0439    mrr@20 : 0.042    mrr@10 : 0.0389    mrr@5 : 0.0339    mrr@1 : 0.0114    ndcg@50 : 0.0825    ndcg@40 : 0.0789    ndcg@20 : 0.0675    ndcg@10 : 0.0564    ndcg@5 : 0.0441    ndcg@1 : 0.0114    precision@50 : 0.0047    precision@40 : 0.0053    precision@20 : 0.0079    precision@10 : 0.0113    precision@5 : 0.015    precision@1 : 0.0114
+Fri 29 Nov 2024 15:55:32 INFO  epoch 164 training [time: 18.25s, train loss: 1315.8947]
+Fri 29 Nov 2024 15:55:32 INFO  epoch 164 evaluating [time: 0.32s, valid_score: 0.067300]
+Fri 29 Nov 2024 15:55:32 INFO  valid result: 
+recall@50 : 0.2325    recall@40 : 0.2132    recall@20 : 0.1575    recall@10 : 0.1133    recall@5 : 0.0746    recall@1 : 0.011    mrr@50 : 0.044    mrr@40 : 0.0436    mrr@20 : 0.0416    mrr@10 : 0.0386    mrr@5 : 0.0335    mrr@1 : 0.011    ndcg@50 : 0.0821    ndcg@40 : 0.0787    ndcg@20 : 0.0673    ndcg@10 : 0.0561    ndcg@5 : 0.0437    ndcg@1 : 0.011    precision@50 : 0.0047    precision@40 : 0.0053    precision@20 : 0.0079    precision@10 : 0.0113    precision@5 : 0.0149    precision@1 : 0.011
+Fri 29 Nov 2024 15:55:50 INFO  epoch 165 training [time: 18.26s, train loss: 1316.6657]
+Fri 29 Nov 2024 15:55:51 INFO  epoch 165 evaluating [time: 0.32s, valid_score: 0.067400]
+Fri 29 Nov 2024 15:55:51 INFO  valid result: 
+recall@50 : 0.232    recall@40 : 0.2127    recall@20 : 0.1571    recall@10 : 0.1128    recall@5 : 0.0752    recall@1 : 0.0114    mrr@50 : 0.0443    mrr@40 : 0.0438    mrr@20 : 0.0419    mrr@10 : 0.0389    mrr@5 : 0.0338    mrr@1 : 0.0114    ndcg@50 : 0.0822    ndcg@40 : 0.0787    ndcg@20 : 0.0674    ndcg@10 : 0.0562    ndcg@5 : 0.0441    ndcg@1 : 0.0114    precision@50 : 0.0046    precision@40 : 0.0053    precision@20 : 0.0079    precision@10 : 0.0113    precision@5 : 0.015    precision@1 : 0.0114
+Fri 29 Nov 2024 15:56:09 INFO  epoch 166 training [time: 18.29s, train loss: 1316.0275]
+Fri 29 Nov 2024 15:56:09 INFO  epoch 166 evaluating [time: 0.32s, valid_score: 0.067600]
+Fri 29 Nov 2024 15:56:09 INFO  valid result: 
+recall@50 : 0.2317    recall@40 : 0.2126    recall@20 : 0.1568    recall@10 : 0.1137    recall@5 : 0.0753    recall@1 : 0.012    mrr@50 : 0.0446    mrr@40 : 0.0442    mrr@20 : 0.0422    mrr@10 : 0.0392    mrr@5 : 0.0342    mrr@1 : 0.012    ndcg@50 : 0.0824    ndcg@40 : 0.079    ndcg@20 : 0.0676    ndcg@10 : 0.0567    ndcg@5 : 0.0443    ndcg@1 : 0.012    precision@50 : 0.0046    precision@40 : 0.0053    precision@20 : 0.0078    precision@10 : 0.0114    precision@5 : 0.0151    precision@1 : 0.012
+Fri 29 Nov 2024 15:56:28 INFO  epoch 167 training [time: 18.29s, train loss: 1314.8701]
+Fri 29 Nov 2024 15:56:28 INFO  epoch 167 evaluating [time: 0.32s, valid_score: 0.067600]
+Fri 29 Nov 2024 15:56:28 INFO  valid result: 
+recall@50 : 0.2317    recall@40 : 0.2138    recall@20 : 0.1574    recall@10 : 0.1134    recall@5 : 0.0752    recall@1 : 0.0116    mrr@50 : 0.0444    mrr@40 : 0.0441    mrr@20 : 0.0421    mrr@10 : 0.0391    mrr@5 : 0.034    mrr@1 : 0.0116    ndcg@50 : 0.0823    ndcg@40 : 0.0791    ndcg@20 : 0.0676    ndcg@10 : 0.0566    ndcg@5 : 0.0442    ndcg@1 : 0.0116    precision@50 : 0.0046    precision@40 : 0.0053    precision@20 : 0.0079    precision@10 : 0.0113    precision@5 : 0.015    precision@1 : 0.0116
+Fri 29 Nov 2024 15:56:46 INFO  epoch 168 training [time: 18.27s, train loss: 1313.8512]
+Fri 29 Nov 2024 15:56:46 INFO  epoch 168 evaluating [time: 0.32s, valid_score: 0.067600]
+Fri 29 Nov 2024 15:56:46 INFO  valid result: 
+recall@50 : 0.2328    recall@40 : 0.2134    recall@20 : 0.158    recall@10 : 0.1141    recall@5 : 0.0752    recall@1 : 0.011    mrr@50 : 0.0443    mrr@40 : 0.0439    mrr@20 : 0.0419    mrr@10 : 0.0389    mrr@5 : 0.0337    mrr@1 : 0.011    ndcg@50 : 0.0825    ndcg@40 : 0.079    ndcg@20 : 0.0676    ndcg@10 : 0.0566    ndcg@5 : 0.044    ndcg@1 : 0.011    precision@50 : 0.0047    precision@40 : 0.0053    precision@20 : 0.0079    precision@10 : 0.0114    precision@5 : 0.015    precision@1 : 0.011
+Fri 29 Nov 2024 15:57:05 INFO  epoch 169 training [time: 18.27s, train loss: 1313.2801]
+Fri 29 Nov 2024 15:57:05 INFO  epoch 169 evaluating [time: 0.32s, valid_score: 0.067600]
+Fri 29 Nov 2024 15:57:05 INFO  valid result: 
+recall@50 : 0.2315    recall@40 : 0.2141    recall@20 : 0.1573    recall@10 : 0.1132    recall@5 : 0.0756    recall@1 : 0.0117    mrr@50 : 0.0444    mrr@40 : 0.0441    mrr@20 : 0.0421    mrr@10 : 0.039    mrr@5 : 0.034    mrr@1 : 0.0117    ndcg@50 : 0.0823    ndcg@40 : 0.0792    ndcg@20 : 0.0676    ndcg@10 : 0.0565    ndcg@5 : 0.0443    ndcg@1 : 0.0117    precision@50 : 0.0046    precision@40 : 0.0054    precision@20 : 0.0079    precision@10 : 0.0113    precision@5 : 0.0151    precision@1 : 0.0117
+Fri 29 Nov 2024 15:57:23 INFO  epoch 170 training [time: 18.25s, train loss: 1312.6729]
+Fri 29 Nov 2024 15:57:24 INFO  epoch 170 evaluating [time: 0.32s, valid_score: 0.067800]
+Fri 29 Nov 2024 15:57:24 INFO  valid result: 
+recall@50 : 0.232    recall@40 : 0.2137    recall@20 : 0.1576    recall@10 : 0.1134    recall@5 : 0.0749    recall@1 : 0.0122    mrr@50 : 0.0447    mrr@40 : 0.0443    mrr@20 : 0.0423    mrr@10 : 0.0393    mrr@5 : 0.0342    mrr@1 : 0.0122    ndcg@50 : 0.0826    ndcg@40 : 0.0792    ndcg@20 : 0.0678    ndcg@10 : 0.0567    ndcg@5 : 0.0443    ndcg@1 : 0.0122    precision@50 : 0.0046    precision@40 : 0.0053    precision@20 : 0.0079    precision@10 : 0.0113    precision@5 : 0.015    precision@1 : 0.0122
+Fri 29 Nov 2024 15:57:42 INFO  epoch 171 training [time: 18.13s, train loss: 1309.4945]
+Fri 29 Nov 2024 15:57:42 INFO  epoch 171 evaluating [time: 0.45s, valid_score: 0.067300]
+Fri 29 Nov 2024 15:57:42 INFO  valid result: 
+recall@50 : 0.232    recall@40 : 0.2126    recall@20 : 0.1574    recall@10 : 0.1129    recall@5 : 0.0761    recall@1 : 0.0108    mrr@50 : 0.044    mrr@40 : 0.0436    mrr@20 : 0.0416    mrr@10 : 0.0386    mrr@5 : 0.0337    mrr@1 : 0.0108    ndcg@50 : 0.082    ndcg@40 : 0.0785    ndcg@20 : 0.0673    ndcg@10 : 0.0561    ndcg@5 : 0.0442    ndcg@1 : 0.0108    precision@50 : 0.0046    precision@40 : 0.0053    precision@20 : 0.0079    precision@10 : 0.0113    precision@5 : 0.0152    precision@1 : 0.0108
+Fri 29 Nov 2024 15:58:00 INFO  epoch 172 training [time: 18.16s, train loss: 1310.3366]
+Fri 29 Nov 2024 15:58:01 INFO  epoch 172 evaluating [time: 0.32s, valid_score: 0.067200]
+Fri 29 Nov 2024 15:58:01 INFO  valid result: 
+recall@50 : 0.2322    recall@40 : 0.2123    recall@20 : 0.1569    recall@10 : 0.1128    recall@5 : 0.0767    recall@1 : 0.0104    mrr@50 : 0.044    mrr@40 : 0.0436    mrr@20 : 0.0417    mrr@10 : 0.0386    mrr@5 : 0.0338    mrr@1 : 0.0104    ndcg@50 : 0.0821    ndcg@40 : 0.0785    ndcg@20 : 0.0672    ndcg@10 : 0.0561    ndcg@5 : 0.0444    ndcg@1 : 0.0104    precision@50 : 0.0046    precision@40 : 0.0053    precision@20 : 0.0078    precision@10 : 0.0113    precision@5 : 0.0153    precision@1 : 0.0104
+Fri 29 Nov 2024 15:58:01 INFO  Finished training, best eval result in epoch 161
+Fri 29 Nov 2024 15:58:02 INFO  Loading model structure and parameters from saved/GSAU-Nov-29-2024_15-02-29.pth
+Fri 29 Nov 2024 15:58:03 INFO  The running environment of this training is as follows:
++-------------+-----------------+
+| Environment |      Usage      |
++=============+=================+
+| CPU         |     8.10 %      |
++-------------+-----------------+
+| GPU         | 0.65 G/44.34 G  |
++-------------+-----------------+
+| Memory      | 1.25 G/251.62 G |
++-------------+-----------------+
+Fri 29 Nov 2024 15:58:03 INFO  best valid : OrderedDict([('recall@50', 0.2326), ('recall@40', 0.2138), ('recall@20', 0.1586), ('recall@10', 0.1136), ('recall@5', 0.0758), ('recall@1', 0.0116), ('mrr@50', 0.0446), ('mrr@40', 0.0442), ('mrr@20', 0.0423), ('mrr@10', 0.0392), ('mrr@5', 0.0342), ('mrr@1', 0.0116), ('ndcg@50', 0.0827), ('ndcg@40', 0.0793), ('ndcg@20', 0.068), ('ndcg@10', 0.0567), ('ndcg@5', 0.0445), ('ndcg@1', 0.0116), ('precision@50', 0.0047), ('precision@40', 0.0053), ('precision@20', 0.0079), ('precision@10', 0.0114), ('precision@5', 0.0152), ('precision@1', 0.0116)])
+Fri 29 Nov 2024 15:58:03 INFO  test result: OrderedDict([('recall@50', 0.197), ('recall@40', 0.1807), ('recall@20', 0.1328), ('recall@10', 0.0924), ('recall@5', 0.0613), ('recall@1', 0.0116), ('mrr@50', 0.0379), ('mrr@40', 0.0375), ('mrr@20', 0.0359), ('mrr@10', 0.0331), ('mrr@5', 0.029), ('mrr@1', 0.0116), ('ndcg@50', 0.0699), ('ndcg@40', 0.0669), ('ndcg@20', 0.0572), ('ndcg@10', 0.047), ('ndcg@5', 0.0369), ('ndcg@1', 0.0116), ('precision@50', 0.0039), ('precision@40', 0.0045), ('precision@20', 0.0066), ('precision@10', 0.0092), ('precision@5', 0.0123), ('precision@1', 0.0116)])
